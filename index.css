@@ -1,0 +1,165 @@
+/* 
+font-family: 'Caveat Brush', cursive;
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Varela Round', sans-serif;
+ */
+html {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /* font-size: 15px; */
+    line-height: 1.5;
+}
+
+#navTabs{
+    z-index: 10;
+    text-align: center;
+    /* background-color: rgba(250, 249, 249, 0.4); */
+    background-color: rgb(121, 121, 121 , 0.4); 
+    position: fixed; /* Make it stick/fixed */
+    right: 0px;
+    top: -50px; /* Hide the navbar 50 px outside of the topf view */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+#navTabs a {
+    color: white;
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+}
+
+#navTabs a:hover {
+    font-weight: bold;
+}
+ 
+.Header{
+    background-color: rgb(231, 232, 231);
+    height:auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 100%;  
+    text-align: center;   
+}
+
+.Header p{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.Header h1{
+    font-size:3.5rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.Projects{
+    /* margin-top:25rem; */
+    padding-top: 20px;
+    background-color: rgb(172, 232, 172);
+    height: fit-content;
+}
+
+.content{
+    font-family: 'Varela Round', sans-serif;
+    width: 35rem;
+}
+
+.Skills{
+    height: 30rem;
+}
+
+.Education{
+
+    /* padding: 60px 0; */
+
+    padding: 20px 0;
+    font-family: 'Varela Round', sans-serif;
+    background-color: rgb(199, 240, 252);
+    height: fit-content;
+}
+
+.content-wrap{
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.singleProject{
+    display: flex;
+    /* background-color: blue; */
+    align-items: center;
+}
+
+.singleProject video{
+    width: 15rem;
+    height: 15rem;
+}
+
+.singleProject video,.content{
+    padding: 1rem;
+}
+/* future group ..      */
+.links{
+    background-color: rgb(109, 143, 254);
+    color: white;
+    text-decoration: none;
+}
+.Footer{
+    background-color: rgb(231, 232, 231);
+    width: 100%;
+    padding-bottom: 2rem;
+} 
+
+.Footer a:hover{
+    cursor: pointer;
+    font-weight:bold
+}
+
+.contacts{
+    display: flex; 
+    justify-content: space-around; 
+    font-size: 1.25rem;
+}
+@media only screen and (min-width :279px) and (max-width : 481px){
+    html {
+        font-size: 70%;
+    }
+    .Header{
+        font-size: medium;
+    }
+    .singleProject{
+        flex-direction: column;
+    } 
+    
+    .singleProject img,.content{
+        padding: 0.5rem;
+        width: 98%;
+
+    }
+}
+@media only screen and (min-width :481px) and (max-width : 769px){
+    html {
+        font-size: 70%;
+    }
+    .Header{
+        font-size: medium;
+    }
+    .content-wrap{
+        width: 95%;
+    }
+    
+}
+@media only screen and (min-width :769px) and (max-width : 1024px){
+    html {
+        font-size: 90%;
+    }
+   
+      
+}
