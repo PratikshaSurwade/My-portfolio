@@ -97,12 +97,12 @@ h1 {
     align-items: center;
 }
 
-.singleProject video{
+.singleProject img{
     width: 15rem;
     height: 15rem;
 }
 
-.singleProject video,.content{
+.singleProject img,.content{
     padding: 1rem;
 }
 /* future group ..      */
@@ -125,7 +125,7 @@ h1 {
 .contacts{
     display: flex; 
     justify-content: space-around; 
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 @media only screen and (min-width :279px) and (max-width : 481px){
     html {
