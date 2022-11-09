@@ -12,7 +12,7 @@ body{
 #navTabs{
     z-index: 10;
     text-align: center;
-    /* background-color: rgba(250, 249, 249, 0.4); */
+    /* background-color: rgba(20, 32, 168, 0.4); */
     background-color: rgb(121, 121, 121 , 0.4); 
     position: fixed; /* Make it stick/fixed */
     right: 0px;
@@ -33,7 +33,9 @@ body{
 }
  
 .Header{
-    background-color: rgb(231, 232, 231);
+    background-color: rgb(8, 20, 154);
+    /* background-color: rgb(231, 232, 231); */
+    color: white;
     height:auto;
     padding-top: 40px;
     padding-bottom: 20px;
@@ -157,6 +159,4 @@ h1 {
     html {
         font-size: 90%;
     }
-   
-      
 }
