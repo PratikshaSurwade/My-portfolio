@@ -67,6 +67,10 @@ body{
     margin: 20% 10%;
 }
 
+.NameDeveloper{
+    background-color: black;
+    color: #e1e1e1;
+}
 .Header h1{
 
     top: 5rem;
@@ -77,6 +81,28 @@ body{
 h1 {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+/* Name Projects styling Starts */
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.word {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: var(--delay);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Name Projects styling ends */
 
 .Projects{
     /* margin-top:25rem; */
