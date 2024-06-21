@@ -62,15 +62,18 @@ body{
     animation: circleBorder1 5s linear infinite;
 }
 
-.Header p{
+.Summary{
     font-family: 'Varela Round', sans-serif;
-    margin: 20% 10%;
+    margin: 15% 10%;
+    font-size: 1.5rem;
+    display: inline-block;
 }
 
 .NameDeveloper{
     background-color: black;
     color: #e1e1e1;
 }
+
 .Header h1{
 
     top: 5rem;
