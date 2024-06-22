@@ -72,6 +72,8 @@ body{
 .NameDeveloper{
     background-color: black;
     color: #e1e1e1;
+    display: flex;
+    align-items: center;
 }
 
 .Header h1{
