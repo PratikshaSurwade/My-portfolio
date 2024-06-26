@@ -55,6 +55,7 @@ body{
     mix-blend-mode: difference;
     padding: 1.5rem 1.5rem;
     font-size: x-large;
+    position: fixed;
 }
 
 .fa-globe{
@@ -62,11 +63,16 @@ body{
     animation: circleBorder1 5s linear infinite;
 }
 
+.Header{
+    text-align: center;
+}
+
 .Summary{
     font-family: 'Varela Round', sans-serif;
-    margin: 15% 10%;
     font-size: 1.5rem;
     display: inline-block;
+    position: relative;
+    top:7rem;
 }
 
 .NameDeveloper{
