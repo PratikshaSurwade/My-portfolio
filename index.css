@@ -54,7 +54,7 @@ body{
     border-radius: 5%;
  }
  
- .headerTabSubSection{
+.headerTabSubSection{
     height: 6%;
     width: 39%;
     margin: auto;
@@ -70,15 +70,14 @@ body{
     display: flex;
     justify-content: center;
     align-self: center;
- }
+}
  
- .headerTabImage{
+.headerTabImage{
     height: 100%;
     width: 100%;
     border-radius: 5%;
     margin-top: 1%;
- 
- }
+}
  
 /* Tab Designing */
 
@@ -87,9 +86,9 @@ body{
     width: 10rem;
     background-color: #d3d3d3;
     border-radius: 5%;
- }
+}
  
- .headerMobTabSubSection{
+.headerMobTabSubSection{
     height: 6%;
     width: 39%;
     margin: auto;
@@ -105,15 +104,14 @@ body{
     display: flex;
     justify-content: center;
     align-self: center;
- }
+}
  
- .headerMobTabImage{
+.headerMobTabImage{
     height: 100%;
     width: 100%;
     border-radius: 5%;
     margin-top: 1%;
- 
- }
+}
  
 
 .scrollWatchers{
@@ -133,10 +131,10 @@ body{
         transform: scale(1);
     }
 }
+
 .Name{
     z-index: 10;
     /* text-align: center; */
-
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     color: #e1e1e1;
@@ -175,7 +173,6 @@ body{
 .Summary{
     font-family: 'Varela Round', sans-serif;
     font-size: 1.5rem;
-
 }
 
 .NameDeveloper{
@@ -187,7 +184,6 @@ body{
 }
 
 .Header h1{
-
     top: 5rem;
     /* margin-bottom: ; */
     font-size:3.5rem;
