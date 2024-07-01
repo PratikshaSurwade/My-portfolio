@@ -125,7 +125,6 @@ h1 {
     position: relative;
     animation: DividerLineAnimate both;
     animation-timeline: view(70% 5%);
-
 }
 
 .dividerLine::before{
@@ -137,7 +136,6 @@ h1 {
     width: 1rem;
     animation: DividerLineAnimate both;
     animation-timeline: view(70% 5%);
-
 }
 
 .dividerLine::after{
@@ -192,6 +190,7 @@ h1 {
     display: flex;
     /* background-color: blue; */
     align-items: center;
+    justify-content: space-evenly;
 }
 
 
@@ -200,34 +199,47 @@ h1 {
 .titleName>h2{
     display: inline-block;
 }
-/* .animationShow{
-    animation: animationShowAnimate both;
-    animation-timeline: view(70% 5%);
+.animationShow{
+    animation: animationShowAnimate linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+
 }
 @keyframes animationShowAnimate {
     from{
         opacity: 0;
-        transform: translateY(50px) scale(0.5);
+        transform: translateY(100px) scale(0.5);
     }
     to{
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-} */
+}
 
 
 .animateTitleWords{
-    animation: animateTitleWordsAnimation both;
-    animation-timeline: view();
-
+    /* opacity: 0; */
+    transform-origin: bottom;
+    animation: animateTitleWordsAnimation 1.6s;
+    animation-timeline: scroll;
+    /*animation-range: entry 0 cover 40%; */
+    
 }
 
 @keyframes animateTitleWordsAnimation {
-    from{
+    0%{
         opacity: 0;
-        transform: translateY(50px) scale(0.5);
+        transform: translateY(100px) scale(0.3);
     }
-    to{
+    35%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0) scale(1.5);
+    }
+    100%{
         opacity: 1;
         transform: translateY(0) scale(1);
     }

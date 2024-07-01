@@ -83,8 +83,11 @@
 
 /* Tab Designing */
 .projectsImagesShow{
-
+  position: relative;
+  height: 25rem;
+  width: 30rem;
 }
+
 .tabSection{
    height: 20rem;
    width: 25rem;
@@ -93,12 +96,12 @@
    border-radius: 5%;
    position: relative;
    text-align: center;
-   box-shadow: 4px 4px 5px 0em #d3d3d3
-
+   box-shadow: 4px 4px 5px 0em #d3d3d3;
+   overflow: visible;
 }
 
 .tabSubSection{
-   height: 6%;
+   height: 1.8rem;
    width: 39%;
    margin: auto;
    background-color: #fff;
@@ -113,52 +116,52 @@
    display: flex;
    justify-content: center;
    align-self: center;
-   padding: 15px;
-
 }
 
 .tabImage{
-   height: 80%;
-   width: 95%;
+   height: 90%;
+   width: 98%;
    border-radius: 5%;
-
-}
-.tabMobSection{
-   height: 10rem;
-   width: 5rem;
-   margin: auto;
-   background-color: #e1e1e1;
-   border-radius: 5%;
-   position: relative;
-   text-align: center;
-   box-shadow: 4px 4px 5px 0em #d3d3d3
-
 }
 
-.tabMobSubSection{
-   height: 3%;
-   width: 32%;
-   margin: auto;
-   background-color: #fff;
-   background-image: url("./assets/triangle2.png"),url("./assets/triangle1.png");
-   /* background-image: url("./assets/crow.png"); */
-   background-position: 100%,0%;
-   background-repeat: no-repeat,no-repeat;
-   background-size: contain,contain;
-   object-fit: fill;
-   font-size: small;
-   color: #878787;
-   display: flex;
-   justify-content: center;
-   align-self: center;
-   padding: 15px;
+.tabMobSection{ 
+  height: 15rem;
+  width: 8rem;
+  margin: auto;
+  background-color: #e1e1e1;
+  border-radius: 5%;
+  position: absolute;
+  left: -2rem;
+  text-align: center;
+  box-shadow: 4px 4px 5px 0em #d3d3d3;
+  bottom: 0rem;
+}
 
+.tabMobSubSection{    
+  height: 4%;
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  /* background: transparent; */
+  background-image: url("./assets/triangle2.png"),url("./assets/triangle1.png");
+  /* background-image: url("./assets/crow.png"); */
+  background-position: 100%,0%;
+  background-repeat: no-repeat,no-repeat;
+  background-size: contain,contain;
+  object-fit: cover;
+  font-size: small;
+  color: #878787;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .tabMobImage{
-   height: 80%;
-   width: 95%;
+   height: 95%;
+   width: 98%;
+   padding: 1%;
    border-radius: 5%;
+   object-fit: cover;
 
 }
 
