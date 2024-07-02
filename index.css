@@ -12,8 +12,11 @@ body{
     line-height: 1.5;
     /* background-color: #e1e1e1; */
     color: black;
-    font-family: 'Montserrat Alternates', sans-serif;
-}
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 #navTabs{
     z-index: 10;
@@ -73,6 +76,7 @@ body{
     mix-blend-mode: difference;
     padding: 1.5rem 1.5rem;
     font-size: x-large;
+    font-weight: 500;
     position: fixed;
 }
 
@@ -81,26 +85,47 @@ body{
     animation: circleBorder1 5s linear infinite;
 }
 
-.Header{
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
 
 .Summary{
-    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
     font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20vh;
+
 }
 
 .NameDeveloper{
     background-color: black;
     color: #e1e1e1;
+    display: inline;
     display: flex;
     align-items: center;
     padding: 0.9rem;
+    font-size: 1.7rem;
+    /* animation-name: bounce ,moveLeft300px;
+    animation-duration: 2.5s, 5s;
+    animation-iteration-count: 2, 1; */
 }
+
+.testbutton {
+    font-family: arial;
+    color: #000000 !important;
+    font-size: 14px;
+    text-shadow: 0px 0px 1px #DEDCDC;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: #FFFFFF;
+  }
+  .testbutton:hover {
+    color: #FFFFFF !important;
+    background: #000000;
+  }
+  
 
 .Header h1{
     top: 5rem;
@@ -112,72 +137,21 @@ h1 {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+div.skillsSlider{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 3px solid #d3d3d3;
+    margin-top: 2vh;
+}
+
+.skillsSlider p{
+    /* padding: 2rem; */
+}
 .Projects{
-    /* margin-top:25rem; */
     padding-top: 20px;
-    /* background-color: rgb(172, 232, 172); */
-    height: fit-content;
-}
-
-.dividerLine{
-    border-left: #000 solid 0.1rem;
-    height: 20rem;
-    position: relative;
-    animation: DividerLineAnimate both;
-    animation-timeline: view(70% 5%);
-}
-
-.dividerLine::before{
-    position: absolute;
-    content: "";
-    left: 100%;
-    box-shadow: inset -16px 0px 8px 0em black;
-    height: 0.5rem;
-    width: 1rem;
-    animation: DividerLineAnimate both;
-    animation-timeline: view(70% 5%);
-}
-
-.dividerLine::after{
-    position: absolute;
-    content: "";
-    /* box-shadow: inset .1em 0px 0px .08em green; */
-    border-radius: 50%;
-    background-color: black;
-    height: 0.5rem;
-    width: 0.5rem;
-    bottom: 0px;
-    left: -0.25rem;
-    animation: DividerLineAnimate both;
-    animation-timeline: view(70% 5%);
-}
-
-@keyframes DividerLineAnimate {
-    from{
-        opacity: 0;
-        transform: translateY(50px) scale(0.5);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-} 
-
-
-.content{
-    font-family: 'Varela Round', sans-serif;
-    width: 35rem;
-}
-
-.Skills{
-    height: 30rem;
-}
-
-.Education{
-    /* padding: 60px 0; */
-    padding: 20px 0;
-    font-family: 'Varela Round', sans-serif;
-    /* background-color: rgb(199, 240, 252); */
     height: fit-content;
 }
 
@@ -202,17 +176,17 @@ h1 {
 .animationShow{
     animation: animationShowAnimate linear;
     animation-timeline: view();
-    animation-range: entry 0 cover 40%;
+    animation-range: entry 0 cover 30%;
 
 }
 @keyframes animationShowAnimate {
     from{
         opacity: 0;
-        transform: translateY(100px) scale(0.5);
+        transform: translateY(200px) ;
     }
     to{
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
@@ -271,10 +245,125 @@ h1 {
     animation-delay: 1.6s;
 }
 
+.dividerLine{
+    border-left: #000 solid 0.1rem;
+    height: 20rem;
+    position: relative;
+    transition: top;
+    /* animation: DividerLineAnimate both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%; */
+}
 
+.dividerLine::before{
+    position: absolute;
+    content: "";
+    left: 100%;
+    box-shadow: inset -16px 0px 8px 0em black;
+    height: 0.5rem;
+    width: 1rem;
+    transform-origin: left;
+    animation: ClipPathAnimateRect both;
+    animation-timeline: view();
+    /* animation-range: entry 25% cover 45%; */
+}
+
+.dividerLine::after{
+    position: absolute;
+    content: "";
+    /* box-shadow: inset .1em 0px 0px .08em green; */
+    border-radius: 50%;
+    background-color: black;
+    height: 0.5rem;
+    width: 0.5rem;
+    bottom: 0px;
+    left: -0.25rem;
+
+    animation: ClipPathAnimate both;
+    animation-timeline: view(70% 30%);
+}
+
+@keyframes DividerLineAnimate {
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+} 
+@keyframes ClipPathAnimate {
+    from{
+        transform: scale(0);
+    }
+    to{
+        clip-path: circle(50% at 50% 50%);   
+    }
+}
+@keyframes ClipPathAnimateRect {
+    /* 0%{
+        clip-path: inset(0% 100% 0% 0%);
+    }
+    50%{
+        clip-path: inset(0% 100% 0% 0%);
+    }
+    100%{
+        clip-path: inset(0% 0% 0% 0%);
+    } */
+
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+
+}
+
+/* .projectDescription li{
+    display: inline;
+} */
+
+.projectDescription span {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-image: linear-gradient(90deg, rgb(6, 6, 6), rgb(4, 4, 4));
+    animation: scroll-reveal linear forwards;
+    animation-timeline: view(y);
+} 
+
+.projectDescription h4{
+    animation-range-start: cover 10vh;
+    animation-range-end: 30vh;
+}
+.projectDescription p span{
+    animation-range-start: cover 5.5vh;
+    animation-range-end: 35vh;
+}
+
+@keyframes scroll-reveal {
+    to{
+        background-size: 100% 100%;
+    }
+}
+
+.Skills{
+    height: 30rem;
+}
+
+.Education{
+    /* padding: 60px 0; */
+    padding: 20px 0;
+    font-family: 'Varela Round', sans-serif;
+    /* background-color: rgb(199, 240, 252); */
+    height: fit-content;
+}
 
 .content{
     padding: 1rem;
+    width: 35rem;
+
 }
 
 .links{
