@@ -24,7 +24,8 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+<!--   font-family: "Rowdies", sans-serif; -->
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -32,43 +33,70 @@
 
 <body>
     <div>
-        <navbar>
-            <div class="Name">PRATIKSHA SURWADE</div>
-            <div id="navTabs">
+        <nav class="NavBar">
+            <div class="Name">PRATIKSHA</div>
+            <div class="navTabs">
                 <a href="#projects" class="btn">Projects</a>
                 <a href="#education" class="btn">Education</a>
                 <a href="#contacts" class="btn">Contacts</a>
             </div>
-        </navbar>
+        </nav>
+
         <div class="scrollWatchers"></div>
+        <div id="cursor"></div>
+        <div class="mainHeader">
             <div class="Summary">
-                <div class="">I am Pratiksha Surwade,</div><br>
-                <div class="NameDeveloper">FULL STACK WEB DEVELOPER
-                    <div class="circleContainer">
-                        <div class="CircleRing">
-                            <div class="verticalRings"></div>
-                            <div class="verticalRings"></div>
-                            <div class="verticalRings"></div>
-                            <div class="horizontailRing"></div>
-                            <div class="horizontalRingMid"></div>
+
+                <div>
+                    <div class="NameDeveloper">
+                        <span class="wordsImportant">FULL STACK WEB DEVELOPER</span>
+                        <div class="circleContainer">
+                            <div class="CircleRing">
+                                <div class="verticalRings"></div>
+                                <div class="verticalRings"></div>
+                                <div class="verticalRings"></div>
+                                <div class="horizontailRing"></div>
+                                <div class="horizontalRingMid"></div>
+                            </div>
                         </div>
-                    </div>
-                </div><br>
+                    </div><br>
+    
+                    
+                    <div class="codeElements"></div>Hi, I am <br> <span class="wordsImportantPratiksha">Pratiksha
+                        Surwade</span>
+                    <i class="fas fa-praying-hands" title="Hello,(Namste)" style="color: #f1c27d;"></i>
+                    <br>
+                    
+                </div>
+                <br>
+                <!-- <span class="wordsImportant">FULL STACK WEB DEVELOPER</span> -->
+
+
                 <div class="subName">
-                    <i class="fas fa-graduation-cap"></i>B.Tech | <i class="fas fa-user-graduate"></i> M.Tech</div><br>
-                <div class="headerButtons"><button class="testbutton">Contact Me</button><button class="testbutton">Donload CV</button></div>           
-            </div>
-            <div class="skillsSlider">
-                <p>Html</p>
-                <p>Css</p>
-                <p>Javascript</p>
-                <p>Reactjs</p>
-                <p>NodeJs</p>
-                <p>MongoDb</p>
-                <p>ExpressJs</p>
-                <p>Saas</p>
+                    <i class="fas fa-user-graduate"></i> B.Tech | M.Tech<br>
+                    Frontend Developer | Backend Developer
+                </div>
+                
+                <div class="headerButtons"><button class="testbutton">Contact Me</button><button
+                        class="testbutton">Donload CV</button></div>
             </div>
 
+            <img src="./assets/mainPageimg.jpg" class="mainPageImage" alt="mainImage">
+        </div>
+        <!-- <hr class="hrBorder"> -->
+        <div class="mainpageskills">
+            <p>Html</p>
+            <p>Css</p>
+            <p>Javascript</p>
+            <p>Reactjs</p>
+            <p>NodeJs</p>
+            <p>MongoDb</p>
+            <p>ExpressJs</p>
+            <p>Saas</p>
+        </div>
+        
+
+        <!-- <hr class="hrNavBorder"> -->
         <div class="Projects" id="projects">
             <div class="content-wrap">
                 <div class="titleName">
@@ -95,13 +123,15 @@
                     <div class="dividerLine"></div>
                     <div class="content projectDescription">
                         <h4>iShop MERN app</h4>
-                        <p><span>It is Full stack Web E-commerce App(MERN-E-commerce App) - CRUD App Uses - React as frontend,
-                            Express(NodeJs) as backend, MongoDB(NoSql) as database.
-                            <li>Build Home page, Login & Register Page, Order page, Shipping Page, and Payment page (
-                                integrated with Razor pay).</li>
-                            <li>Build a Cart to add/ remove items with individual & total price.</li>
-                            <li>Website - with Navbar, Pagination, Filter - color, price brand , Sort features.</li>
-                        </span>
+                        <p><span>It is Full stack Web E-commerce App(MERN-E-commerce App) - CRUD App Uses - React as
+                                frontend,
+                                Express(NodeJs) as backend, MongoDB(NoSql) as database.
+                                <li>Build Home page, Login & Register Page, Order page, Shipping Page, and Payment page
+                                    (
+                                    integrated with Razor pay).</li>
+                                <li>Build a Cart to add/ remove items with individual & total price.</li>
+                                <li>Website - with Navbar, Pagination, Filter - color, price brand , Sort features.</li>
+                            </span>
                         </p>
                         <a href="https://mern-ishop-ecommerce-app.netlify.app/" class="links" style="padding: 0.5rem;"
                             target="_blank">Website</a>
@@ -125,9 +155,11 @@
                     <div class="dividerLine"></div>
                     <div class="content projectDescription">
                         <h4>The Siren - Blog app</h4>
-                        <p><span>A simple News Blog Website .ExpressJs(NodeJs) is used to create Rest API , the frontend uses
-                            React and the data is stored at MongoDB Atlas. Responsive blog application, Navbar showing
-                            various categories sort.</span></p>
+                        <p><span>A simple News Blog Website .ExpressJs(NodeJs) is used to create Rest API , the frontend
+                                uses
+                                React and the data is stored at MongoDB Atlas. Responsive blog application, Navbar
+                                showing
+                                various categories sort.</span></p>
                         <a href="https://m-e-r-n-blog-app.netlify.app/" class="links" style="padding: 0.5rem;"
                             target="_blank">Website</a>
                         <a href="https://github.com/PratikshaSurwade/Blog-app" class="links" style="padding: 0.5rem;"
@@ -211,6 +243,8 @@
         <div class="Education" id="education">
             <div class="content-wrap">
                 <div class="titleName">
+                    <i class="fas fa-graduation-cap"></i>
+
                     <h2 class="animateTitleWords">E</h2>
                     <h2 class="animateTitleWords">D</h2>
                     <h2 class="animateTitleWords">U</h2>
@@ -266,6 +300,12 @@
 
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./index.js" async defer></script>
 </body>
 

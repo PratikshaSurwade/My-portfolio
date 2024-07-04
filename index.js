@@ -11,3 +11,14 @@ console.log(elements);
         });
     });
 });
+
+var crsr = document.querySelector("#cursor");
+
+document.addEventListener("mousemove",function(details){
+    crsr.style.left = details.x+"px";
+    crsr.style.top = details.y+"px";
+
+})
+
+// document.querySelector(".skillsSlider").cloneNode(true);
+// document.querySelector()

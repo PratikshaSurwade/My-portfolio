@@ -168,6 +168,24 @@
 
 /* Stylefor tab animation creation */
 
+/* Hr style and the Sticy to navbar from bottom to top scrool */
+
+/* 
+.hrBorder{
+  height: 0.05em;
+  width: 100%;
+  background: linear-gradient(in hsl longer hue 90deg, #f66 0 0);
+}
+
+.hrNavBorder{
+  opacity:1;
+  position: sticky;
+  top: 5rem;
+  height: 0.05em;
+  width: 100%;
+  background: linear-gradient(in hsl longer hue 90deg, #f66 0 0);
+} */
+
 /*                 <img src="https://cdn.builder.io/api/v1/image/assets%2F7f2a427c7e5d46d486cd081a3a926bdc%2F69577720e74c417ab27cdf80cc65c3f2?format=webp&width=400">
  */
 
