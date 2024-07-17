@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll('.word');
-console.log(elements);
+    console.log(elements);
     window.addEventListener('scroll', function() {
         elements.forEach((element, index) => {
             const rect = element.getBoundingClientRect();
@@ -14,7 +14,6 @@ console.log(elements);
 
 var crsr = document.querySelector("#cursor");
 
-
 document.addEventListener("mousemove",function(details){
     crsr.style.left = details.x+"px";
     crsr.style.top = details.y+"px";
@@ -25,6 +24,26 @@ document.addEventListener("",function(details){
     crsr.style.top = details.y+"px";
 })
 
+// Navbar Animation
 
-// document.querySelector(".skillsSlider").cloneNode(true);
-// document.querySelector()
+
+gsap.from("h1",{
+    y:20,
+    opacity:0,
+    duration:1,
+    delay:0.5,
+})
+
+gsap.from(".navTabs .btn",{
+    y:20,
+    opacity:0,
+    duration:1,
+    stagger:0.3
+})
+
+gsap.from("div",{
+    y:20,
+    opacity:0,
+    duration:1,
+    stagger:0.3
+})

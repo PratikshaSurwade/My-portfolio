@@ -27,21 +27,22 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 1rem 2rem;
     position: sticky;
-    top:1rem;
+    top: 1;
 }
 
 .navTabs{
     background-color: transparent; 
     z-index: 5;
-    margin: 1rem 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
     transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 .navTabs a {
     text-decoration: none;
-    margin: 1rem 2rem;
-    padding: 0.5rem 0.52rem;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -214,18 +215,16 @@ div.mainpageskills{
     background: linear-gradient(90deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
 
 }
-.mainpageskills::after{
+/* .mainpageskills::after{
     position: absolute;
     content: "";
-    /* content-visibility: ; */
     width: 10%;
     height: 100%;
     right: -75px;
     background-image: url("./assets/blur.png");
     background-repeat: no-repeat;
-    /* background: rgb(211,211,211);
-    background: linear-gradient(270deg, rgba(211,211,211,1) 0%, rgba(255,255,255,0.5271358543417367) 50%); */
-}
+    background: linear-gradient(270deg, rgba(211,211,211,1) 0%, rgba(255,255,255,0.5271358543417367) 50%); 
+} */
 .Projects{
     padding-top: 20px;
     height: fit-content;
