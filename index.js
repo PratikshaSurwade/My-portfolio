@@ -30,20 +30,23 @@ document.addEventListener("",function(details){
 gsap.from("h1",{
     y:20,
     opacity:0,
-    duration:1,
-    delay:0.5,
+    duration:0.3,
+    delay:0.1,
 })
 
 gsap.from(".navTabs .btn",{
     y:20,
     opacity:0,
-    duration:1,
+    delay:0.4,
     stagger:0.3
 })
 
-gsap.from("div",{
+var tl= gsap.timeline();
+
+tl.from("dividerLine",{
     y:20,
     opacity:0,
-    duration:1,
-    stagger:0.3
+    duration:0.3,
+    delay:0.1,
 })
+

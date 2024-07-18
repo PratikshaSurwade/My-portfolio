@@ -70,7 +70,7 @@ body{
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #000;
     position:fixed;
     z-index: 99;
 }
@@ -131,7 +131,7 @@ body{
 .Summary{
     font-size:1.2rem;
     font-weight: 400;
-    margin-top: 15vh;
+    margin-top: 10vh;
     text-align: center;
     background: rgb(255,255,255);
 
@@ -211,20 +211,20 @@ div.mainpageskills{
     /* background: rgb(211,211,211);
     background: linear-gradient(90deg, rgba(211,211,211,1) 0%, rgba(255,255,255,0.5271358543417367) 50%); */
 
-    background: black;
+    background: #000000;
     background: linear-gradient(90deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
 
 }
-/* .mainpageskills::after{
+.mainpageskills::after{
     position: absolute;
     content: "";
     width: 10%;
     height: 100%;
     right: -75px;
-    background-image: url("./assets/blur.png");
-    background-repeat: no-repeat;
-    background: linear-gradient(270deg, rgba(211,211,211,1) 0%, rgba(255,255,255,0.5271358543417367) 50%); 
-} */
+    /* background-image: url("./assets/blur.png");
+    background-repeat: no-repeat; */
+    background: linear-gradient(270deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
+}
 .Projects{
     padding-top: 20px;
     height: fit-content;
@@ -364,7 +364,7 @@ div.mainpageskills{
     animation-timeline: view(70% 30%);
 }
 
-@keyframes DividerLineAnimate {
+/* @keyframes DividerLineAnimate {
     from{
         transform: scaleY(0);
     }
@@ -381,24 +381,13 @@ div.mainpageskills{
     }
 }
 @keyframes ClipPathAnimateRect {
-    /* 0%{
-        clip-path: inset(0% 100% 0% 0%);
-    }
-    50%{
-        clip-path: inset(0% 100% 0% 0%);
-    }
-    100%{
-        clip-path: inset(0% 0% 0% 0%);
-    } */
-
     from{
         transform: scaleX(0);
     }
     to{
         transform: scaleX(1);
     }
-
-}
+} */
 
 /* .projectDescription li{
     display: inline;
