@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
+*::selection{
+    color: #d75151;
+}
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -64,6 +67,7 @@ body{
     animation: scrollWatcherAnimate linear;
     animation-timeline: scroll();
     z-index: 20;
+    -webkit-animation: scrollWatcherAnimate linear;
 }
 
 #cursor{
@@ -104,7 +108,7 @@ body{
 }
 
 .iconone{
-    width: 5vw;
+    width: 5vw; 
     height: 5vh;
     top: 1rem;
 }
@@ -218,10 +222,14 @@ div.mainpageskills{
 .mainpageskills::after{
     position: absolute;
     content: "";
-    width: 10%;
+    width: 10%; 
     height: 100%;
     right: -75px;
     /* background-image: url("./assets/blur.png");
+
+    help help not leavingni am ohmg the sc=crystal cleari wiill help youhow much of your timeyou must not fall asalpeep
+    help
+
     background-repeat: no-repeat; */
     background: linear-gradient(270deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
 }
