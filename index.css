@@ -138,10 +138,10 @@ body{
     margin-top: 10vh;
     text-align: center;
     background: rgb(255,255,255);
-
     /* background: rgb(125,33,133);
     background: radial-gradient(circle, rgba(125,33,133,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);} */
 }
+
     .NameDeveloper{
     background-color: black;
     /* color: #fff; */
@@ -149,10 +149,9 @@ body{
     display: flex;
     align-items: center;
     padding: 0.9rem;
-    font-size: 2.2rem;
+    /* font-size: 3.2rem; */
     /* -webkit-text-stroke: white 2px; */
     font-family: "Rowdies", sans-serif;
-
 }
 
 .wordsImportantPratiksha{
@@ -167,7 +166,7 @@ body{
     color: #fff;
     position: relative;
     z-index: 10;
-
+    font-size: 3.2rem;
 }
 
 .subName{
@@ -224,7 +223,7 @@ div.mainpageskills{
     content: "";
     width: 10%; 
     height: 100%;
-    right: -75px;
+    right: -0;
     /* background-image: url("./assets/blur.png");
 
     help help not leavingni am ohmg the sc=crystal cleari wiill help youhow much of your timeyou must not fall asalpeep

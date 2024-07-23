@@ -6,6 +6,10 @@
    height: 7rem;
    background: transparent;
    transition: 2s ease-in-out;
+   -webkit-transition: 2s ease-in-out;
+   -moz-transition: 2s ease-in-out;
+   -ms-transition: 2s ease-in-out;
+   -o-transition: 2s ease-in-out;
 }
 
 .CircleRing{
@@ -15,7 +19,7 @@
    border-radius: 50%;
    background:transparent;
    animation: circleBorder 7.2s infinite alternate;
-   
+   -webkit-animation: circleBorder 7.2s infinite alternate;
 }
 
 
