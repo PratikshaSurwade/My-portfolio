@@ -193,16 +193,25 @@ body{
     background: #000000;
 } 
 
+/* ScrollBar Animation */
 
 div.mainpageskills{
-    z-index: 10;
     height: 10rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     margin-top: 2vh;
     position: relative;
+    overflow-y: auto;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.mainpageskills::-webkit-scrollbar{
+    display: none;
+}
+
+.mainpageskills p{
+    display: inline-block;
+    padding: 2rem 3.5rem;
 }
 
 .mainpageskills::before{
@@ -211,10 +220,6 @@ div.mainpageskills{
     width: 10%;
     height: 100%;
     left: 0;
-    /* background: rgb(211,211,211);
-    background: linear-gradient(90deg, rgba(211,211,211,1) 0%, rgba(255,255,255,0.5271358543417367) 50%); */
-
-    background: #000000;
     background: linear-gradient(90deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
 
 }
@@ -224,13 +229,25 @@ div.mainpageskills{
     width: 10%; 
     height: 100%;
     right: -0;
-    /* background-image: url("./assets/blur.png");
-
-    help help not leavingni am ohmg the sc=crystal cleari wiill help youhow much of your timeyou must not fall asalpeep
-    help
-
-    background-repeat: no-repeat; */
     background: linear-gradient(270deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%);
+}
+
+.scrollItems{
+    overflow-x: auto;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 1.5rem;
+    animation: move 20s linear infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 .Projects{
     padding-top: 20px;
