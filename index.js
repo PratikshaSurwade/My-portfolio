@@ -50,3 +50,8 @@ tl.from("dividerLine",{
     delay:0.1,
 })
 
+var loader = document.querySelector(".loader")
+
+setTimeout(function () {
+    loader.style.top = "-100%"
+}, 4000)
