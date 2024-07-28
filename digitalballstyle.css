@@ -146,9 +146,7 @@
   width: 50%;
   margin: auto;
   background-color: #fff;
-  /* background: transparent; */
   background-image: url("./assets/triangle2.png"),url("./assets/triangle1.png");
-  /* background-image: url("./assets/crow.png"); */
   background-position: 100%,0%;
   background-repeat: no-repeat,no-repeat;
   background-size: contain,contain;
