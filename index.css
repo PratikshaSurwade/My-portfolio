@@ -60,13 +60,15 @@ body{
     border-bottom: black solid;
 }
 
+
+
 .scrollWatchers{
     height: 5px;
     width: 100%;
     /* background: linear-gradient(90deg, hsl(0, 100%, 70%), hsl(30, 100%, 70%), hsl(60, 100%, 70%), hsl(90, 100%, 70%), hsl(120, 100%, 70%), hsl(150, 100%, 70%), hsl(180, 100%, 70%), hsl(210, 100%, 70%), hsl(240, 100%, 70%), hsl(270, 100%, 70%), hsl(300, 100%, 70%), hsl(330, 100%, 70%), hsl(360, 100%, 70%));
     background: linear-gradient(in hsl longer hue 90deg, #f66 0 0); */
     background: linear-gradient(to right, red,yellow,orange);
-    top: 0px;
+    top: 6rem;
     position: fixed;
     transform-origin: left;
     transform: scaleX(0);
@@ -84,6 +86,10 @@ body{
     background-color: #000;
     position:fixed;
     z-index: 99;
+}
+
+.navTabs a:hover #cursor{
+    background-color: #DEDCDC;
 }
 
 .mainHeader{
@@ -149,9 +155,9 @@ body{
     background: radial-gradient(circle, rgba(125,33,133,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);} */
 }
 
-    .NameDeveloper{
-    background-color: black;
-    /* color: #fff; */
+.NameDeveloper{
+    background-color: white;
+    color: #000;
     /* display: inline; */
     display: flex;
     align-items: center;
@@ -185,20 +191,40 @@ body{
 
 .testbutton {
     font-family: arial;
-    color: #000000 !important;
+    color: #000000;
     font-size: 14px;
     text-shadow: 0px 0px 1px #DEDCDC;
     box-shadow: 1px 1px 1px #BEE2F9;
-    padding: 10px 25px;
+    width: 8rem;
+    height: 2.5rem;
     border-radius: 10px;
     background: #FFFFFF;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 4s;
+    transform-origin: bottom;
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
 }
 
-.testbutton:hover {
-    color: #FFFFFF !important;
-    background: #000000;
+.testbutton::before{
+    position: absolute;
+    content: "";
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 99%;
+    background-color: black;
+    transition: 0.4s all ease;
+    top: 100%;
+    left: 0;
+    z-index: 8;
+}
+
+.testbutton:hover::before{
+    top: 0;
+    border-radius: 0;
 } 
+.testbutton:hover{
+    color: #fff;
+}
 
 /* ScrollBar Animation */
 
