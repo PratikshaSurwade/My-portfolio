@@ -156,7 +156,7 @@ body{
 }
 
 .NameDeveloper{
-    background-color: white;
+    background-color: black;
     color: #000;
     /* display: inline; */
     display: flex;
@@ -221,11 +221,12 @@ body{
 .testbutton:hover::before{
     top: 0;
     border-radius: 0;
-} 
+}  
+
 .testbutton:hover{
     color: #fff;
 }
-
+      
 /* ScrollBar Animation */
 
 div.mainpageskills{
