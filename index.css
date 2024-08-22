@@ -56,8 +56,23 @@ body{
     font-weight: bold;
 }
 
-.navTabs a:hover {
-    border-bottom: black solid;
+.navTabs a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #1C1D20;
+    transition: all .3s cubic-bezier(.7, 0, .3, 1);
+    will-change: transform;
+    display: none;
+}
+
+
+.navTabs a:hover::after {
+    display: block;
 }
 
 
@@ -209,16 +224,17 @@ body{
     position: relative;
     overflow: hidden;
     text-align: center;
+    z-index: 2;
 }
+
 
 .testbutton a{
     text-decoration: none;
     font-size: larger;
-    color: rgba(11, 5, 0, 0.2);
-    z-index: 5;
+    color: rgba(0, 11, 2, 0.2);
     position: relative;
     padding-top: 3rem;
-
+    z-index: 10;
 }
 
 .testbutton::before{
@@ -239,7 +255,7 @@ body{
     border-radius: 0;
 }  
 
-.testbutton:hover a{
+.testbutton:hover>a{
     color: #fff;
 }
       
@@ -511,16 +527,31 @@ div.mainpageskills{
 }
 
 .links{
-    background-color: rgb(56, 134, 75);
-    color: rgb(241, 186, 56);
+    color: #000;
     text-decoration: none;
-}
-.links:hover{
-    background-color: rgb(241, 186, 56);
-    color: rgb(56, 134, 75);
-    text-decoration: none;
+    transition: all ease 1s;
+    transform-origin: left;
+    position: relative;
 }
 
+.links::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #1C1D20;
+    transition: all .3s cubic-bezier(.7, 0, .3, 1);
+    will-change: transform;
+    display: none;
+}
+
+.links:hover::after{
+    display: block;
+    /* text-decoration: none; */
+}
 
 .Footer{
     background-color: rgb(231, 232, 231);
