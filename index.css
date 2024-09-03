@@ -593,8 +593,8 @@ div.mainpageskills{
     width: 32vw;
     position: absolute;
     border-radius: 50%;
-    /* background: linear-gradient(to top right, #fcbff9, #f98ffc); */
-    /* background: linear-gradient(to top right,red,blue); */
+    background: linear-gradient(to top right, #fcbff9, #f98ffc); */
+    /* /* background: linear-gradient(to top right,red,blue); */
     top: 58%;
     right: 5%;
     filter: blur(20px);
