@@ -51,12 +51,10 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
         y: 20,
         opacity: 0,
         stagger: 0.5,
-        // duration: 2,
         ease: "power3.out",
         scrollTrigger: {
             trigger: heading,
             scroller: "body",
-            markers:true,
             start: "top 80%",  // Animation starts when the element hits 80% from the top of the viewport
             end: "top 50%",    // Animation ends when the element is at 50% from the top of the viewport
             toggleActions: "play none none none"  // The animation will only play once when the element comes into view
@@ -93,8 +91,14 @@ introTexts.forEach((introText) => {
     text.split('').forEach((letter, index) => {
         const span = document.createElement('span');
         span.textContent = letter;
-        span.classList.add('letter');
 
+        if (letter === " ") {
+            // If the character is a space, create a span with the 'space' class
+            span.classList.add("space");
+        } else {
+            // For letters, use the 'letter' class
+            span.classList.add("letter");
+        }
         // Apply animation on hover with delay based on index
         span.addEventListener('mouseenter', () => {
             span.classList.add('animate__animated', 'animate__rubberBand');
@@ -107,3 +111,30 @@ introTexts.forEach((introText) => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll(".navTabs a");
+
+    links.forEach(link => {
+        link.addEventListener("mouseenter", function(e) {
+            const dot = this.querySelector("::after");
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            gsap.to(dot, {
+                x: x - rect.width / 2,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+
+        link.addEventListener("mouseleave", function() {
+            const dot = this.querySelector("::after");
+            gsap.to(dot, {
+                x: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+    });
+});

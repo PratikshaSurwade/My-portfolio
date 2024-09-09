@@ -24,10 +24,6 @@ body{
     background: linear-gradient(90deg, rgba(0,0,0,1) 42%, rgba(255,255,255,1) 58%); */
 }
 
-.codeElements >img{
-    left: -1rem;
-}
-
 .NavBar{
     display: flex;
     flex-direction: row;
@@ -70,19 +66,16 @@ body{
     display: none;
 }
 
-
 .navTabs a:hover::after {
     display: block;
 }
-
-
 
 .scrollWatchers{
     height: 5px;
     width: 100%;
     /* background: linear-gradient(90deg, hsl(0, 100%, 70%), hsl(30, 100%, 70%), hsl(60, 100%, 70%), hsl(90, 100%, 70%), hsl(120, 100%, 70%), hsl(150, 100%, 70%), hsl(180, 100%, 70%), hsl(210, 100%, 70%), hsl(240, 100%, 70%), hsl(270, 100%, 70%), hsl(300, 100%, 70%), hsl(330, 100%, 70%), hsl(360, 100%, 70%));
     background: linear-gradient(in hsl longer hue 90deg, #f66 0 0); */
-    background: linear-gradient(to right, red,yellow,orange);
+    background: linear-gradient(to right, #fbcee5, #f87dbc,#ea1a85);
     top: 6rem;
     position: fixed;
     transform-origin: left;
@@ -165,9 +158,7 @@ body{
     font-weight: 400;
     margin-top: 10vh;
     text-align: center;
-    background: rgb(255,255,255);
-    /* background: rgb(125,33,133);
-    background: radial-gradient(circle, rgba(125,33,133,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);} */
+    /* box-shadow: 0rem 0rem 3rem 1rem #ee21874a; */
 }
 
 .NameDeveloper{
@@ -182,16 +173,6 @@ body{
     font-family: "Rowdies", sans-serif;
 }
 
-.wordsImportantPratiksha{
-    color: #000;
-    font-size: 2.2rem;
-    position: relative;
-    z-index: 2;
-    font-family: "Rowdies", sans-serif;
-    animation: rubberband;
-    animation-duration: 2.5s;
-
-}
 
 .wordsImportant{
     color: #fff;
@@ -208,21 +189,28 @@ body{
 }
 
 .intro-text {
-    font-size: 3rem;
-    font-weight: bold;
     color: black;
     line-height: 0.5rem;
     font-family: "Rowdies", sans-serif;
   
 }
 
-.letter {
+.intro-text:nth-child(1){
+    font-size: small;
+}
+
+.letter, .space {
     display: inline-block;
-    transition: color 0.2s;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .letter:hover {
-    color: yellow;
+    transform: scale(1.1);
+    color: #ea1a85;
+}
+
+.space {
+    width: 1.2rem; /* Adjust space width as needed */
 }
 
 .headerButtons{
@@ -234,8 +222,6 @@ body{
     font-family: arial;
     color: #000000;
     font-size: 14px;
-    text-shadow: 0px 0px 1px #DEDCDC;
-    box-shadow: 1px 1px 1px #BEE2F9;
     border: #d3d3d3 solid 2px;
     width: 8rem;
     height: 2.5rem;
@@ -255,7 +241,7 @@ body{
 .testbutton a{
     text-decoration: none;
     font-size: larger;
-    color: rgba(0, 11, 2, 0.2);
+    color: #000000;
     /* color:#000; */
     position: absolute;
     z-index: 10;
@@ -589,14 +575,15 @@ div.mainpageskills{
 }
 
 .blur{
-    height: 32vw;
-    width: 32vw;
+    height: 40vw;
+    width: 80vw;
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(to top right, #fcbff9, #f98ffc); */
-    /* /* background: linear-gradient(to top right,red,blue); */
-    top: 58%;
-    right: 5%;
+    background: linear-gradient( #f4bcd84a, #f98dc34a);
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    display: flex;
     filter: blur(20px);
     animation-name: gooey;
     animation-duration: 6s;
@@ -609,12 +596,12 @@ div.mainpageskills{
 @keyframes gooey {
     from {
         filter: blur(20px);
-        transform: translate(10%, -10%) skew(0);
+        transform: translate(10%, 10%);
     }
 
     to {
         filter: blur(30px);
-        transform: translate(-10%, 10%) skew(-12deg);
+        transform: translate(10%, 10%);
     }
 }
 
