@@ -162,14 +162,14 @@ body{
 }
 
 .NameDeveloper{
-    background-color: black;
+    /* background-color: black; */
     color: #000;
     /* display: inline; */
     display: flex;
     align-items: center;
     padding: 0.9rem;
     /* font-size: 3.2rem; */
-    /* -webkit-text-stroke: white 2px; */
+    -webkit-text-stroke: #000 2px;
     font-family: "Rowdies", sans-serif;
 }
 
@@ -179,6 +179,7 @@ body{
     position: relative;
     z-index: 10;
     font-size: 3.2rem;
+    transition: transform 0.5s ease;
 }
 
 .subName{
@@ -192,7 +193,6 @@ body{
     color: black;
     line-height: 0.5rem;
     font-family: "Rowdies", sans-serif;
-  
 }
 
 .intro-text:nth-child(1){
@@ -342,6 +342,73 @@ div.mainpageskills{
     align-items: center;
     justify-content: space-evenly;
 }
+.projectBox {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .projectBox>.rightBox>img {
+    width: 20rem;
+    height: 30rem;
+  }
+  
+  .projectBox>.leftBox {
+    display: flex;
+    /* background-color: bisque; */
+    width: 26rem;
+    height: 30rem;
+    position: relative;
+  }
+  
+  .leftBoxText {
+    width: 25rem;
+    height: 25rem;
+    /* background-color: burlywood; */
+    display: flex;
+    align-items: center;
+  }
+  
+  .leftBoxLineContainer {
+    height: 25rem;
+    position: absolute;
+    background-color: #000;
+    right: 0;
+    transform-origin: bottom;
+  
+  }
+  
+  .leftRect {
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    background-color: #000;
+    transform-origin: left;
+  }
+  
+  .leftCircle {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #000;
+    bottom: 0;
+    transform: translate(-50%,0);
+  
+  }
+  
+  .leftLine {
+    position: absolute;
+    width: 0.15rem;
+    height: 25rem;
+    background-color: #000;
+    bottom: 0;
+    right: 0;
+  
+  }
+
 
 
 /* Animation  */
@@ -385,32 +452,40 @@ div.mainpageskills{
     animation-range: entry 0% cover 25%; */
 }
 
-.dividerLine::before{
+.divbefore{
     position: absolute;
     content: "";
     left: 100%;
-    box-shadow: inset -16px 0px 8px 0em black;
+    box-shadow: inset -16px 0px 8px 0em rgb(99, 230, 247);
     height: 0.5rem;
     width: 1rem;
     transform-origin: left;
-    animation: ClipPathAnimateRect both;
-    animation-timeline: view();
+    /* animation: ClipPathAnimateRect both;
+    animation-timeline: view(); */
     /* animation-range: entry 25% cover 45%; */
 }
 
-.dividerLine::after{
+.divafter{
     position: absolute;
     content: "";
     /* box-shadow: inset .1em 0px 0px .08em green; */
     border-radius: 50%;
-    background-color: black;
+    background-color: rgb(176, 68, 68);
     height: 0.5rem;
     width: 0.5rem;
     bottom: 0px;
     left: -0.25rem;
 
-    animation: ClipPathAnimate both;
-    animation-timeline: view(70% 30%);
+    /* animation: ClipPathAnimate both;
+    animation-timeline: view(70% 30%); */
+}
+
+
+.line1{
+    border-left: #000 solid 0.1rem;
+    height: 20rem;
+    position: relative;
+    transition: top;
 }
 
 /* @keyframes DividerLineAnimate {
@@ -453,6 +528,8 @@ div.mainpageskills{
 } 
 
 .projectDescription h4{
+    border-bottom: #ea1a85 solid;
+    display: inline-block;
     animation-range-start: cover 20vh;
     animation-range-end: 30vh;
 }

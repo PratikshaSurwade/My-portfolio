@@ -14,17 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Cursor animation
 
-var crsr = document.querySelector("#cursor");
+// var crsr = document.querySelector("#cursor");
 
-document.addEventListener("mousemove",function(details){
-    crsr.style.left = details.x+"px";
-    crsr.style.top = details.y+"px";
-})
+// document.addEventListener("mousemove",function(details){
+//     crsr.style.left = details.x+"px";
+//     crsr.style.top = details.y+"px";
+// })
 
-document.addEventListener("",function(details){
-    crsr.style.left = details.x+"px";
-    crsr.style.top = details.y+"px";
-})
+// document.addEventListener("",function(details){
+//     crsr.style.left = details.x+"px";
+//     crsr.style.top = details.y+"px";
+// })
 
 
 // Navbar Animation
@@ -44,32 +44,26 @@ gsap.from(".navTabs .btn",{
     stagger:0.3
 })
 
+
 //Heading Name Animation
 
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
-        y: 20,
+        y: 100,
+       
         opacity: 0,
         stagger: 0.5,
         ease: "power3.out",
         scrollTrigger: {
             trigger: heading,
             scroller: "body",
-            start: "top 80%",  // Animation starts when the element hits 80% from the top of the viewport
+            start: "top 70%",  // Animation starts when the element hits 80% from the top of the viewport
             end: "top 50%",    // Animation ends when the element is at 50% from the top of the viewport
             toggleActions: "play none none none"  // The animation will only play once when the element comes into view
         }
     });
 });
  
-var tl= gsap.timeline();
-
-tl.from("dividerLine",{
-    y:20,
-    opacity:0,
-    duration:0.3,
-    delay:0.1,
-})
 
 
 // var loader = document.querySelector(".loader")
@@ -138,3 +132,85 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Page 2 Design
+
+const navBar = document.querySelector(".navBarDesign");
+const navItem = document.querySelectorAll(".navItems");
+
+gsap.to("navBarDesign",{
+    width: "2rem",
+    duration:0.3,
+    delay:0.1,
+})
+
+gsap.from(".navBarDesign .moveNavItems",{
+    x:20,
+    opacity:0,
+    delay:0.4,
+    stagger:-0.3
+})
+
+// Collapse the navbar when scrolling down
+window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 0) { // Adjust scroll threshold
+        // Hide the nav items
+        gsap.to(".moveNavItems", {
+            x: 40,
+            opacity: 0,
+            delay: 0.1,
+
+            onComplete: () => {
+                document.querySelector(".navBarDesign").classList.add("collapsed");
+            }
+        });
+        gsap.to(".fa-plus", {
+            duration: 0.5,
+            rotation: 0,
+        })
+        gsap.to(".menuItem", {
+            backgroundColor: "red",
+            borderRadius: "50%",
+        })
+    } else {
+        // Show the nav items when scrolling back to the top
+        // document.querySelector(".navBarDesign").classList.remove("collapsed");
+        gsap.to(".moveNavItems", {
+            x: 0,
+            opacity: 1,
+            delay: 0.1,
+        });
+        gsap.to(".fa-plus", {
+            duration: 0.5,
+            rotation: 225,
+        })
+        gsap.to(".menuItem", {
+            backgroundColor: "antiquewhite",
+            borderRadius: "0%",
+        })
+    }
+});
+
+// Menu toggle to expand/collapse the navbar
+// document.querySelector(".menuIcon").addEventListener("click", () => {
+//     const navBar = document.querySelector(".navBarDesign");
+//     if (navBar.classList.contains("collapsed")) {
+//         navBar.classList.remove("collapsed");
+//         gsap.from(".navItems", {
+//             x: 20,
+//             opacity: 1,
+//             duration: 0.5,
+//             stagger: 0.2
+//         });
+//     } else {
+//         gsap.to(".navItems", {
+//             x: 20,
+//             opacity: 0,
+//             duration: 0.3,
+//             onComplete: () => {
+//                 navBar.classList.add("collapsed");
+//             }
+//         });
+//     }
+// });
