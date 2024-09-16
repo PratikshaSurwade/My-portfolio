@@ -415,7 +415,9 @@ div.mainpageskills{
 
 .titleName>h2{
     display: inline-block;
+    font-size: 2.5rem;
 }
+
 .animationShow{
     animation: animationShowAnimate linear;
     animation-timeline: view();
@@ -435,6 +437,16 @@ div.mainpageskills{
 
 
 .animateTitleWords{
+
+    alin it hurt so much that i caanot express my feelings
+
+
+    +mumma phone vajt hota
+
+
+
+    congratulatons on oyue
+    +
 }
 
 .animateTitleWords:hover{

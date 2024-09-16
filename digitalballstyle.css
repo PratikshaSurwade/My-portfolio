@@ -58,7 +58,7 @@
    animation-delay: 0.9s;
 }
 
-.horizontailRing {
+.horizontalRing {
    width: 88%;
    border-radius: 0%;
    border-top: solid white;
@@ -74,7 +74,7 @@
    position: absolute;
    width: 100%;
    border-top: solid white;
-   top: 50%;
+   top: 50%; 
  }  
 
 @keyframes ringsAnimation {
@@ -263,7 +263,7 @@
 }
 
 .navBarDesign{
-      width: 30rem;
+    width: 30rem;
     height: 7rem;
     position: fixed;
     top: 0.5rem;
@@ -300,11 +300,13 @@
   height: 70vh;
   width: 40vh;
 }
+
 .heroClass2{
   background-color: #d3d3d3;
   height: 50vh;
-  width: 40vh;
+  width: 30vh;
 }
+
 /* Stylefor tab animation creation */
 
 /* Hr style and the Sticy to navbar from bottom to top scrool */
