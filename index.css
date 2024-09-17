@@ -320,16 +320,15 @@ div.mainpageskills{
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-100%);
     }
 }
+
 .Projects{
     padding-top: 20px;
     height: fit-content;
 }
-
 
 .content-wrap{
     width: 85%;
@@ -338,57 +337,56 @@ div.mainpageskills{
 
 .singleProject{
     display: flex;
-    /* background-color: blue; */
     align-items: center;
     justify-content: space-evenly;
 }
+
 .projectBox {
     height: 80vh;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
+}
   
-  .projectBox>.rightBox>img {
+.projectBox>.rightBox>img {
     width: 20rem;
     height: 30rem;
-  }
+}
   
-  .projectBox>.leftBox {
+.projectBox>.leftBox {
     display: flex;
     /* background-color: bisque; */
     width: 26rem;
     height: 30rem;
     position: relative;
-  }
+}
   
-  .leftBoxText {
+.leftBoxText {
     width: 25rem;
     height: 25rem;
     /* background-color: burlywood; */
     display: flex;
     align-items: center;
-  }
+}
   
-  .leftBoxLineContainer {
+.leftBoxLineContainer {
     height: 25rem;
     position: absolute;
     background-color: #000;
     right: 0;
     transform-origin: bottom;
+}
   
-  }
-  
-  .leftRect {
+.leftRect {
     position: absolute;
     width: 2rem;
     height: 1rem;
     background-color: #000;
     transform-origin: left;
-  }
+}
   
-  .leftCircle {
+.leftCircle {
     position: absolute;
     width: 1rem;
     height: 1rem;
@@ -396,20 +394,16 @@ div.mainpageskills{
     background-color: #000;
     bottom: 0;
     transform: translate(-50%,0);
+}
   
-  }
-  
-  .leftLine {
+.leftLine {
     position: absolute;
     width: 0.15rem;
     height: 25rem;
     background-color: #000;
     bottom: 0;
     right: 0;
-  
-  }
-
-
+}
 
 /* Animation  */
 
@@ -422,8 +416,8 @@ div.mainpageskills{
     animation: animationShowAnimate linear;
     animation-timeline: view();
     animation-range: entry 0 cover 30%;
-
 }
+
 @keyframes animationShowAnimate {
     from{
         opacity: 0;
@@ -433,20 +427,6 @@ div.mainpageskills{
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-.animateTitleWords{
-
-    alin it hurt so much that i caanot express my feelings
-
-
-    +mumma phone vajt hota
-
-
-
-    congratulatons on oyue
-    +
 }
 
 .animateTitleWords:hover{
@@ -499,35 +479,6 @@ div.mainpageskills{
     position: relative;
     transition: top;
 }
-
-/* @keyframes DividerLineAnimate {
-    from{
-        transform: scaleY(0);
-    }
-    to{
-        transform: scaleY(1);
-    }
-} 
-@keyframes ClipPathAnimate {
-    from{
-        transform: scale(0);
-    }
-    to{
-        clip-path: circle(50% at 50% 50%);   
-    }
-}
-@keyframes ClipPathAnimateRect {
-    from{
-        transform: scaleX(0);
-    }
-    to{
-        transform: scaleX(1);
-    }
-} */
-
-/* .projectDescription li{
-    display: inline;
-} */
 
 .projectDescription span {
     background-clip: text;
@@ -687,14 +638,11 @@ div.mainpageskills{
         filter: blur(20px);
         transform: translate(10%, 10%);
     }
-
     to {
         filter: blur(30px);
         transform: translate(10%, 10%);
     }
 }
-
-
 
 @media only screen and (min-width :279px) and (max-width : 481px){
     html {
@@ -706,11 +654,9 @@ div.mainpageskills{
     .singleProject{
         flex-direction: column;
     } 
-    
     .singleProject img,.content{
         padding: 0.5rem;
         width: 98%;
-
     }
     .imgBorder::after{
         width: 113%;
@@ -727,7 +673,6 @@ div.mainpageskills{
     .content-wrap{
         width: 95%;
     }
-    
 }
 
 @media only screen and (min-width :769px) and (max-width : 1024px){
