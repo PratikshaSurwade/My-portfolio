@@ -1,16 +1,16 @@
 // Cursor animation
 
-// var crsr = document.querySelector("#cursor");
+var crsr = document.querySelector("#cursor");
 
-// document.addEventListener("mousemove",function(details){
-//     crsr.style.left = details.x+"px";
-//     crsr.style.top = details.y+"px";
-// })
+document.addEventListener("mousemove",function(details){
+    crsr.style.left = details.x+"px";
+    crsr.style.top = details.y+"px";
+})
 
-// document.addEventListener("",function(details){
-//     crsr.style.left = details.x+"px";
-//     crsr.style.top = details.y+"px";
-// })
+document.addEventListener("",function(details){
+    crsr.style.left = details.x+"px";
+    crsr.style.top = details.y+"px";
+})
 
 // Navbar Animation
 
@@ -83,6 +83,7 @@ introTexts.forEach((introText) => {
     });
 });
 
+
 // Page 2 Design
 
 const navBar = document.querySelector(".navBarDesign");
@@ -125,7 +126,7 @@ window.addEventListener("scroll", () => {
         });
     } else {
         // Show the nav items when scrolling back to the top
-        gsap.to(".moveNavItems"<archer>, {
+        gsap.to(".moveNavItems", {
             x: 0,
             opacity: 1,
             delay: 0.1,
@@ -149,7 +150,7 @@ function toggleFlag() {
 // Menu toggle to expand/collapse the navbar
 document.querySelector(".menuIcon").addEventListener("click", (e) => {
     e.preventDefault();  // Prevent default behavior (like scrolling to the top)
-    
+    console.log(navbarFlag)
     if (navbarFlag) {
         navbarFlag = !navbarFlag;
         console.log(navbarFlag);
