@@ -27,7 +27,55 @@ gsap.from(".navTabs .btn",{
     delay:0.4,
     stagger:0.3
 })
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.from(".leftBoxLineContainer",{
+    opacity:0,
+    duration:0.3,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".projectBox",
+        scroller:"body",
+        start:"top 50%",
+        end:"top 10%",
+        markers:true,
+    }
+})
+
+// Projects .....
+
+
+gsap.from(".differenctiator .differ",{
+    width:0,
+    opacity:0,
+    delay:0.4,
+    stagger:0.3
+})
+
+gsap.timeline({
+    scrollTrigger: {
+      trigger: ".projectBox",
+      scroller: "body",
+      start: "top 50%", // When to start the animation
+      end: "top 10%", // Scroll trigger end point
+      markers: true,     // Show markers to debug
+      scrub: true,       // Smooth scrubbing for better control
+    }
+  })
+  .from(".leftLine", {
+    scale: 0,
+    delay: 0.1,
+  })
+  .from(".leftRect", {
+    width: 0,
+    delay: 0.1,
+  })
+
+  .from(".leftCircle", {
+    scale: 0,
+    delay: 0.1,
+  });
+  
 //Heading Name Animation
 
 gsap.utils.toArray(".titleName").forEach((heading) => {
@@ -185,3 +233,20 @@ document.querySelector(".menuIcon").addEventListener("click", (e) => {
         });
     }
 });
+
+
+// Trying 3d effect/////////////
+
+let tl1= gsap.timeline({
+    scrollTrigger:{
+        trigger:"#projects",
+        scroller:"body",
+        scrub:2,
+        markers:"true"
+    }
+})
+
+tl1.to(".circleContainer",{
+    left:20,
+    right:10
+})
