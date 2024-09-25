@@ -3,6 +3,11 @@
 *::selection{
     color: #d75151;
 }
+
+.star{
+    z-index: 999;
+    position: relative;
+}
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;

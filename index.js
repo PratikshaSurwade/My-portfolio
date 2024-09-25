@@ -239,9 +239,9 @@ document.querySelector(".menuIcon").addEventListener("click", (e) => {
 
 let tl1= gsap.timeline({
     scrollTrigger:{
-        trigger:"#projects",
+        trigger:".Projects",
         scroller:"body",
-        scrub:2,
+        scrub:5,
         markers:"true"
     }
 })

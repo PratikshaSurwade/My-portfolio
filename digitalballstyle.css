@@ -356,6 +356,32 @@
   width: 30vh;
 }
 
+/* Trying to create the project */
+
+
+.mine1{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  display: flex;
+}
+
+.mine1>img{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.minedescription{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  background-color: #e7212181;
+  z-index: 10;
+  position: absolute;
+}
+
 /*
  <div class="page2">
             <nav class="navBarDesign">
