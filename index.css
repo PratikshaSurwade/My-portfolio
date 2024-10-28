@@ -82,16 +82,31 @@ body{
     /* background: linear-gradient(90deg, hsl(0, 100%, 70%), hsl(30, 100%, 70%), hsl(60, 100%, 70%), hsl(90, 100%, 70%), hsl(120, 100%, 70%), hsl(150, 100%, 70%), hsl(180, 100%, 70%), hsl(210, 100%, 70%), hsl(240, 100%, 70%), hsl(270, 100%, 70%), hsl(300, 100%, 70%), hsl(330, 100%, 70%), hsl(360, 100%, 70%));
     background: linear-gradient(in hsl longer hue 90deg, #f66 0 0); */
     background: linear-gradient(to right, #fbcee5, #f87dbc,#ea1a85);
-    top: 6rem;
+    /* top: 6rem; */
+    top: 0;
     position: fixed;
     transform-origin: left;
-    transform: scaleX(0);
+    transform: scaleY(0);
     -webkit-animation: scrollWatcherAnimate linear;
 
     animation: scrollWatcherAnimate linear;
     animation-timeline: scroll();
     z-index: 99;
 }
+/* 
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(to right, #fbcee5, #f87dbc,#ea1a85);
+    top: 0;
+    right: 0;
+    position: fixed;
+    transform-origin: top;
+    transform: scaleY(0);
+    -webkit-animation: scrollWatcherAnimate linear;
+    animation: scrollWatcherAnimate linear;
+    animation-timeline: scroll();
+    z-index: 99;
+ */
 
 #cursor{
     width: 2rem;
