@@ -703,6 +703,24 @@ div.mainpageskills{
     }
 }
 
+.magneticIconsContainer {
+    width: 5rem;
+    height: 5rem;
+    background-color: #c2def6;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .magIcon {
+    font-size: 2rem;
+    color: #333;
+    transition: transform 0.2s ease;
+  }
+
 @media only screen and (min-width :279px) and (max-width : 481px){
     html {
         font-size: 70%;

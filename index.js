@@ -250,3 +250,25 @@ tl1.to(".circleContainer",{
     left:20,
     right:10
 })
+
+// MAGNETIC CURSOR FOR ICONS IN PAGE 4
+
+document.querySelectorAll('.magneticIconsContainer').forEach(container => {
+    const icon = container.querySelector('.magIcon');
+    
+    container.addEventListener('mousemove', (e) => {
+      // Get container and mouse positions
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Adjust icon position
+      icon.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      // Reset icon position
+      icon.style.transform = 'translate(0, 0)';
+    });
+  });
+  
