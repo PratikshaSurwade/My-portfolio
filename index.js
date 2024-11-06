@@ -99,6 +99,34 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
 // setTimeout(function () {
 //     loader.style.top = "-100%"
 // }, 4000)
+window.addEventListener("load", () => {
+    const circle = document.querySelector("#circleContainer");
+    const lines = [document.querySelector("#line1"), document.querySelector("#line2"), document.querySelector("#line3")];
+  
+    // First, animate the circle
+    setTimeout(() => {
+      circle.style.opacity = 1;
+    }, 500); // Delay for visual appeal
+  
+    // Next, animate the text lines in sequence
+    setTimeout(() => {
+      lines[0].classList.add("show");
+    }, 2500);
+  
+    setTimeout(() => {
+      lines[1].classList.add("show");
+    }, 3500);
+  
+    setTimeout(() => {
+      lines[2].classList.add("show");
+    }, 4500);
+  
+    // Finally, move the circle to the corner
+    setTimeout(() => {
+      circle.classList.add("movedToCorner");
+    }, 6000);
+  });
+  
 
 // Select all h1 elements with the class "animate-text"
 const introTexts = document.querySelectorAll('.animate-text');
