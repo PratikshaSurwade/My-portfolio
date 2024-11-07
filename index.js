@@ -160,24 +160,6 @@ introTexts.forEach((introText) => {
 });
 
 
-// Page 2 Design
-
-const navBar = document.querySelector(".navBarDesign");
-const navItem = document.querySelectorAll(".navItems");
-
-gsap.to("navBarDesign",{
-    width: "2rem",
-    duration:0.3,
-    delay:0.1,
-})
-
-gsap.from(".navBarDesign .moveNavItems",{
-    x:20,
-    opacity:0,
-    delay:0.4,
-    stagger:-0.3
-})
-
 // Collapse the navbar when scrolling down
 
 let navbarFlag = true;  // Use 'let' to toggle flag
@@ -223,44 +205,7 @@ function toggleFlag() {
     console.log(navbarFlag);
 }
 
-// Menu toggle to expand/collapse the navbar
-document.querySelector(".menuIcon").addEventListener("click", (e) => {
-    e.preventDefault();  // Prevent default behavior (like scrolling to the top)
-    console.log(navbarFlag)
-    if (navbarFlag) {
-        navbarFlag = !navbarFlag;
-        console.log(navbarFlag);
-        gsap.to(".moveNavItems", {
-            x: 40,
-            opacity: 0,
-            delay: 0.1,
-        });
-        gsap.to(".fa-plus", {
-            duration: 0.5,
-            rotation: 0,
-        });
-        gsap.to(".menuItem", {
-            backgroundColor: "red",
-            borderRadius: "50%",
-        });
-    } else {
-        navbarFlag = !navbarFlag;
-        console.log(navbarFlag);
-        gsap.to(".moveNavItems", {
-            x: 0,
-            opacity: 1,
-            delay: 0.1,
-        });
-        gsap.to(".fa-plus", {
-            duration: 0.5,
-            rotation: 225,
-        });
-        gsap.to(".menuItem", {
-            backgroundColor: "antiquewhite",
-            borderRadius: "0%",
-        });
-    }
-});
+
 
 
 // Trying 3d effect/////////////
@@ -300,3 +245,16 @@ document.querySelectorAll('.magneticIconsContainer').forEach(container => {
     });
   });
   
+
+  document.addEventListener("mousemove", (e) => {
+    const cursorRing = document.querySelector(".cursor-ring");
+    cursorRing.style.left = `${e.clientX}px`;
+    cursorRing.style.top = `${e.clientY}px`;
+});
+
+document.addEventListener("mousemove", (e) => {
+    const spotLightRing = document.querySelector(".spoltlight-ring");
+    spotLightRing.style.left = `${e.clientX}px`;
+    spotLightRing.style.top = `${e.clientY}px`;
+});
+
