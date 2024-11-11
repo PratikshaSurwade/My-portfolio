@@ -162,51 +162,55 @@ introTexts.forEach((introText) => {
 
 // Collapse the navbar when scrolling down
 
-let navbarFlag = true;  // Use 'let' to toggle flag
+let navbarFlag = true;  // Flag to track the visibility of navbar items
+const menuButton = document.querySelector(".menuItem");
 
-window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-    if (window.scrollY > 0 && navbarFlag) {
-        // Hide the nav items
-        console.log(navbarFlag);
+// Function to handle the toggle on click
+function toggleNavItems() {
+    if (navbarFlag) {
+        // Hide nav items if they're currently visible
         gsap.to(".moveNavItems", {
             x: 40,
             opacity: 0,
-            delay: 0.1,
+            duration: 0.5,
         });
         gsap.to(".fa-plus", {
-            duration: 0.5,
             rotation: 0,
-        });
-        gsap.to(".menuItem", {
-            backgroundColor: "red",
-            borderRadius: "50%",
+            duration: 0.5,
         });
     } else {
-        // Show the nav items when scrolling back to the top
+        // Show nav items if they're currently hidden
         gsap.to(".moveNavItems", {
             x: 0,
             opacity: 1,
-            delay: 0.1,
+            duration: 0.5,
         });
         gsap.to(".fa-plus", {
-            duration: 0.5,
             rotation: 225,
-        });
-        gsap.to(".menuItem", {
-            backgroundColor: "antiquewhite",
-            borderRadius: "0%",
+            duration: 0.5,
         });
     }
-});
-
-function toggleFlag() {
-    navbarFlag = !navbarFlag;  // Toggle the navbarFlag value
-    console.log(navbarFlag);
+    // Toggle the navbarFlag to switch the state
+    navbarFlag = !navbarFlag;
 }
 
+// Attach the toggle function to the click event of the button
+menuButton.addEventListener("click", toggleNavItems);
 
-
+// Scroll animation (optional for keeping scroll effect)
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 0 && navbarFlag) {
+        // Hide the nav items on scroll
+        gsap.to(".moveNavItems", { x: 40, opacity: 0, delay: 0.1 });
+        gsap.to(".fa-plus", { duration: 0.5, rotation: 0 });
+        gsap.to(".menuItem", { backgroundColor: "red", borderRadius: "50%" });
+    } else if (window.scrollY === 0) {
+        // Show nav items when scrolling back to the top
+        gsap.to(".moveNavItems", { x: 0, opacity: 1, delay: 0.1 });
+        gsap.to(".fa-plus", { duration: 0.5, rotation: 225 });
+        gsap.to(".menuItem", { backgroundColor: "antiquewhite", borderRadius: "0%" });
+    }
+});
 
 // Trying 3d effect/////////////
 

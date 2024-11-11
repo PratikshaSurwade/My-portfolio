@@ -841,7 +841,7 @@ div.mainpageskills{
     transition: width 0.2s ease, height 0.2s ease;
     z-index: 97;
     background-color: rgba(201, 198, 198, 0.7); /* Change to your desired color for the central dot */
-    box-shadow: 0 0 40px 40px rgba(5, 0, 0, 0.7); /* Soft spotlight effect */
+    box-shadow: 0 0 50px 50px rgba(249, 2, 2, 0.7); /* Soft spotlight effect */
     transition: transform 0.8s ease-out; /* Smooth follow effect */
 }
 .spoltlight-ring {
@@ -856,3 +856,44 @@ div.mainpageskills{
     background-color: #ff8c00; /* Change to your desired color for the central dot */
     transition: transform 0.3s ease-out; /* Smooth follow effect */
 }
+
+
+
+/* Navbar Base Styling */
+.navBarDesign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #333;
+}
+
+.navItems {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.navItems:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1000px) {
+    .navBarDesign {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+
+    .navItems {
+        padding: 0.8rem;
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
