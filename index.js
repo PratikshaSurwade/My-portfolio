@@ -1,264 +1,148 @@
-// Cursor animation
+// Function to handle the loader circle animation and position change
+function animateLoaderCircle() {
+    const loaderCircle = document.querySelector(".loaderCircle");
 
-// var crsr = document.querySelector("#cursor");
-
-// document.addEventListener("mousemove",function(details){
-//     crsr.style.left = details.x+"px";
-//     crsr.style.top = details.y+"px";
-// })
-
-// document.addEventListener("",function(details){
-//     crsr.style.left = details.x+"px";
-//     crsr.style.top = details.y+"px";
-// })
-
-// Navbar Animation
-
-gsap.from("h1",{
-    y:20,
-    opacity:0,
-    duration:0.3,
-    delay:0.1,
-})
-
-gsap.from(".navTabs .btn",{
-    y:20,
-    opacity:0,
-    delay:0.4,
-    stagger:0.3
-})
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".leftBoxLineContainer",{
-    opacity:0,
-    duration:0.3,
-    stagger:0.3,
-    scrollTrigger:{
-        trigger:".projectBox",
-        scroller:"body",
-        start:"top 50%",
-        end:"top 10%",
-        markers:true,
-    }
-})
-
-// Projects .....
-
-
-gsap.from(".differenctiator .differ",{
-    width:0,
-    opacity:0,
-    delay:0.4,
-    stagger:0.3
-})
-
-gsap.timeline({
-    scrollTrigger: {
-      trigger: ".projectBox",
-      scroller: "body",
-      start: "top 50%", // When to start the animation
-      end: "top 10%", // Scroll trigger end point
-      markers: true,     // Show markers to debug
-      scrub: true,       // Smooth scrubbing for better control
-    }
-  })
-  .from(".leftLine", {
-    scale: 0,
-    delay: 0.1,
-  })
-  .from(".leftRect", {
-    width: 0,
-    delay: 0.1,
-  })
-
-  .from(".leftCircle", {
-    scale: 0,
-    delay: 0.1,
-  });
-  
-//Heading Name Animation
-
-gsap.utils.toArray(".titleName").forEach((heading) => {
-    gsap.from(heading.querySelectorAll(".animateTitleWords"), {
-        y: 100,   
-        opacity: 0,
-        stagger: 0.5,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: heading,
-            scroller: "body",
-            start: "top 70%",  // Animation starts when the element hits 80% from the top of the viewport
-            end: "top 50%",    // Animation ends when the element is at 50% from the top of the viewport
-            toggleActions: "play none none none"  // The animation will only play once when the element comes into view
-        }
-    });
-});
-
-// var loader = document.querySelector(".loader")
-
-// setTimeout(function () {
-//     loader.style.top = "-100%"
-// }, 4000)
-window.addEventListener("load", () => {
-    const circle = document.querySelector("#circleContainer");
-    const lines = [document.querySelector("#line1"), document.querySelector("#line2"), document.querySelector("#line3")];
-  
-    // First, animate the circle
-    setTimeout(() => {
-      circle.style.opacity = 1;
-    }, 500); // Delay for visual appeal
-  
-    // Next, animate the text lines in sequence
-    setTimeout(() => {
-      lines[0].classList.add("show");
-    }, 2500);
-  
-    setTimeout(() => {
-      lines[1].classList.add("show");
-    }, 3500);
-  
-    setTimeout(() => {
-      lines[2].classList.add("show");
-    }, 4500);
-  
-    // Finally, move the circle to the corner
-    setTimeout(() => {
-      circle.classList.add("movedToCorner");
-    }, 6000);
-  });
-  
-
-// Select all h1 elements with the class "animate-text"
-const introTexts = document.querySelectorAll('.animate-text');
-
-introTexts.forEach((introText) => {
-    const text = introText.textContent;
-    introText.innerHTML = '';
-
-    // Loop through each letter and wrap it in a span with a delay
-    text.split('').forEach((letter, index) => {
-        const span = document.createElement('span');
-        span.textContent = letter;
-
-        if (letter === " ") {
-            // If the character is a space, create a span with the 'space' class
-            span.classList.add("space");
-        } else {
-            // For letters, use the 'letter' class
-            span.classList.add("letter");
-        }
-        // Apply animation on hover with delay based on index
-        span.addEventListener('mouseenter', () => {
-            span.classList.add('animate__animated', 'animate__rubberBand');
-            span.addEventListener('animationend', () => {
-                span.classList.remove('animate__animated', 'animate__rubberBand');
-            }, { once: true });
-        });
-
-        introText.appendChild(span);
-    });
-});
-
-
-// Collapse the navbar when scrolling down
-
-let navbarFlag = true;  // Flag to track the visibility of navbar items
-const menuButton = document.querySelector(".menuItem");
-
-// Function to handle the toggle on click
-function toggleNavItems() {
-    if (navbarFlag) {
-        // Hide nav items if they're currently visible
-        gsap.to(".moveNavItems", {
-            x: 40,
-            opacity: 0,
-            duration: 0.5,
-        });
-        gsap.to(".fa-plus", {
-            rotation: 0,
-            duration: 0.5,
-        });
-    } else {
-        // Show nav items if they're currently hidden
-        gsap.to(".moveNavItems", {
-            x: 0,
-            opacity: 1,
-            duration: 0.5,
-        });
-        gsap.to(".fa-plus", {
-            rotation: 225,
-            duration: 0.5,
-        });
-    }
-    // Toggle the navbarFlag to switch the state
-    navbarFlag = !navbarFlag;
+    // After 3 seconds when the circle is fully drawn, start the next transitions
+    setTimeout(function () {
+        loaderCircle.style.top = "19.0%"; 
+    }, 3000); // Wait for the circle to fully draw
 }
 
-// Attach the toggle function to the click event of the button
-menuButton.addEventListener("click", toggleNavItems);
+// Function to handle the animation of the loader (opacity changes, etc.)
+function animateLoader() {
+    const tl = gsap.timeline();
 
-// Scroll animation (optional for keeping scroll effect)
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 0 && navbarFlag) {
-        // Hide the nav items on scroll
-        gsap.to(".moveNavItems", { x: 40, opacity: 0, delay: 0.1 });
-        gsap.to(".fa-plus", { duration: 0.5, rotation: 0 });
-        gsap.to(".menuItem", { backgroundColor: "red", borderRadius: "50%" });
-    } else if (window.scrollY === 0) {
-        // Show nav items when scrolling back to the top
-        gsap.to(".moveNavItems", { x: 0, opacity: 1, delay: 0.1 });
-        gsap.to(".fa-plus", { duration: 0.5, rotation: 225 });
-        gsap.to(".menuItem", { backgroundColor: "antiquewhite", borderRadius: "0%" });
-    }
-});
+    tl.to(".loader", {
+        opacity: 1,
+        duration: 6,
+        onComplete: () => console.log("Loader animation complete")
+    })
+    .to(".circleContainer", {
+        opacity: 1,
+        visibility: "visible",
+        duration: 1,
+        onComplete: () => console.log("CircleContainer visible")
+    }, "-=3")
+    .to(".loader", {
+        opacity: 0,
+        duration: 1,
+        onComplete: () => {
+            console.log("Loader hidden");
+            document.querySelector(".loader").style.display = "none";
+        }
+    }, "-=1")
+    .from("nav", {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        onComplete: () => console.log("Nav visible")
+    })
+    .from(".hero h1", {
+        y: -100,
+        opacity: 0,
+        duration: 0.8,
+        onComplete: () => console.log("Hero h1 visible")
+    }, "-=0.4")
+    .from(".hero h2", {
+        y: -100,
+        opacity: 0,
+        duration: 0.8,
+        onComplete: () => console.log("Hero h2 visible")
+    }, "-=0.3")
+    .from(".hero h3", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        onComplete: () => console.log("Hero h3 visible")
+    }, "-=0.2");
 
-// Trying 3d effect/////////////
+    console.log("Animation sequence initialized.");
+}
 
-let tl1= gsap.timeline({
-    scrollTrigger:{
-        trigger:".Projects",
-        scroller:"body",
-        scrub:5,
-        markers:"true"
-    }
-})
-
-tl1.to(".circleContainer",{
-    left:20,
-    right:10
-})
-
-// MAGNETIC CURSOR FOR ICONS IN PAGE 4
-
-document.querySelectorAll('.magneticIconsContainer').forEach(container => {
-    const icon = container.querySelector('.magIcon');
-    
-    container.addEventListener('mousemove', (e) => {
-      // Get container and mouse positions
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      // Adjust icon position
-      icon.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+// Function to move the cursor ring based on mouse movement
+function followMouseCursorRing() {
+    document.addEventListener("mousemove", (e) => {
+        const cursorRing = document.querySelector(".cursor-ring");
+        cursorRing.style.left = `${e.clientX}px`;
+        cursorRing.style.top = `${e.clientY}px`;
     });
-    
-    container.addEventListener('mouseleave', () => {
-      // Reset icon position
-      icon.style.transform = 'translate(0, 0)';
+}
+
+// Function to move the spotlight ring based on mouse movement
+function followMouseSpotlightRing() {
+    document.addEventListener("mousemove", (e) => {
+        const spotLightRing = document.querySelector(".spotlight-ring");
+        spotLightRing.style.left = `${e.clientX}px`;
+        spotLightRing.style.top = `${e.clientY}px`;
     });
-  });
-  
+}
 
-  document.addEventListener("mousemove", (e) => {
-    const cursorRing = document.querySelector(".cursor-ring");
-    cursorRing.style.left = `${e.clientX}px`;
-    cursorRing.style.top = `${e.clientY}px`;
+function h4hoverEffect() {
+    const h4Elements = document.querySelectorAll("nav .NavItems h4");
+    const spotlightRing = document.querySelector(".spotlight-ring");
+
+h4Elements.forEach(h4 => {
+    h4.addEventListener("mouseenter", (event) => {
+        // Get the position and dimensions of the h4
+        const rect = h4.getBoundingClientRect();
+        
+        // Adjust spotlight-ring's size and position
+        spotlightRing.style.width = "2rem";
+        spotlightRing.style.height = "2rem";
+        spotlightRing.style.backgroundColor = "transparent";
+        spotlightRing.style.border = "2px solid #ff8c00";
+        spotlightRing.style.position = "absolute";
+        spotlightRing.style.left = `${rect.left + rect.width / 2}px`;
+        spotlightRing.style.top = `${rect.top + rect.height / 2}px`;
+
+        // Make spotlight-ring visible by adjusting z-index
+        spotlightRing.style.zIndex = "34";
+    });
+
+    h4.addEventListener("mouseleave", () => {
+        spotlightRing.style.width = "1rem";
+        spotlightRing.style.height = "1rem";
+        spotlightRing.style.backgroundColor = "#ff8c00"; // Reset to dot color
+        spotlightRing.style.border = "none";
+        spotlightRing.style.zIndex = "3";
+    });
 });
+}
+// Function to create grid items dynamically based on the viewport size
+function createGridItems() {
+    const gridContainer = document.querySelector('.grid-container');
+    gridContainer.innerHTML = ''; // Clear any existing grid items
 
-document.addEventListener("mousemove", (e) => {
-    const spotLightRing = document.querySelector(".spoltlight-ring");
-    spotLightRing.style.left = `${e.clientX}px`;
-    spotLightRing.style.top = `${e.clientY}px`;
+    // Define item size and gap
+    const itemSize = 10; // in vh (10vh height and width for square items)
+    const gap = 1; // in px
+
+    // Calculate number of columns and rows needed to fill the viewport
+    const columns = Math.ceil(window.innerWidth / (window.innerHeight * (itemSize / 100)));
+    const rows = Math.ceil(100 / itemSize);
+
+    // Set the CSS grid template dynamically
+    gridContainer.style.gridTemplateColumns = `repeat(${columns}, ${itemSize}vh)`;
+
+    // Create and append the required number of grid items
+    for (let i = 0; i < columns * rows; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridContainer.appendChild(gridItem);
+    }
+}
+
+// Initialize functions on page load
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Starting animation...");
+
+    animateLoaderCircle(); // Start loader circle position change
+    animateLoader(); // Start loader animation
+    followMouseCursorRing(); // Activate cursor ring animation
+    followMouseSpotlightRing(); // Activate spotlight ring animation
+    h4hoverEffect();
+    createGridItems(); // Create grid items
+
+    // Re-create grid items on resize for responsiveness
+    window.addEventListener('resize', createGridItems);
 });
-
