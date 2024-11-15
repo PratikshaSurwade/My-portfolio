@@ -1,304 +1,505 @@
-
-*,*::before,*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Loader */
 .loader {
-    height: 100%;
-    width: 100%;
-    background-color: transparent;
-    position: fixed;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: loaderAnime 6s ease-in-out forwards; 
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderAnime 6s ease-in-out forwards;
 }
 
 .loaderCircle {
-    position: relative;
-    width: 7.1rem;
-    height: 7.1rem;
-    top: 0;
-    transition: top 1.5s ease-in-out;
+  position: relative;
+  width: 7.1rem;
+  height: 7.1rem;
+  top: 0;
+  transition: top 1.5s ease-in-out;
 }
 /* Animation for the loader */
 @keyframes loaderAnime {
-    0% {
-        opacity: 0;
-        background-color: #837777;
-    }
-    50% {
-        opacity: 1;
-        background-color: #837777;
-    }
-    75% {
-        opacity: 1;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    100% {
-        opacity: 1; /* Loader fades out */
-        background-color: rgba(0, 0, 0, 0);
-        visibility: hidden;
-    }
+  0% {
+    opacity: 0;
+    background-color: #837777;
+  }
+  50% {
+    opacity: 1;
+    background-color: #837777;
+  }
+  75% {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 1; /* Loader fades out */
+    background-color: rgba(0, 0, 0, 0);
+    visibility: hidden;
+  }
 }
 
 /* SVG circle styling */
 .svgCircle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
 }
 
 .svgCircle circle {
-    fill: none;
-    stroke: black;  
-    stroke-width: 3; 
-    stroke-dasharray: 459;  /* circle circumference */
-    stroke-dashoffset: 440;  /* Start with the circle completely hidden */
-    animation: drawCircle 3s ease-in-out forwards;
+  fill: none;
+  stroke: black;
+  stroke-width: 3;
+  stroke-dasharray: 459; /* circle circumference */
+  stroke-dashoffset: 440; /* Start with the circle completely hidden */
+  animation: drawCircle 3s ease-in-out forwards;
 }
 
 /* Keyframes to animate the circumference drawing */
 @keyframes drawCircle {
-    0% {
-        stroke-dashoffset: 440; /* Circle hidden */
-    }
-    100% {
-        stroke-dashoffset: 0; /* Circle fully drawn */
-    }
+  0% {
+    stroke-dashoffset: 440; /* Circle hidden */
+  }
+  100% {
+    stroke-dashoffset: 0; /* Circle fully drawn */
+  }
 }
 
 /* Cicular Ring */
 .circleContainer {
-    /* opacity: 0;    // for intial animation
+  /* opacity: 0;    // for intial animation
     visibility: hidden;  //for intial animation */
-    opacity: 0;
-    visibility: hidden;
-    width: 7rem;
-    height: 7rem;
-    position: relative;
-    background: transparent;
-    transition: 2s ease-in-out;
-    -webkit-transition: 2s ease-in-out;
-    -moz-transition: 2s ease-in-out;
-    -ms-transition: 2s ease-in-out;
-    -o-transition: 2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+  background: transparent;
+  transition: 2s ease-in-out;
+  -webkit-transition: 2s ease-in-out;
+  -moz-transition: 2s ease-in-out;
+  -ms-transition: 2s ease-in-out;
+  -o-transition: 2s ease-in-out;
 }
 
 .CircleRing {
-    border: 3px solid black;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: transparent;
-    animation: circleBorder 7.2s infinite alternate;
-    -webkit-animation: circleBorder 7.2s infinite alternate;
+  border: 3px solid black;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  animation: circleBorder 7.2s infinite alternate;
+  -webkit-animation: circleBorder 7.2s infinite alternate;
 }
 
 @keyframes circleBorder {
-    from {
-        transform: rotateZ(15deg);
-    }
-    to {
-        transform: rotateZ(-15deg);
-    }
+  from {
+    transform: rotateZ(15deg);
+  }
+  to {
+    transform: rotateZ(-15deg);
+  }
 }
 
 .CircleRing .verticalRings {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    overflow: hidden;
-    animation: ringsAnimation 2.7s linear infinite;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+  animation: ringsAnimation 2.7s linear infinite;
 }
 
 .CircleRing .verticalRings:nth-child(1) {
-    animation-delay: 2.7s;
+  animation-delay: 2.7s;
 }
 
 .CircleRing .verticalRings:nth-child(2) {
-    animation-delay: 1.8s;
+  animation-delay: 1.8s;
 }
 
 .CircleRing .verticalRings:nth-child(3) {
-    animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 
 .horizontalRing {
-    width: 88%;
-    border-radius: 0%;
-    border-top: solid black;
-    border-bottom: solid black;
-    margin: auto;
-    position: relative;
-    top: 25%;
-    height: 50%;
+  width: 88%;
+  border-radius: 0%;
+  border-top: solid black;
+  border-bottom: solid black;
+  margin: auto;
+  position: relative;
+  top: 25%;
+  height: 50%;
 }
 
 .horizontalRingMid {
-    position: absolute;
-    width: 100%;
-    border-top: solid black;
-    top: 50%;
+  position: absolute;
+  width: 100%;
+  border-top: solid black;
+  top: 50%;
 }
 
 @keyframes ringsAnimation {
-    0% {
-        border-radius: 50%;
-        box-shadow: inset .1em 0px 0px .08em black;
-        width: 100%;
-    }
-    49% {
-        border-radius: 50%;
-        box-shadow: inset .1em 0px 0px .08em black;
-        background: transparent;
-    }
-    50% {
-        border-radius: 0%;
-        width: .175em;
-        background: black;
-    }
-    51% {
-        border-radius: 50%;
-        box-shadow: inset -.1em 0px 0px .08em black;
-        background: transparent;
-    }
-    100% {
-        border-radius: 50%;
-        box-shadow: inset -.1em 0px 0px .08em black;
-        width: 100%;
-    }
+  0% {
+    border-radius: 50%;
+    box-shadow: inset 0.1em 0px 0px 0.08em black;
+    width: 100%;
+  }
+  49% {
+    border-radius: 50%;
+    box-shadow: inset 0.1em 0px 0px 0.08em black;
+    background: transparent;
+  }
+  50% {
+    border-radius: 0%;
+    width: 0.175em;
+    background: black;
+  }
+  51% {
+    border-radius: 50%;
+    box-shadow: inset -0.1em 0px 0px 0.08em black;
+    background: transparent;
+  }
+  100% {
+    border-radius: 50%;
+    box-shadow: inset -0.1em 0px 0px 0.08em black;
+    width: 100%;
+  }
 }
 
 /* Page 1 */
 
-.page1{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+.page1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    position: sticky;
-    top: -100px; /* Start off-screen */
-    z-index: 85;
-    width: 100%;
-    color: #000;
-    transition: transform 0.75s cubic-bezier(0.65, 0.05, 0.36, 1);
-    padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  position: sticky;
+  top: -100px; /* Start off-screen */
+  z-index: 85;
+  width: 100%;
+  color: #000;
+  transition: transform 0.75s cubic-bezier(0.65, 0.05, 0.36, 1);
+  padding: 0 2rem;
 }
 
 nav .NavItems {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
 }
 
-nav .NavItems>h4:hover{
-    cursor: pointer;
+nav .NavItems > h4:hover {
+  cursor: pointer;
 }
 
 .hero {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-    pointer-events: none;
-    /* font-size: 160%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  /* font-size: 160%; */
 }
 
-.hero>h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Grid Container styling */
 .grid-container {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-auto-rows: calc(10vh); /* Keep each row height consistent */
-    gap: 1px;
-    background-color: #fff; 
-    position: absolute;
-    overflow: hidden;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-auto-rows: calc(10vh); /* Keep each row height consistent */
+  gap: 1px;
+  background-color: #fff;
+  position: absolute;
+  overflow: hidden;
 }
 
 .grid-item {
-    background: #f7f7f7;
-    border: 2px solid #f7f7f7;
-    border-radius: 10px;
-    height: 100%; /* Fill grid cell height */
-    z-index: 2;
+  background: #f7f7f7;
+  border: 2px solid #f7f7f7;
+  border-radius: 10px;
+  height: 100%; /* Fill grid cell height */
+  z-index: 2;
 }
 
 /* Cursor ring styling */
 .cursor-ring {
-    position: fixed;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-    background-color: rgba(0, 0, 0); /*Change to your desired color for the central dot*/
-    box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.781); /* Dark red soft spotlight effect */
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  /* pointer-events: none; */
+  z-index: 1;
+  background-color: rgba(
+    0,
+    0,
+    0
+  ); /*Change to your desired color for the central dot*/
+  box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.781); /* Dark red soft spotlight effect */
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
 }
 .spotlight-ring {
-    position: fixed;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    background-color: #ff8c00; /* Central dot color */
-    transition: transform 0.4s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  position: fixed;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: #ff8c00; /* Central dot color */
+  transition: transform 0.4s ease-out, width 0.3s ease, height 0.3s ease,
+    background-color 0.3s ease, border 0.3s ease;
 }
 
-button{
-    width: 10rem;
-    height: 3rem;
-    /* border: none; */
-    background: transparent;
+button {
+  width: 10rem;
+  height: 3rem;
+  /* border: none; */
+  background: transparent;
 }
 /* Ring appearance on hover */
-.page2{
-    width: 100%;
-    height: 100vh;
+.page2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #837777;
 }
 
+.hero__content {
+  display: none; /* Initially hidden */
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.hero__headline {
+  --padding: 1.5vmin;
+  --duration: 400ms;
+  --delay: calc(var(--duration) / 2);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+  position: relative;
+  display: inline-block;
+  font-size: 10vmin;
+  overflow: hidden;
+  margin-top: calc(var(--padding) * -1);
+  padding: var(--padding);
+}
+.hero__headline::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - var(--padding));
+  left: 0;
+  background-color: red;
+  width: 100%;
+  height: 1.5vmin;
+  transform: scaleX(0);
+  transition: transform var(--duration) var(--delay) var(--ease);
+}
+.hero__headline span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform var(--duration) var(--ease);
+}
+.hero__content .active .hero__headline::after {
+  transform: scaleX(1);
+  transition-delay: 0s;
+}
+
+.hero__content .active .hero__headline span {
+  transform: translateY(0);
+  transition-delay: var(--delay);
+}
+
+.title {
+  display: flex;
+  gap: 0.1rem;
+  font-size: 3rem;
+  opacity: 0;
+  color: red;
+  overflow: hidden;
+}
+
+.title span {
+  display: inline-block;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.titleName {
+  padding: 0 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border: solid black 3px;
+}
+.titleName span {
+  top: 100%;
+}
+
+.page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 2500px;
+    margin: 0 auto;
+  }
+  
+  .spacer {
+    height: 100vh;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 33.3vh;
+    width: 100vw;
+    margin: 0 auto;
+  }
+  
+  .image_cont {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    max-height: 500px;
+  }
+  
+  .image_cont img {
+    position: absolute;
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
+    bottom: 0;
+  }
+  
+  .image_cont:nth-child(1) {
+    grid-column: 1/-1;
+    grid-row: 1;
+    height: 95vh;
+  }
+  
+  .image_cont:nth-child(2) {
+    grid-column: 2/span 8;
+    grid-row: 2;
+    height: 60vh;
+  }
+  
+  .image_cont:nth-child(3) {
+    grid-column: 4/span 8;
+    grid-row: 3;
+    height: 60vh;
+  }
+  
+  .image_cont:nth-child(3) img {
+    object-position: right;
+  }
+  
+  .image_cont:nth-child(4) {
+    grid-column: 1/-1;
+    grid-row: 4;
+    height: 60vh;
+  }
+  
+  .image_cont:nth-child(5) {
+    grid-column: 4/span 8;
+    grid-row: 5;
+    height: 80vh;
+  }
+  
+  .image_cont:nth-child(6) {
+    grid-column: 2/span 8;
+    grid-row: 6;
+    height: 80vh;
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .image_cont {
+      max-height: unset;
+    }
+  
+    .image_cont:nth-child(2) {
+      grid-column: 2/span 4;
+    }
+  
+    .image_cont:nth-child(3) {
+      grid-column: 8/span 4;
+    }
+  
+    .image_cont:nth-child(5) {
+      grid-column: 8/span 4;
+    }
+  
+    .image_cont:nth-child(6) {
+      grid-column: 2/span 4;
+    }
+  }
+  .overlay {
+    position: fixed;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 10rem;
+    width: 100vw;
+    margin: 0 auto;
+    z-index: -1;
+  }
+  
+  .overlay div {
+    opacity: 0.2;
+    border-left: 0.5px white solid;
+    border-right: 0.5px white solid;
+  }

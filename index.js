@@ -4,7 +4,7 @@ function animateLoaderCircle() {
 
     // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
-        loaderCircle.style.top = "19.0%"; 
+        loaderCircle.style.top = "19.0%";
     }, 3000); // Wait for the circle to fully draw
 }
 
@@ -17,44 +17,44 @@ function animateLoader() {
         duration: 6,
         onComplete: () => console.log("Loader animation complete")
     })
-    .to(".circleContainer", {
-        opacity: 1,
-        visibility: "visible",
-        duration: 1,
-        onComplete: () => console.log("CircleContainer visible")
-    }, "-=3")
-    .to(".loader", {
-        opacity: 0,
-        duration: 1,
-        onComplete: () => {
-            console.log("Loader hidden");
-            document.querySelector(".loader").style.display = "none";
-        }
-    }, "-=1")
-    .from("nav", {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        onComplete: () => console.log("Nav visible")
-    })
-    .from(".hero h1", {
-        y: -100,
-        opacity: 0,
-        duration: 0.8,
-        onComplete: () => console.log("Hero h1 visible")
-    }, "-=0.4")
-    .from(".hero h2", {
-        y: -100,
-        opacity: 0,
-        duration: 0.8,
-        onComplete: () => console.log("Hero h2 visible")
-    }, "-=0.3")
-    .from(".hero h3", {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        onComplete: () => console.log("Hero h3 visible")
-    }, "-=0.2");
+        .to(".circleContainer", {
+            opacity: 1,
+            visibility: "visible",
+            duration: 1,
+            onComplete: () => console.log("CircleContainer visible")
+        }, "-=3")
+        .to(".loader", {
+            opacity: 0,
+            duration: 1,
+            onComplete: () => {
+                console.log("Loader hidden");
+                document.querySelector(".loader").style.display = "none";
+            }
+        }, "-=1")
+        .from("nav", {
+            y: -100,
+            opacity: 0,
+            duration: 1,
+            onComplete: () => console.log("Nav visible")
+        })
+        .from(".hero h1", {
+            y: -100,
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => console.log("Hero h1 visible")
+        }, "-=0.4")
+        .from(".hero h2", {
+            y: -100,
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => console.log("Hero h2 visible")
+        }, "-=0.3")
+        .from(".hero h3", {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => console.log("Hero h3 visible")
+        }, "-=0.2");
 
     console.log("Animation sequence initialized.");
 }
@@ -81,32 +81,32 @@ function h4hoverEffect() {
     const h4Elements = document.querySelectorAll("nav .NavItems h4");
     const spotlightRing = document.querySelector(".spotlight-ring");
 
-h4Elements.forEach(h4 => {
-    h4.addEventListener("mouseenter", (event) => {
-        // Get the position and dimensions of the h4
-        const rect = h4.getBoundingClientRect();
-        
-        // Adjust spotlight-ring's size and position
-        spotlightRing.style.width = "2rem";
-        spotlightRing.style.height = "2rem";
-        spotlightRing.style.backgroundColor = "transparent";
-        spotlightRing.style.border = "2px solid #ff8c00";
-        spotlightRing.style.position = "absolute";
-        spotlightRing.style.left = `${rect.left + rect.width / 2}px`;
-        spotlightRing.style.top = `${rect.top + rect.height / 2}px`;
+    h4Elements.forEach(h4 => {
+        h4.addEventListener("mouseenter", (event) => {
+            // Get the position and dimensions of the h4
+            const rect = h4.getBoundingClientRect();
 
-        // Make spotlight-ring visible by adjusting z-index
-        spotlightRing.style.zIndex = "34";
-    });
+            // Adjust spotlight-ring's size and position
+            spotlightRing.style.width = "2rem";
+            spotlightRing.style.height = "2rem";
+            spotlightRing.style.backgroundColor = "transparent";
+            spotlightRing.style.border = "2px solid #ff8c00";
+            spotlightRing.style.position = "absolute";
+            spotlightRing.style.left = `${rect.left + rect.width / 2}px`;
+            spotlightRing.style.top = `${rect.top + rect.height / 2}px`;
 
-    h4.addEventListener("mouseleave", () => {
-        spotlightRing.style.width = "1rem";
-        spotlightRing.style.height = "1rem";
-        spotlightRing.style.backgroundColor = "#ff8c00"; // Reset to dot color
-        spotlightRing.style.border = "none";
-        spotlightRing.style.zIndex = "3";
+            // Make spotlight-ring visible by adjusting z-index
+            spotlightRing.style.zIndex = "34";
+        });
+
+        h4.addEventListener("mouseleave", () => {
+            spotlightRing.style.width = "1rem";
+            spotlightRing.style.height = "1rem";
+            spotlightRing.style.backgroundColor = "#ff8c00"; // Reset to dot color
+            spotlightRing.style.border = "none";
+            spotlightRing.style.zIndex = "3";
+        });
     });
-});
 }
 // Function to create grid items dynamically based on the viewport size
 function createGridItems() {
@@ -136,8 +136,8 @@ function createGridItems() {
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Starting animation...");
 
-    animateLoaderCircle(); // Start loader circle position change
-    animateLoader(); // Start loader animation
+    // animateLoaderCircle(); // Start loader circle position change
+    // animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
     h4hoverEffect();
@@ -145,4 +145,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Re-create grid items on resize for responsiveness
     window.addEventListener('resize', createGridItems);
+});
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+const smoother = ScrollSmoother.create({
+ content: "#content",
+ smooth: 3,
+ effects: true
+});
+smoother.effects("img", { speed: "auto" });
+
+
+gsap.fromTo(".title span",
+    { y: 100, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1, // delays each letter slightly for a cascading effect
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".title",
+            start: "top 50%", // when title reaches the middle of the viewport
+            toggleActions: "play none none none"
+        }
+    }
+);
+gsap.utils.toArray(".titleName").forEach((heading) => {
+    gsap.from(heading.querySelectorAll(".animateTitleWords"), {
+        y: 100, // Higher value to make it start from below the border
+        opacity: 0,
+        stagger: 0.5,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: heading,
+            start: "center center", // Trigger when `.titleName` reaches the center of the viewport
+            end: "bottom center",
+            toggleActions: "play none none none"
+        }
+    });
 });
