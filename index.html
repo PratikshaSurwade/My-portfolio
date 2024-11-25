@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <!-- <div class="loader">
+    <div class="loader">
         <div class="loaderCircle">
             <svg class="svgCircle" viewBox="0 0 150 150" stroke="green">
                 <circle cx="75" cy="75" r="73" class="loaderCircleRing" />
             </svg>
         </div>   
-    </div> -->
+    </div>
 
     <div class="main">
         <div class="page1">
@@ -26,21 +26,33 @@
             </div>
             <nav>
                 <h1>Pratiksha</h1>
+                <!-- DeskTop -->
                 <div class="NavItems">
-                    <h4>Projects <span class="h4-ring"></span></h4>
-                    <h4>Education <span class="h4-ring"></span></h4>
-                    <h4>Contact <span class="h4-ring"></span></h4>
-                </div>
+                    <span class="buttonEffect">Projects</span>
+                <span class="buttonEffect">Education</span>
+                <span class="buttonEffect">Contact</span>
+                </div> 
+                <!-- Mobile -->
+                <button class="navBarButton" onclick="navToggle()">*</button>
+                
             </nav>
+            <div class="NavMobItems">
+                <span class="buttonEffect">Projects</span>
+                <span class="buttonEffect">Education</span>
+                <span class="buttonEffect">Contact</span>
+            </div>
             <div class="hero">
-                <div class="">
-                    <h3>Hii, I am</h3>
-                    <h1>Pratiksha Surwade</h1>
-                    <h2>Full stack Developer</h2>
-                    <h3>B.Tech | M.Tech</h3>
-                    <div><button>Download Resume</button><button>Contact</button></div>
-    
+                <div class="heroTitleName">
+                    <p style="color: #6C757D   ;">Hii, I am</p>
+                    <h1 style="color: #005F5F   ;">Pratiksha Surwade</h1>
+                    <h2 style="color: #2C3E50  ;">Full stack Developer</h2>
+                    <p style="color: #ADB5BD ;">B.Tech | M.Tech</p>
+                    <p class="heroButtons"><button class="buttonEffect">Download Resume</button><button class="buttonEffect">Contact</button></p>
+
                 </div>
+                <!-- <div class="heroImg">
+                    <img src="./assets/Laptopcore.png" alt="laptop core">
+                </div> -->
                 <div class="circleContainer">
                     <div class="CircleRing">
                         <div class="verticalRings"></div>
@@ -50,6 +62,135 @@
                         <div class="horizontalRingMid"></div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="mainpageskills">
+                <div class="scrollItems">
+                    <p>Html</p>
+                    <p>Css</p>
+                    <p>Javascript</p>
+                    <p>Reactjs</p>
+                    <p>NodeJs</p>
+                    <p>MongoDb</p>
+                    <p>ExpressJs</p>
+                    <p>Saas</p>
+                </div>
+                <div class="scrollItems">
+                    <p>Html</p>
+                    <p>Css</p>
+                    <p>Javascript</p>
+                    <p>Reactjs</p>
+                    <p>NodeJs</p>
+                    <p>MongoDb</p>
+                    <p>ExpressJs</p>
+                    <p>Saas</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="page2">
+            
+
+            <div class="titleName">
+                <span class="animateTitleWords">P</span>
+                <span class="animateTitleWords">R</span>
+                <span class="animateTitleWords">O</span>
+                <span class="animateTitleWords">J</span>
+                <span class="animateTitleWords">E</span>
+                <span class="animateTitleWords">C</span>
+                <span class="animateTitleWords">T</span>
+            </div>
+            <div class="singleProject animationShow">
+                <div class="projectsImagesShow">
+                    <div class="tabSection">
+                        <div class="tabSubSection"></div>
+                        <img class="tabImage" src="./assets/blogImage.png" alt="iShop App Review">
+                    </div>
+                    <div class="tabMobSection">
+                        <div class="tabMobSubSection"></div>
+                        <img class="tabMobImage" src="./assets/blogMob.png" alt="iShop App Review">
+                    </div>
+                </div>
+                <div class="dividerLine"></div>
+                <div class="content projectDescription">
+                    <h4>iShop MERN app</h4>
+                    <p><span>It is Full stack Web E-commerce App(MERN-E-commerce App) - CRUD App Uses - React as
+                            frontend,
+                            Express(NodeJs) as backend, MongoDB(NoSql) as database.
+                            <li>Build Home page, Login & Register Page, Order page, Shipping Page, and Payment page
+                                (
+                                integrated with Razor pay).</li>
+                            <li>Build a Cart to add/ remove items with individual & total price.</li>
+                            <li>Website - with Navbar, Pagination, Filter - color, price brand , Sort features.</li>
+                        </span>
+                    </p>
+                    <a href="https://mern-ishop-ecommerce-app.netlify.app/" class="links" style="padding: 0.5rem;"
+                        target="_blank">Website</a>
+                    <a href="https://github.com/PratikshaSurwade/iShop-Mern-App" class="links" style="padding: 0.5rem;"
+                        target="_blank">Github</a>
+
+                </div>
+            </div>
+            <hr>
+            <div class="projectBox">
+                <div class="leftBox">
+                    <div class="leftBoxText">
+                        <div>
+                            <h4>  cvscs sdfsiShop MERNsdsdfdfsdf app</h4>
+                            <p><span>It is Full stack Web E-commerce App(MERN-E-commerce App) - CRUD App Uses -
+                                    React as
+                                    frontend,
+                                    Express(NodeJs) as backend, MongoDB(NoSql) as database.
+                                    <li>Build Home page, Login & Register Page, Order page, Shipping Page, and
+                                        Payment page
+                                        (
+                                        integrated with Razor pay).</li>
+                                    <li>Build a Cart to add/ remove items with individual & total price.</li>
+                                    <li>Website - with Navbar, Pagination, Filter - color, price brand , Sort
+                                        features.</li>
+                                </span>
+                            </p>
+                            <a href="https://mern-ishop-ecommerce-app.netlify.app/" class="links"
+                                style="padding: 0.5rem;" target="_blank">Website</a>
+                            <a href="https://github.com/PratikshaSurwade/iShop-Mern-App" class="links"
+                                style="padding: 0.5rem;" target="_blank">Github</a>
+
+                        </div>
+                    </div>
+                    <div class="differenctiator">
+                        <div class="differ"></div>
+                        <div class="differ"></div>
+                        <div class="differ"></div>
+                    </div>
+                </div>
+                <div class="rightBox">
+                    <div class="projectsImagesShow">
+                        <div class="tabSection">
+                            <div class="tabSubSection"></div>
+                            <img class="tabImage" src="./assets/blogImage.png" alt="iShop App Review">
+                        </div>
+                        <div class="tabMobSection">
+                            <div class="tabMobSubSection"></div>
+                            <img class="tabMobImage" src="./assets/blogMob.png" alt="iShop App Review">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page2">
+            
+            <div class="title">
+                <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span>
+            </div>
+            <div class="titleName">
+                <span class="animateTitleWords">P</span>
+                <span class="animateTitleWords">R</span>
+                <span class="animateTitleWords">O</span>
+                <span class="animateTitleWords">J</span>
+                <span class="animateTitleWords">E</span>
+                <span class="animateTitleWords">C</span>
+                <span class="animateTitleWords">T</span>
             </div>
         </div>
         <div class="page2">
@@ -67,58 +208,10 @@
                 <span class="animateTitleWords">T</span>
             </div>
         </div>
-        <div class="page3">
-            <section id="content">
-                <!--  smooth scrolling biz goes in here -->
-                <section class="image-grid container">
-                 <!--    use picture elements -->
-                 <picture class="image_cont">
-                  <source srcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNTU3OA&ixlib=rb-1.2.1&q=85&w=1500" media="(min-width: 1500px)">
-                  <source srcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNTU3OA&ixlib=rb-1.2.1&q=85&w=1000" media="(min-width: 700px)">
-                  <img class="" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNTU3OA&ixlib=rb-1.2.1&q=85&w=600">
-                 </picture>
-                 <!--    or just images -->
-                 <div class="image_cont">
-                  <img src="https://images.unsplash.com/photo-1569596082827-c5e8990496cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNDg3NQ&ixlib=rb-1.2.1&q=80&w=500" alt="">
-                 </div>
-                 <div class="image_cont">
-                  <img src="https://images.unsplash.com/photo-1587932775991-708a20af2cc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNDQ5Mg&ixlib=rb-1.2.1&q=80&w=500" alt="">
-                 </div>
-                 <div class="image_cont">
-                  <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNTU3OA&ixlib=rb-1.2.1&q=85&w=1200" alt="">
-                 </div>
-                 <div class="image_cont">
-                  <img src="https://images.unsplash.com/photo-1623166200209-6bd48520d6cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNDg3NQ&ixlib=rb-1.2.1&q=80&w=500" alt="">
-                 </div>
-                 <div class="image_cont">
-                  <img src="https://images.unsplash.com/photo-1532587459811-f057563d1936?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NDMzNDg3NQ&ixlib=rb-1.2.1&q=80&w=500" alt="">
-                 </div>
-                </section>
-                <div class="spacer"></div>
-               </section>
-               
-               <!-- <div class="overlay">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-               </div> -->
-        </div>
     </div>
-
     <!-- Gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollSmoother.min.js"></script>
-
     <script src="./index.js"></script>
 </body>
 

@@ -1,10 +1,13 @@
+// State Initializing 
+let navOpen = false;
+
 // Function to handle the loader circle animation and position change
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
 
     // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
-        loaderCircle.style.top = "19.0%";
+        loaderCircle.style.top = "27.0%";
     }, 3000); // Wait for the circle to fully draw
 }
 
@@ -49,7 +52,7 @@ function animateLoader() {
             duration: 0.8,
             onComplete: () => console.log("Hero h2 visible")
         }, "-=0.3")
-        .from(".hero h3", {
+        .from(".hero p", {
             y: 20,
             opacity: 0,
             duration: 0.8,
@@ -77,8 +80,8 @@ function followMouseSpotlightRing() {
     });
 }
 
-function h4hoverEffect() {
-    const h4Elements = document.querySelectorAll("nav .NavItems h4");
+function buttonhoverEffect() {
+    const h4Elements = document.querySelectorAll(".buttonEffect");
     const spotlightRing = document.querySelector(".spotlight-ring");
 
     h4Elements.forEach(h4 => {
@@ -87,11 +90,10 @@ function h4hoverEffect() {
             const rect = h4.getBoundingClientRect();
 
             // Adjust spotlight-ring's size and position
-            spotlightRing.style.width = "2rem";
-            spotlightRing.style.height = "2rem";
+            spotlightRing.style.width = "3rem";
+            spotlightRing.style.height = "3rem";
             spotlightRing.style.backgroundColor = "transparent";
             spotlightRing.style.border = "2px solid #ff8c00";
-            spotlightRing.style.position = "absolute";
             spotlightRing.style.left = `${rect.left + rect.width / 2}px`;
             spotlightRing.style.top = `${rect.top + rect.height / 2}px`;
 
@@ -132,45 +134,29 @@ function createGridItems() {
     }
 }
 
+function navToggle() {
+    (navOpen===false)?
+        document.querySelector(".NavMobItems").style.right="-100%" :document.querySelector(".NavMobItems").style.right="0"
+    navOpen = !navOpen;
+    console.log(navOpen)
+}
+
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Starting animation...");
 
-    // animateLoaderCircle(); // Start loader circle position change
-    // animateLoader(); // Start loader animation
+    animateLoaderCircle(); // Start loader circle position change
+    animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
-    h4hoverEffect();
+    buttonhoverEffect();
     createGridItems(); // Create grid items
+    navToggle();// Navbar Open Close
 
     // Re-create grid items on resize for responsiveness
     window.addEventListener('resize', createGridItems);
 });
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-const smoother = ScrollSmoother.create({
- content: "#content",
- smooth: 3,
- effects: true
-});
-smoother.effects("img", { speed: "auto" });
-
-
-gsap.fromTo(".title span",
-    { y: 100, opacity: 0 },
-    {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1, // delays each letter slightly for a cascading effect
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: ".title",
-            start: "top 50%", // when title reaches the middle of the viewport
-            toggleActions: "play none none none"
-        }
-    }
-);
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
         y: 100, // Higher value to make it start from below the border
@@ -185,3 +171,34 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
         }
     });
 });
+
+gsap.from(".differenctiator .differ",{
+    width:0,
+    opacity:0,
+    delay:0.4,
+    stagger:0.3
+})
+
+gsap.timeline({
+    scrollTrigger: {
+      trigger: ".projectBox",
+      scroller: "body",
+      start: "top 50%", // When to start the animation
+      end: "top 10%", // Scroll trigger end point
+      markers: true,     // Show markers to debug
+      scrub: true,       // Smooth scrubbing for better control
+    }
+  })
+  .from(".leftLine", {
+    scale: 0,
+    delay: 0.1,
+  })
+  .from(".leftRect", {
+    width: 0,
+    delay: 0.1,
+  })
+
+  .from(".leftCircle", {
+    scale: 0,
+    delay: 0.1,
+  });
