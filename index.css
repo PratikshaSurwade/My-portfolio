@@ -23,7 +23,7 @@ body {
 .loader {
   height: 100%;
   width: 100%;
-  background-color: green;
+  background-color: #837777;
   position: fixed;
   z-index: 999;
   display: flex;
@@ -43,13 +43,13 @@ body {
 /* Animation for the loader */
 @keyframes loaderAnime {
   0% {
-    opacity: 0;
-    background-color: #837777;
+    opacity: 1;
+    background-color: teal;
   }
 
   50% {
     opacity: 1;
-    background-color: #837777;
+    background-color: teal;
   }
 
   75% {
@@ -216,7 +216,7 @@ body {
 /* Grid Container styling */
 .grid-container {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   grid-auto-rows: calc(10vh);
   gap: 1px;
@@ -240,6 +240,8 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  cursor: none;
+
 }
 
 nav {
@@ -264,9 +266,7 @@ nav .NavItems {
   gap: 3rem;
 }
 
-nav .NavItems>span:hover {
-  cursor: pointer;
-}
+
 
 .NavMobItems{
   position: absolute;
@@ -310,8 +310,8 @@ nav .NavItems>span:hover {
 .heroButtons button{
   margin-right: 1rem;
   border: #005F5F solid 3px;
-  cursor: pointer;
   color: #6C757D;
+  cursor: none;
 }
 
 .heroButtons button:hover{
@@ -352,16 +352,14 @@ div.mainpageskills{
   width: 10%;
   height: 100%;
   left: 0;
-  /* background: linear-gradient(90deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%); */
-
 }
+
 .mainpageskills::after{
   position: absolute;
   content: "";
   width: 10%; 
   height: 100%;
-  right: -0;
-  /* background: linear-gradient(270deg, rgb(10, 9, 9) 0%, rgba(255,255,255,0.5271358543417367) 50%); */
+  right: 0;
 }
 
 .scrollItems{
@@ -369,7 +367,7 @@ div.mainpageskills{
   white-space: nowrap;
   display: inline-block;
   margin-top: 1.5rem;
-  animation: move 20s linear infinite;
+  animation: move 40s linear infinite;
 }
 
 @keyframes move {
@@ -416,34 +414,21 @@ button {
   pointer-events: auto;
 }
 
-.page2 {
+.page2,.page3 {
   width: 100%;
   min-height: 100vh;
   background-color: #f7f7f7;
-}
-
-.title {
-  display: flex;
-  gap: 0.1rem;
-  font-size: 3rem;
-  opacity: 0;
-  color: red;
-  /* overflow: hidden; */
-}
-
-.title span {
-  display: inline-block;
-  opacity: 0;
 }
 
 .titleName {
   padding: 0 3rem;
   font-size: 2rem;
   font-weight: 700;
-}
-
-.titleName span {
-  top: 100%;
+  position: sticky;
+  top: 0; /* Sticks at the top of the viewport */
+  z-index: 10;
+  padding: 0.5rem;
+  background-color: #f7f7f7;
 }
 
 .Projects{
@@ -559,7 +544,6 @@ button {
 
 .projectBox>.leftBox {
   display: flex;
-  /* background-color: bisque; */
   width: 26rem;
   height: 30rem;
   position: relative;
@@ -568,7 +552,6 @@ button {
 .leftBoxText {
   width: 25rem;
   height: 25rem;
-  /* background-color: burlywood; */
   display: flex;
   align-items: center;
 }
@@ -577,7 +560,7 @@ button {
   height: 25rem;
   position: absolute;
   background-color: #000;
-  right: 0;
+  left: 0;
   transform-origin: bottom;
 }
 
@@ -606,44 +589,7 @@ button {
   background-color: #000;
   bottom: 0;
   right: 0;
-}
-
-
-/* Trialll */
-
-.differenctiator {
-  height: 25rem;
-  position: absolute;
-  background-color: #000;
-  right: 0;
   transform-origin: bottom;
-}
-
-.differ:nth-child(2) {
-  position: absolute;
-  width: 2rem;
-  height: 1rem;
-  background-color: #000;
-  transform-origin: left;
-}
-
-.differ:nth-child(3) {
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: #000;
-  bottom: 0;
-  transform: translate(-50%,0);
-}
-
-.differ:nth-child(1) {
-  position: absolute;
-  width: 0.15rem;
-  height: 25rem;
-  background-color: #000;
-  bottom: 0;
-  right: 0;
 }
 
 /* Mobile Responsive Design */
@@ -655,11 +601,21 @@ button {
   nav .navBarButton,nav .NavMobItems{
     display: block;
   }
+  .projectBox {
+    flex-direction: column;
+  }
+  
 }
 
 @media only screen and (min-width: 576px) and (max-width: 769px){
   nav .navBarButton,nav .NavMobItems{
     display: none;
+  }
+  .projectBox {
+    flex-direction: column;
+  }
+  .projectsImagesShow{
+    width: 100%;
   }
 }
 

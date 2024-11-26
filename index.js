@@ -7,7 +7,7 @@ function animateLoaderCircle() {
 
     // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
-        loaderCircle.style.top = "27.0%";
+        loaderCircle.style.top = "17.2%";
     }, 3000); // Wait for the circle to fully draw
 }
 
@@ -135,8 +135,8 @@ function createGridItems() {
 }
 
 function navToggle() {
-    (navOpen===false)?
-        document.querySelector(".NavMobItems").style.right="-100%" :document.querySelector(".NavMobItems").style.right="0"
+    (navOpen === false) ?
+        document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
     navOpen = !navOpen;
     console.log(navOpen)
 }
@@ -172,33 +172,35 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
     });
 });
 
-gsap.from(".differenctiator .differ",{
-    width:0,
-    opacity:0,
-    delay:0.4,
-    stagger:0.3
-})
+// gsap.from(".differenctiator .differ", {
+//     width: 0,
+//     opacity: 0,
+//     duration: 0.9,
+//     stagger: 0.3,
+//     scrollTrigger: {
+//         trigger: ".projectBox",
+//         scroller: "body",
+//         start: "top 30%", // When to start the animation
+//         end: "top 10%", // Scroll trigger end point
+//         stagger: 0.9,       // Smooth scrubbing for better control
+//     }
+// })
 
-gsap.timeline({
-    scrollTrigger: {
-      trigger: ".projectBox",
-      scroller: "body",
-      start: "top 50%", // When to start the animation
-      end: "top 10%", // Scroll trigger end point
-      markers: true,     // Show markers to debug
-      scrub: true,       // Smooth scrubbing for better control
-    }
-  })
-  .from(".leftLine", {
-    scale: 0,
-    delay: 0.1,
-  })
-  .from(".leftRect", {
-    width: 0,
-    delay: 0.1,
-  })
+// Select all project boxes
+const projectBoxes = document.querySelectorAll(".projectBox");
 
-  .from(".leftCircle", {
-    scale: 0,
-    delay: 0.1,
-  });
+// Loop through each project box and apply ScrollTrigger
+projectBoxes.forEach((box) => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: box,            // Trigger for the current box
+            scroller: "body",        // Default scroller is the body
+            start: "top 45%",        // Adjust based on when you want the animation to start
+            end: "top 25%",          // When the animation ends
+            markers: true,           // Debug markers
+        }
+    })
+        .from(box.querySelector(".leftLine"), { scale: 0, delay: 0.1 })
+        .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
+        .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 });
+});
