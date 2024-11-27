@@ -1,3 +1,25 @@
+/* lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* CSS */
 *,
 *::before,
 *::after {
@@ -544,9 +566,10 @@ button {
 
 .projectBox>.leftBox {
   display: flex;
-  width: 26rem;
+  width: 30rem;
   height: 30rem;
   position: relative;
+  justify-content: flex-end;
 }
 
 .leftBoxText {
@@ -604,7 +627,12 @@ button {
   .projectBox {
     flex-direction: column;
   }
-  
+  .tabSection{
+    width: 100%;
+  }
+  .projectsImagesShow{
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 769px){
@@ -613,6 +641,9 @@ button {
   }
   .projectBox {
     flex-direction: column;
+  }
+  .tabSection{
+    width: 100%;
   }
   .projectsImagesShow{
     width: 100%;

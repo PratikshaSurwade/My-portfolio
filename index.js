@@ -1,6 +1,10 @@
+// Initialize Lenis
+const lenis = new Lenis({
+    autoRaf: true,
+  });
+  
+  
 // State Initializing 
-let navOpen = false;
-
 // Function to handle the loader circle animation and position change
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
@@ -135,6 +139,8 @@ function createGridItems() {
 }
 
 function navToggle() {
+    let navOpen = false;
+
     (navOpen === false) ?
         document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
     navOpen = !navOpen;
@@ -143,7 +149,6 @@ function navToggle() {
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-
     animateLoaderCircle(); // Start loader circle position change
     animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
@@ -151,12 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonhoverEffect();
     createGridItems(); // Create grid items
     navToggle();// Navbar Open Close
-
     // Re-create grid items on resize for responsiveness
     window.addEventListener('resize', createGridItems);
 });
-
-
+ 
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
         y: 100, // Higher value to make it start from below the border
