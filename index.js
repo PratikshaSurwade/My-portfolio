@@ -1,9 +1,9 @@
 // Initialize Lenis
 const lenis = new Lenis({
     autoRaf: true,
-  });
-  
-  
+    duration: 3,
+});
+
 // State Initializing 
 // Function to handle the loader circle animation and position change
 function animateLoaderCircle() {
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Re-create grid items on resize for responsiveness
     window.addEventListener('resize', createGridItems);
 });
- 
+
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
         y: 100, // Higher value to make it start from below the border
@@ -175,35 +175,67 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
     });
 });
 
-// gsap.from(".differenctiator .differ", {
-//     width: 0,
-//     opacity: 0,
-//     duration: 0.9,
-//     stagger: 0.3,
-//     scrollTrigger: {
-//         trigger: ".projectBox",
-//         scroller: "body",
-//         start: "top 30%", // When to start the animation
-//         end: "top 10%", // Scroll trigger end point
-//         stagger: 0.9,       // Smooth scrubbing for better control
-//     }
-// })
-
 // Select all project boxes
 const projectBoxes = document.querySelectorAll(".projectBox");
 
 // Loop through each project box and apply ScrollTrigger
+// projectBoxes.forEach((box) => {
+//     gsap.timeline({
+//         scrollTrigger: {
+//             trigger: box,            // Trigger for the current box
+//             scroller: "body",        // Default scroller is the body
+//             start: "top 45%",        // Adjust based on when you want the animation to start
+//             end: "top 25%",          // When the animation ends
+//             // markers: true,           // Debug markers
+//         }
+//     })
+//         .from(box.querySelector(".leftLine"), { scale: 0, delay: 0.1 })
+//         .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
+//         .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 });
+// });
+
+
 projectBoxes.forEach((box) => {
-    gsap.timeline({
+    // GSAP timeline for animations
+    const tl = gsap.timeline({
         scrollTrigger: {
             trigger: box,            // Trigger for the current box
-            scroller: "body",        // Default scroller is the body
+            scroller: "body",        // Default scroller
             start: "top 45%",        // Adjust based on when you want the animation to start
-            end: "top 25%",          // When the animation ends
-            markers: true,           // Debug markers
+            end: "top 20%",          // When the animation ends
+            scrub: 1,                // Smooth animation on scroll
+            // markers: true,           // Debug markers (uncomment if needed)
         }
-    })
+    });
+
+    // Left box animations
+    tl
         .from(box.querySelector(".leftLine"), { scale: 0, delay: 0.1 })
         .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
-        .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 });
+        .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 })
+        .from(box.querySelector(".leftBoxText h4"), { opacity: 0, x: -50, ease: "power2.out" })
+        .from(box.querySelector(".leftBoxText p"), { opacity: 0, x: -50, ease: "power2.out" })
+        .from(box.querySelectorAll(".leftBoxText a"), {
+            opacity: 0,
+            y: 30,
+            stagger: 0.1,
+              duration: 0.6,
+            ease: "power2.out",
+        });
+
+    // Right box animations
+    tl
+        // .from(box.querySelector(".projectsImagesShow"), {
+        //     opacity: 0,
+        //     scale: 0.8,
+        //     // duration: 0.8,
+        //     ease: "power3.out",
+        // })
+        .from(box.querySelectorAll(".tabSection, .tabMobSection"), {
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+        }, "<0.2");
 });

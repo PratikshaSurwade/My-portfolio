@@ -4,7 +4,7 @@ html.lenis, html.lenis body {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+  scroll-behavior: smooth !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -309,12 +309,29 @@ nav .NavItems {
 .hero {
   height: 70%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 10;
   pointer-events: none;
+}
+
+.heroIcons{
+  flex: 1;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: xx-large;
+}
+
+.heroCenter{
+  text-align: center;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heroTitleName{
@@ -341,7 +358,13 @@ nav .NavItems {
   background-color: #005F5F;
 }
 
-/* ScrollBar Animation */
+.heroSide{
+  flex: 1;
+  transform: rotateZ(90deg);
+  text-align: center;
+}
+
+/* MovingBar Animation */
 
 div.mainpageskills{
   height: 10rem;
@@ -451,6 +474,7 @@ button {
   z-index: 10;
   padding: 0.5rem;
   background-color: #f7f7f7;
+  display: inline-block;
 }
 
 .Projects{
@@ -555,7 +579,7 @@ button {
   height: 80vh;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
