@@ -41,6 +41,11 @@ body {
   padding: 0;
 }
 
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Loader */
 .loader {
   height: 100%;
@@ -234,8 +239,7 @@ body {
   }
 }
 
-/* BackGround */
-/* Grid Container styling */
+/* BackGround Grid Container styling */
 .grid-container {
   display: grid;
   width: 100%;
@@ -263,7 +267,6 @@ body {
   position: relative;
   overflow: hidden;
   cursor: none;
-
 }
 
 nav {
@@ -287,8 +290,6 @@ nav .NavItems {
   justify-content: center;
   gap: 3rem;
 }
-
-
 
 .NavMobItems{
   position: absolute;
@@ -576,7 +577,7 @@ button {
 }
 
 .projectBox {
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -657,6 +658,13 @@ button {
   .projectsImagesShow{
     width: 100%;
   }
+  .projectBox>.leftBox {
+    width: 98%;
+  }
+  .leftBoxText{
+    width: 80%;
+  }
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 769px){
@@ -672,6 +680,13 @@ button {
   .projectsImagesShow{
     width: 100%;
   }
+  .projectBox>.leftBox {
+    width: 98%;
+  }
+  .leftBoxText{
+    width: 80%;
+  }
+
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px){

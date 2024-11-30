@@ -11,7 +11,7 @@ function animateLoaderCircle() {
 
     // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
-        loaderCircle.style.top = "17.2%";
+        loaderCircle.style.top = "15%";
     }, 3000); // Wait for the circle to fully draw
 }
 
@@ -178,23 +178,6 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
 // Select all project boxes
 const projectBoxes = document.querySelectorAll(".projectBox");
 
-// Loop through each project box and apply ScrollTrigger
-// projectBoxes.forEach((box) => {
-//     gsap.timeline({
-//         scrollTrigger: {
-//             trigger: box,            // Trigger for the current box
-//             scroller: "body",        // Default scroller is the body
-//             start: "top 45%",        // Adjust based on when you want the animation to start
-//             end: "top 25%",          // When the animation ends
-//             // markers: true,           // Debug markers
-//         }
-//     })
-//         .from(box.querySelector(".leftLine"), { scale: 0, delay: 0.1 })
-//         .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
-//         .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 });
-// });
-
-
 projectBoxes.forEach((box) => {
     // GSAP timeline for animations
     const tl = gsap.timeline({
@@ -214,7 +197,7 @@ projectBoxes.forEach((box) => {
         .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
         .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 })
         .from(box.querySelector(".leftBoxText h4"), { opacity: 0, x: -50, ease: "power2.out" })
-        .from(box.querySelector(".leftBoxText p"), { opacity: 0, x: -50, ease: "power2.out" })
+        .from(box.querySelector(".leftBoxText p"), { opacity: 0, x: -50, stagger: 0.2, ease: "power2.out" })
         .from(box.querySelectorAll(".leftBoxText a"), {
             opacity: 0,
             y: 30,
@@ -224,14 +207,7 @@ projectBoxes.forEach((box) => {
         });
 
     // Right box animations
-    tl
-        // .from(box.querySelector(".projectsImagesShow"), {
-        //     opacity: 0,
-        //     scale: 0.8,
-        //     // duration: 0.8,
-        //     ease: "power3.out",
-        // })
-        .from(box.querySelectorAll(".tabSection, .tabMobSection"), {
+    tl.from(box.querySelectorAll(".tabSection, .tabMobSection"), {
             opacity: 0,
             y: 30,
             stagger: 0.2,
