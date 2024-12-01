@@ -149,8 +149,8 @@ function navToggle() {
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    animateLoaderCircle(); // Start loader circle position change
-    animateLoader(); // Start loader animation
+    // animateLoaderCircle(); // Start loader circle position change
+    // animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
     buttonhoverEffect();
@@ -214,4 +214,48 @@ projectBoxes.forEach((box) => {
             duration: 0.8,
             ease: "power2.out",
         }, "<0.2");
+});
+
+gsap.registegsap.registerPlugin(ScrollTrigger);
+
+// Animate the line height as we scroll
+gsap.to(".scrollLine", {
+    scrollTrigger: {
+        trigger: ".animationShow:last-child", // Trigger ends at the last section
+        start: "top 80%", // Animation starts near the first section
+        end: "bottom bottom", // Ends at the bottom of the last section
+        scrub: true, // Smooth animation as you scroll
+    },
+    height: "100%", // Line expands to full container height
+});
+
+// Animate dots as sections come into view
+const dots = document.querySelectorAll(".scrollDot");
+document.querySelectorAll(".animationShow").forEach((section, index) => {
+    gsap.to(dots[index], {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%", // Highlight dot when section reaches 80% of the viewport
+            end: "bottom 20%",
+            toggleClass: "activeDot", // Adds class for highlight effect
+            markers: false, // Debug markers if needed
+        },
+        backgroundColor: "#005F5F", // Dot color changes
+        duration: 0.5,
+    });
+});
+
+
+emailjs.init("VFv3_naMz3dnon2jF");
+
+// Email.js
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_81oe22w", "template_eu4lzyl", this)
+        .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+        }, function(error) {
+            console.log("FAILED...", error);
+        });
 });

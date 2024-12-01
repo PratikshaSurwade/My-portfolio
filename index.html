@@ -20,13 +20,13 @@
 </head>
 
 <body>
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="loaderCircle">
             <svg class="svgCircle" viewBox="0 0 150 150" stroke="green">
                 <circle cx="75" cy="75" r="73" class="loaderCircleRing" />
             </svg>
         </div>
-    </div>
+    </div> -->
 
     <div class="main">
         <div class="page1">
@@ -36,12 +36,13 @@
                 <!-- Grid Items are added by js for responsiveness -->
             </div>
             <nav>
-                <h1>Pratiksha</h1>
+                <p>Open for Offers and<br> Colaboration __</p>
                 <!-- DeskTop -->
                 <div class="NavItems">
-                    <span class="buttonEffect">Projects</span>
+                    <!-- <span class="buttonEffect">Projects</span>
                     <span class="buttonEffect">Education</span>
-                    <span class="buttonEffect">Contact</span>
+                    <span class="buttonEffect">Contact</span> -->
+                    <p>Pune, India</p>
                 </div>
                 <!-- Mobile -->
                 <button class="navBarButton" onclick="navToggle()">*</button>
@@ -54,16 +55,16 @@
             </div>
             <div class="hero">
                 <div class="heroIcons">
-                    <i class="fa-brands fa-github" title="Github Profile"></i>
-                    <i class="fa-brands fa-instagram" title="Instagram"></i>
-                    <i class="fa-brands fa-linkedin" title="fa-linkedin"></i>
-                    <i class="fa fa-angellist" title="Angelist Profile"></i>
+                    <a href="#"><i class="fa-brands fa-github" title="Github Profile"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin" title="fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-angellist" title="Angelist Profile"></i></a>
                 </div>
                 <div class="heroCenter">
                     <div class="heroTitleName">
                         <p style="color: #6C757D   ;">Hii, I am</p>
-                        <h1 style="color: #005F5F   ;">Pratiksha Surwade</h1>
-                        <h2 style="color: #2C3E50  ;">Full stack Developer</h2>
+                        <p style="color: #005F5F   ;">Pratiksha Surwade</p>
+                        <p style="color: #2C3E50  ;">Full stack Developer</p>
                         <p style="color: #ADB5BD ;">B.Tech | M.Tech</p>
                         <p class="heroButtons"><button class="buttonEffect"><a href="./assets/pratiksha_surwade_resume.pdf" download="pratiksha_surwade_resume">Download Resume</a></button><button
                                 class="buttonEffect"><a href="mailto:pratikshasurwade0506@gmail.com?subject=Contact%20Request">Contact</a></button></p>
@@ -79,8 +80,6 @@
                     </div>
                 </div>
                 <div class="heroSide">Scroll Down</div>
-
-
 
             </div>
             <div class="mainpageskills">
@@ -305,6 +304,42 @@
                 <span class="animateTitleWords">N</span>
                 <span class="animateTitleWords"><i class="fa-solid fa-graduation-cap"></i></span>
             </div>
+            <div class="scrollPathContainer">
+                <div class="scrollLine"></div>
+                <div class="scrollDot"></div>
+                <div class="scrollDot"></div>
+                <div class="scrollDot"></div>
+                <div class="scrollDot"></div>
+            </div>
+            <section class="animationShow">
+                <div class="animationWrapper">
+                    <h3>M.Tech</h3>
+                    <p>SSGB College of Engineering Bhusawal, Maharashtra</p>
+                    <p>CGPA - 9.89 (Upto sem 3)</p>
+                </div>
+            </section>
+            <section class="animationShow">
+                <div class="animationWrapper">
+                    <h3>B.Tech</h3>
+                    <p>Government College of Engineering, Jalgaon</p>
+                    <p>CGPA - 8.64</p>
+                </div>
+            </section>
+            <section class="animationShow">
+                <div class="animationWrapper">
+                    <h3>HSC</h3>
+                    <p>K.Narkhede Junior College, Bhusawal, Maharashtra</p>
+                    <p>Percentage - 76.46%</p>
+                </div>
+            </section>
+            <section class="animationShow">
+                <div class="animationWrapper">
+                    <h3>SSC</h3>
+                    <p>Kotecha High School, Bhusawal, Maharashtra</p>
+                    <p>Percentage - 93.60%</p>
+                </div>
+            </section>
+            
         </div>
         <div class="page3">
             <div class="titleName">
@@ -318,10 +353,20 @@
                 <span class="animateTitleWords">&nbsp;</span>
                 <span class="animateTitleWords">M</span>
                 <span class="animateTitleWords">E</span>
-
+            </div>
+            <div class="contact">
+                <form id="contactForm">
+                    <input type="text" name="user_name" placeholder="Your Name" required>
+                    <input type="email" name="user_email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button class="submit" type="submit">Send</button>
+                </form>
             </div>
         </div>
     </div>
+
+    <!-- Email.js -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <!-- lenis -->
     <script src="https://unpkg.com/lenis@1.1.17/dist/lenis.min.js"></script>
     <!-- Gsap -->
