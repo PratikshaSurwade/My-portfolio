@@ -1,11 +1,12 @@
 // Initialize Lenis
 const lenis = new Lenis({
     autoRaf: true,
-    duration: 3,
+    duration: 4,
 });
 
 // State Initializing 
 // Function to handle the loader circle animation and position change
+
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
 
@@ -15,7 +16,7 @@ function animateLoaderCircle() {
     }, 3000); // Wait for the circle to fully draw
 }
 
-// Function to handle the animation of the loader (opacity changes, etc.)
+// Function to handle the animation of the loader (opacity changes, etc.) krte
 function animateLoader() {
     const tl = gsap.timeline();
 
@@ -140,7 +141,6 @@ function createGridItems() {
 
 function navToggle() {
     let navOpen = false;
-
     (navOpen === false) ?
         document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
     navOpen = !navOpen;
@@ -149,8 +149,8 @@ function navToggle() {
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    // animateLoaderCircle(); // Start loader circle position change
-    // animateLoader(); // Start loader animation
+    animateLoaderCircle(); // Start loader circle position change
+    animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
     buttonhoverEffect();
@@ -164,91 +164,61 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
         y: 100, // Higher value to make it start from below the border
         opacity: 0,
-        stagger: 0.5,
+        stagger: 0.1,
         ease: "power3.out",
         scrollTrigger: {
             trigger: heading,
-            start: "center center", // Trigger when `.titleName` reaches the center of the viewport
-            end: "bottom center",
+            start: "top 75%", // Trigger when .titleName reaches the center of the viewport
+            end: "bottom bottom",
             toggleActions: "play none none none"
         }
     });
-});
+})
 
-// Select all project boxes
+// Projects Animation
 const projectBoxes = document.querySelectorAll(".projectBox");
 
 projectBoxes.forEach((box) => {
-    // GSAP timeline for animations
     const tl = gsap.timeline({
         scrollTrigger: {
-            trigger: box,            // Trigger for the current box
-            scroller: "body",        // Default scroller
-            start: "top 45%",        // Adjust based on when you want the animation to start
-            end: "top 20%",          // When the animation ends
-            scrub: 1,                // Smooth animation on scroll
-            // markers: true,           // Debug markers (uncomment if needed)
+            trigger: box,
+            scroller: "body",
+            start: "top 75%", // Trigger when the box is 75% from the top
+            end: "top 15%",
+            scrub:0.3,
+        }
+    });
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: box,
+            scroller: "body",
+            start: "top 55%", // Trigger when the box is 75% from the top
+            end: "top 15%",
         }
     });
 
-    // Left box animations
-    tl
-        .from(box.querySelector(".leftLine"), { scale: 0, delay: 0.1 })
-        .from(box.querySelector(".leftRect"), { width: 0, delay: 0.1 })
-        .from(box.querySelector(".leftCircle"), { scale: 0, delay: 0.1 })
-        .from(box.querySelector(".leftBoxText h4"), { opacity: 0, x: -50, ease: "power2.out" })
-        .from(box.querySelector(".leftBoxText p"), { opacity: 0, x: -50, stagger: 0.2, ease: "power2.out" })
-        .from(box.querySelectorAll(".leftBoxText a"), {
-            opacity: 0,
-            y: 30,
-            stagger: 0.1,
-              duration: 0.6,
-            ease: "power2.out",
-        });
-
-    // Right box animations
+    // Start the right box animations at top 75% along with leftBoxText h4
     tl.from(box.querySelectorAll(".tabSection, .tabMobSection"), {
-            opacity: 0,
-            y: 30,
-            stagger: 0.2,
-            duration: 0.8,
-            ease: "power2.out",
-        }, "<0.2");
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        scrub: 0.5,
+        ease: "power2.out",
+    }, "start");
+
+    tl.from(box.querySelector(".leftBoxText h4"), { opacity: 0, y: 50, ease: "power2.out" }, "start")
+        .from(box.querySelectorAll(".leftBoxText p"), { opacity: 0, y: 50, stagger: 0.2, ease: "power2.out" }, )
+        .from(box.querySelectorAll(".leftBoxText a"), { opacity: 0, y: 30, stagger: 0.1, ease: "power2.out" }, );
+
+    // Start the leftLine, leftRect, and leftCircle at top 55%
+    tl2.from(box.querySelector(".leftLine"), { scale: 0, start: "top 90%" ,stagger: 0.5 }, )
+        .from(box.querySelector(".leftRect"), { width: 0 })
+        .from(box.querySelector(".leftCircle"), { scale: 0 });
 });
-
-gsap.registegsap.registerPlugin(ScrollTrigger);
-
-// Animate the line height as we scroll
-gsap.to(".scrollLine", {
-    scrollTrigger: {
-        trigger: ".animationShow:last-child", // Trigger ends at the last section
-        start: "top 80%", // Animation starts near the first section
-        end: "bottom bottom", // Ends at the bottom of the last section
-        scrub: true, // Smooth animation as you scroll
-    },
-    height: "100%", // Line expands to full container height
-});
-
-// Animate dots as sections come into view
-const dots = document.querySelectorAll(".scrollDot");
-document.querySelectorAll(".animationShow").forEach((section, index) => {
-    gsap.to(dots[index], {
-        scrollTrigger: {
-            trigger: section,
-            start: "top 80%", // Highlight dot when section reaches 80% of the viewport
-            end: "bottom 20%",
-            toggleClass: "activeDot", // Adds class for highlight effect
-            markers: false, // Debug markers if needed
-        },
-        backgroundColor: "#005F5F", // Dot color changes
-        duration: 0.5,
-    });
-});
-
-
-emailjs.init("VFv3_naMz3dnon2jF");
 
 // Email.js
+emailjs.init("VFv3_naMz3dnon2jF");
+
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -258,4 +228,21 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         }, function(error) {
             console.log("FAILED...", error);
         });
+});
+
+// Education Entry
+document.querySelectorAll('.animationShow').forEach((section, index) => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 85%", // Start when section reaches 75% of the viewport
+            end: "top 55%",   // End when section reaches 25% of the viewport
+            scrub: true,      // Tie animation to scroll progress
+            toggleActions: "play none reverse none", // Reverse on back scroll
+        },
+        opacity: 0,
+        x: index % 2 === 0 ? -100 : 100, // Alternate slide directions
+        duration: 1.5,
+        ease: "power2.out",
+    });
 });

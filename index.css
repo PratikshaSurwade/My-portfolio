@@ -32,6 +32,8 @@ html.lenis body {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+
 }
 
 body {
@@ -40,6 +42,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 a {
@@ -131,8 +134,8 @@ a {
 .circleContainer {
   /* opacity: 0;    // for intial animation
     visibility: hidden;  //for intial animation */
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   width: 7rem;
   height: 7rem;
   position: relative;
@@ -469,20 +472,27 @@ button {
   pointer-events: auto;
 }
 
-.page2,
-.page3 {
+.pageWrapper {
+  padding: 10%;
+}
+
+.page2{
   width: 100%;
   min-height: 100vh;
   background-color: #f7f7f7;
 }
 
+.pageCenterWrapper {
+  text-align: center;
+}
+
 .titleName {
   padding: 0 3rem;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   font-weight: 700;
+  /* Sticks at the top of the viewport */
   position: sticky;
   top: 0;
-  /* Sticks at the top of the viewport */
   z-index: 10;
   padding: 0.5rem;
   display: inline-block;
@@ -592,13 +602,16 @@ button {
 }
 
 .projectBox {
-  min-height: 80vh;
+  min-height: 90vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
+.projectBox>.rightBox{
+  text-align: center;
+}
 .projectBox>.rightBox>img {
   width: 20rem;
   height: 30rem;
@@ -616,7 +629,13 @@ button {
   width: 25rem;
   height: 25rem;
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.leftBoxText>p,
+.leftBoxText>a {
+  font-size: 1.1rem;
 }
 
 .leftBoxLineContainer {
@@ -641,7 +660,7 @@ button {
   height: 1rem;
   border-radius: 50%;
   background-color: #000;
-  bottom: 0;
+  bottom: -0.7rem;
   transform: translate(-50%, 0);
 }
 
@@ -655,46 +674,25 @@ button {
   transform-origin: bottom;
 }
 
+.page3 {
+  width: 100%;
+  height: fit-content;
+  background-color: #f7f7f7;
+}
+
 .animationShow {
   margin: 2rem 0;
 }
 
 .animationWrapper {
-  opacity: 0; /* Start invisible */
-  transform: translateY(50px); /* For the initial slide-up effect */
+  /* opacity: 0; Start invisible */
+  transform: translateY(50px);
+  /* For the initial slide-up effect */
   transition: opacity 1s ease, transform 1s ease;
 }
-.scrollPathContainer {
-  position: fixed;
-  top: 10%;
-  left: 5%;
-  height: 80%;
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.scrollLine {
-  position: absolute;
-  width: 2px;
-  height: 0%; /* Start from 0 height */
-  background-color: #005F5F;
-  transition: height 0.3s ease-out;
-}
-
-.scrollDot {
-  width: 10px;
-  height: 10px;
-  background-color: #ADB5BD;
-  border-radius: 50%;
-  margin: 10px 0;
-}
 
 
-#contactForm{
-  width: 80%;
+#contactForm {
   height: 40vh;
   counter-reset: #000;
   display: flex;
@@ -704,23 +702,45 @@ button {
   justify-content: space-around;
 }
 
-#contactForm>input,#contactForm>textarea  {
+#contactForm>input,
+#contactForm>textarea {
   height: 3rem;
+  width: 60%;
   padding: 1rem;
   margin-bottom: 1.5rem;
-  width: 40%;
   border: teal solid;
   border-radius: 5px;
 }
-#contactForm>textarea{
+
+#contactForm>textarea {
   height: 4rem;
 }
 
-.submit{
+.emailSuccessBar {}
+
+.submit {
   background-color: teal;
   color: white;
   border-radius: 5px;
 }
+
+.Footer{
+  background-color: rgb(231, 232, 231);
+  width: 100%;
+  padding-bottom: 2rem;
+} 
+
+.Footer a:hover{
+  cursor: pointer;
+  font-weight:bold
+}
+
+.footerDetails{
+  display: flex; 
+  justify-content: space-around; 
+  font-size: 1.5rem;
+}
+
 
 /* Mobile Responsive Design */
 
@@ -772,24 +792,34 @@ button {
     display: none;
   }
 
+  .pageWrapper {
+    padding: 0;
+  }
+
   .projectBox {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
-  .tabSection {
-    width: 100%;
+  .tabSection{
+    width: 95%;
   }
-
+  .tabMobSection {
+    left: 0;
+  }
   .projectsImagesShow {
-    width: 100%;
+    width: 95%;
   }
-
   .projectBox>.leftBox {
-    width: 98%;
+    margin-top: 10%;
+    width: 90%;
   }
-
   .leftBoxText {
     width: 80%;
+  }
+  
+  #contactForm>input,
+  #contactForm>textarea {
+    width: 90%;
   }
 }
 
@@ -799,8 +829,9 @@ button {
   nav .NavMobItems {
     display: none;
   }
-  .heroCenter{
-    flex: 4 ;
+
+  .heroCenter {
+    flex: 4;
   }
 
   .heroTitleName>p {
@@ -816,7 +847,7 @@ button {
   }
 
   .projectBox {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .tabSection {
@@ -835,6 +866,10 @@ button {
     width: 80%;
   }
 
+  #contactForm>input,
+  #contactForm>textarea {
+    width: 90%;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -843,16 +878,41 @@ button {
   nav .NavMobItems {
     display: none;
   }
-  .heroCenter{
-    flex: 4 ;
+
+  .heroCenter {
+    flex: 4;
+  }
+
+  .projectBox {
+    flex-direction: column-reverse;
+  }
+
+  .tabSection {
+    width: 100%;
+  }
+
+  .projectsImagesShow {
+    width: 100%;
+  }
+
+  .projectBox>.leftBox {
+    width: 98%;
+  }
+
+  .leftBoxText {
+    width: 80%;
   }
 }
 
-/* @media only  screen and (min-width:1025px) and (max-width:1280px){ */
-@media only screen and (min-width :1024px) {
+@media only  screen and (min-width:1025px) and (max-width:1280px){
+/* @media only screen and (min-width :1024px) { */
 
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
+  }
+
+  .pageWrapper {
+    padding: 0;
   }
 }
