@@ -217,32 +217,74 @@ projectBoxes.forEach((box) => {
 });
 
 // Email.js
-emailjs.init("VFv3_naMz3dnon2jF");
+// emailjs.init("VFv3_naMz3dnon2jF");
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const emailSuccessBar = document.querySelector(".emailSuccessBar");
+    const submitButton = this.querySelector(".submit");
+
+    // Disable the button and change cursor
+    submitButton.disabled = true;
+    submitButton.style.cursor = "wait";
+
+    // Reset bar for a fresh animation
+    emailSuccessBar.style.width = "0";
+    emailSuccessBar.style.opacity = "1"; // Ensure it's visible
+    emailSuccessBar.classList.remove("success", "failure");
+
     emailjs.sendForm("service_81oe22w", "template_eu4lzyl", this)
         .then(function(response) {
             console.log("SUCCESS!", response.status, response.text);
+            emailSuccessBar.classList.add("success");
+            emailSuccessBar.innerHTML = "Message Sent Successfully!";
+            animateBar();
         }, function(error) {
             console.log("FAILED...", error);
+            emailSuccessBar.classList.add("failure");
+            emailSuccessBar.innerHTML = "Error Sending Message. Please Try Again!";
+            animateBar();
+        })
+        .finally(() => {
+            // Re-enable the button and reset cursor
+            submitButton.disabled = false;
+            submitButton.style.cursor = "pointer";
         });
+
+    function animateBar() {
+        setTimeout(() => {
+            emailSuccessBar.style.width = "60%";
+        }, 0);
+
+        // Fade out bar and clear message after 3 seconds
+        setTimeout(() => {
+            emailSuccessBar.style.opacity = "0"; // Fade out the bar
+        }, 3000);
+
+        // Reset content and visibility after fade out
+        setTimeout(() => {
+            emailSuccessBar.style.width = "0";
+            emailSuccessBar.innerHTML = "";
+        }, 3500);
+    }
 });
+
+
+
 
 // Education Entry
 document.querySelectorAll('.animationShow').forEach((section, index) => {
     gsap.from(section, {
         scrollTrigger: {
             trigger: section,
-            start: "top 85%", // Start when section reaches 75% of the viewport
-            end: "top 55%",   // End when section reaches 25% of the viewport
+            start: "top 90%", // Start when section reaches 75% of the viewport
+            end: "top 70%",   // End when section reaches 25% of the viewport
             scrub: true,      // Tie animation to scroll progress
             toggleActions: "play none reverse none", // Reverse on back scroll
         },
         opacity: 0,
         x: index % 2 === 0 ? -100 : 100, // Alternate slide directions
-        duration: 1.5,
         ease: "power2.out",
     });
 });

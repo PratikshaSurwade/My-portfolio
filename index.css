@@ -556,10 +556,19 @@ button {
   align-self: center;
 }
 
+.tabLaptopImage{
+  position: absolute;
+  left: -4.4rem;
+  top: -0.5rem;
+  width: 134%;
+  height: 100%;
+}
 .tabImage {
+  position: absolute;
   height: 90%;
   width: 98%;
   border-radius: 5%;
+  left: 0;
 }
 
 .tabMobSection {
@@ -678,28 +687,37 @@ button {
   width: 100%;
   height: fit-content;
   background-color: #f7f7f7;
+}.page4 {
+  width: 100%;
+  height: fit-content;
+  background-color: #f7f7f7;
 }
 
 .animationShow {
   margin: 2rem 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease
+
 }
 
 .animationWrapper {
   /* opacity: 0; Start invisible */
-  transform: translateY(50px);
+  /* transform: translateY(50px); */
   /* For the initial slide-up effect */
-  transition: opacity 1s ease, transform 1s ease;
+
 }
 
 
 #contactForm {
-  height: 40vh;
+  height: 60vh;
   counter-reset: #000;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+  text-align: left;
+  margin: auto;
 }
 
 #contactForm>input,
@@ -716,7 +734,32 @@ button {
   height: 4rem;
 }
 
-.emailSuccessBar {}
+.emailSuccessBar {
+  display: block; /* Ensure it's a block-level element */
+
+  width: 0;
+  margin: 1rem 0;
+  height: 5px;
+  background-color: transparent;
+  transform-origin: left; /* Start from the left */
+  transition: width 3s ease, background-color 0.3s ease;
+}
+
+.success {
+  background-color: teal;
+  width: 60%;
+  transform-origin: left; /* Start from the left */
+  transition: width 3s ease, background-color 0.3s ease;
+
+}
+
+.failure {
+  background-color: red;
+  width: 60%;
+  transform-origin: left; /* Start from the left */
+  transition: width 3s ease, background-color 0.3s ease;
+
+}
 
 .submit {
   background-color: teal;
@@ -724,13 +767,12 @@ button {
   border-radius: 5px;
 }
 
-.Footer{
-  background-color: rgb(231, 232, 231);
+footer{
   width: 100%;
   padding-bottom: 2rem;
 } 
 
-.Footer a:hover{
+footer a:hover{
   cursor: pointer;
   font-weight:bold
 }
@@ -865,6 +907,9 @@ button {
   .leftBoxText {
     width: 80%;
   }
+  .pageWrapper {
+    padding: 0;
+  }
 
   #contactForm>input,
   #contactForm>textarea {
@@ -902,6 +947,10 @@ button {
   .leftBoxText {
     width: 80%;
   }
+  .pageWrapper {
+    padding: 0;
+  }
+
 }
 
 @media only  screen and (min-width:1025px) and (max-width:1280px){
@@ -910,9 +959,5 @@ button {
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
-  }
-
-  .pageWrapper {
-    padding: 0;
   }
 }
