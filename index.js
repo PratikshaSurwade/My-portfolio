@@ -12,7 +12,7 @@ function animateLoaderCircle() {
 
     // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
-        loaderCircle.style.top = "15%";
+        loaderCircle.style.top = "21.5%";
     }, 3000); // Wait for the circle to fully draw
 }
 
@@ -217,7 +217,7 @@ projectBoxes.forEach((box) => {
 });
 
 // Email.js
-// emailjs.init("VFv3_naMz3dnon2jF");
+emailjs.init("VFv3_naMz3dnon2jF");
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();

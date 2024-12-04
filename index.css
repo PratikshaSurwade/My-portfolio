@@ -277,7 +277,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  height: 10vh;
   position: sticky;
   top: -100px;
   /* Start off-screen */
@@ -288,31 +288,8 @@ nav {
   padding: 0 2rem;
 }
 
-nav .NavItems {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.NavMobItems {
-  position: absolute;
-  z-index: 12;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: 1s all ease-in-out;
-  transform-origin: right;
-  background-color: #f7f7f7f5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: x-large;
-}
-
 .hero {
-  height: 75%;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -367,10 +344,15 @@ nav .NavItems {
   background-color: #005F5F;
 }
 
+.buttonEffect{
+  z-index: 15;
+}
+
 .heroSide {
   flex: 1;
   transform: rotateZ(90deg);
   text-align: center;
+
 }
 
 /* MovingBar Animation */
@@ -472,8 +454,12 @@ button {
   pointer-events: auto;
 }
 
-.pageWrapper {
+.page2Wrapper {
   padding: 10%;
+}
+
+.pageWrapper {
+  padding: 0 10%;
 }
 
 .page2{
@@ -687,9 +673,11 @@ button {
   width: 100%;
   height: fit-content;
   background-color: #f7f7f7;
-}.page4 {
+}
+
+.page4 {
   width: 100%;
-  height: fit-content;
+  height: 80vh;
   background-color: #f7f7f7;
 }
 
@@ -834,7 +822,7 @@ footer a:hover{
     display: none;
   }
 
-  .pageWrapper {
+  .page2Wrapper {
     padding: 0;
   }
 
@@ -907,7 +895,7 @@ footer a:hover{
   .leftBoxText {
     width: 80%;
   }
-  .pageWrapper {
+  .page2Wrapper,.pageWrapper {
     padding: 0;
   }
 
@@ -947,7 +935,7 @@ footer a:hover{
   .leftBoxText {
     width: 80%;
   }
-  .pageWrapper {
+  .page2Wrapper {
     padding: 0;
   }
 
