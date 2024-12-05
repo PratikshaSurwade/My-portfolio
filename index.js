@@ -42,26 +42,22 @@ function animateLoader() {
         .from("nav", {
             y: -100,
             opacity: 0,
-            duration: 1,
+            duration: 0.5,
             onComplete: () => console.log("Nav visible")
-        })
-        .from(".hero h1", {
-            y: -100,
-            opacity: 0,
-            duration: 0.8,
-            onComplete: () => console.log("Hero h1 visible")
-        }, "-=0.4")
-        .from(".hero h2", {
-            y: -100,
-            opacity: 0,
-            duration: 0.8,
-            onComplete: () => console.log("Hero h2 visible")
-        }, "-=0.3")
+        }, "-=0.2")
         .from(".hero p", {
             y: 20,
             opacity: 0,
             duration: 0.8,
-            onComplete: () => console.log("Hero h3 visible")
+            stagger:0.1,
+            onComplete: () => console.log("Hero p visible")
+        }, "-=0.2")
+        .from(".hero a", {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            stagger:0.1,
+            onComplete: () => console.log("Hero a visible")
         }, "-=0.2");
 
     console.log("Animation sequence initialized.");
@@ -230,7 +226,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     submitButton.style.cursor = "wait";
 
     // Reset bar for a fresh animation
-    emailSuccessBar.style.width = "0";
+    emailSuccessBar.style.width = "0"; 
     emailSuccessBar.style.opacity = "1"; // Ensure it's visible
     emailSuccessBar.classList.remove("success", "failure");
 
