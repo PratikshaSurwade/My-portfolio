@@ -569,8 +569,9 @@ button {
   width: 134%;
   height: 100%;
 }
+
 .tabImage {
-  position: absolute;
+  position: relative;
   height: 90%;
   width: 98%;
   border-radius: 5%;
@@ -850,9 +851,9 @@ footer a:hover{
     flex-direction: column-reverse;
   }
 
-  .tabSection{
+  /* .tabSection{
     width: 95%;
-  }
+  } */
   .tabMobSection {
     left: 0;
   }
@@ -900,9 +901,9 @@ footer a:hover{
     flex-direction: column-reverse;
   }
 
-  .tabSection {
+  /* .tabSection {
     width: 100%;
-  }
+  } */
 
   .projectsImagesShow {
     width: 100%;
@@ -940,9 +941,9 @@ footer a:hover{
     flex-direction: column-reverse;
   }
 
-  .tabSection {
+  /* .tabSection {
     width: 100%;
-  }
+  } */
 
   .projectsImagesShow {
     width: 100%;
