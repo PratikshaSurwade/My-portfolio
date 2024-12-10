@@ -145,8 +145,8 @@ function navToggle() {
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    animateLoaderCircle(); // Start loader circle position change
-    animateLoader(); // Start loader animation
+    // animateLoaderCircle(); // Start loader circle position change
+    // animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
     buttonhoverEffect();
@@ -284,3 +284,41 @@ document.querySelectorAll('.animationShow').forEach((section, index) => {
         ease: "power2.out",
     });
 });
+
+
+// Set up Three.js
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.getElementById('webglCanvas'),
+});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Create a 3D cube
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+const light = new THREE.PointLight(0xffffff, 1);
+light.position.set(5, 5, 5);
+scene.add(light);
+
+camera.position.z = 5;
+
+// GSAP animation
+gsap.to(cube.rotation, {
+    x: Math.PI * 2,
+    y: Math.PI * 2,
+    duration: 5,
+    repeat: -1,
+    ease: "power1.inOut",
+});
+
+// Render loop
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();

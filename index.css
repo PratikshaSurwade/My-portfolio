@@ -134,8 +134,8 @@ a {
 .circleContainer {
   /* opacity: 0;    // for intial animation
     visibility: hidden;  //for intial animation */
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   width: 7rem;
   height: 7rem;
   position: relative;
@@ -344,15 +344,6 @@ nav {
   overflow: hidden;
 }
 
-.heroButtons button a{
-  position: relative;
-  left: -70px;
-}
-
-.heroButtons button a i{
-  position: absolute;
-  right: -20px;
-}
 .heroButtons button:hover {
   color: #fff;
   background-color: #005F5F;
@@ -385,6 +376,9 @@ nav {
   transform: translateX(0); /* Slide arrow into position */
 }
 
+canvas {
+  display: block;
+}
 
 /* MovingBar Animation */
 
@@ -664,6 +658,35 @@ button {
 .leftBoxText>a {
   font-size: 1.1rem;
 }
+
+.links {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #005F5F;
+  text-decoration: none;
+  padding: 0.5rem;
+  border: 2px solid transparent; /* Optional border styling */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.links .icon {
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-10px); /* Start offset */
+  transition: all 0.3s ease; /* Smooth transition */
+  margin-left: 0.5rem; /* Spacing between text and icon */
+}
+
+.links:hover {
+  color: #ff8c00; /* Change text color on hover */
+}
+
+.links:hover .icon {
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Slide into position */
+}
+
 
 .leftBoxLineContainer {
   height: 25rem;
