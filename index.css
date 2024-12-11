@@ -134,8 +134,8 @@ a {
 .circleContainer {
   /* opacity: 0;    // for intial animation
     visibility: hidden;  //for intial animation */
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   width: 7rem;
   height: 7rem;
   position: relative;

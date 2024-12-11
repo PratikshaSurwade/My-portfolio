@@ -120,9 +120,12 @@ function createGridItems() {
     const itemSize = 10; // in vh (10vh height and width for square items)
     const gap = 1; // in px
 
-    // Calculate number of columns and rows needed to fill the viewport
+    // Calculate the total height of the document in vh
+    const totalHeight = document.body.scrollHeight / window.innerHeight * 100;
+
+    // Calculate number of columns and rows needed to fill the entire document
     const columns = Math.ceil(window.innerWidth / (window.innerHeight * (itemSize / 100)));
-    const rows = Math.ceil(100 / itemSize);
+    const rows = Math.ceil(totalHeight / itemSize);
 
     // Set the CSS grid template dynamically
     gridContainer.style.gridTemplateColumns = `repeat(${columns}, ${itemSize}vh)`;
@@ -135,6 +138,16 @@ function createGridItems() {
     }
 }
 
+// Call the function initially
+createGridItems();
+
+// Recalculate the grid when the window is resized
+window.addEventListener('resize', createGridItems);
+
+// Recalculate the grid when the content of the page changes
+// const observer = new MutationObserver(createGridItems);
+// observer.observe(document.body, { childList: true, subtree: true });
+
 function navToggle() {
     let navOpen = false;
     (navOpen === false) ?
@@ -145,8 +158,8 @@ function navToggle() {
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    // animateLoaderCircle(); // Start loader circle position change
-    // animateLoader(); // Start loader animation
+    animateLoaderCircle(); // Start loader circle position change
+    animateLoader(); // Start loader animation
     followMouseCursorRing(); // Activate cursor ring animation
     followMouseSpotlightRing(); // Activate spotlight ring animation
     buttonhoverEffect();
