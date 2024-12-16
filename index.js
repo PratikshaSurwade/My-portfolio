@@ -22,7 +22,7 @@ function animateLoader() {
 
     tl.to(".loader", {
         opacity: 1,
-        duration: 6,
+        duration: 5,
         onComplete: () => console.log("Loader animation complete")
     })
         .to(".circleContainer", {
