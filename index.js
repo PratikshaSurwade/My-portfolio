@@ -144,10 +144,6 @@ createGridItems();
 // Recalculate the grid when the window is resized
 window.addEventListener('resize', createGridItems);
 
-// Recalculate the grid when the content of the page changes
-// const observer = new MutationObserver(createGridItems);
-// observer.observe(document.body, { childList: true, subtree: true });
-
 function navToggle() {
     let navOpen = false;
     (navOpen === false) ?
@@ -165,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonhoverEffect();
     createGridItems(); // Create grid items
     navToggle();// Navbar Open Close
-    // Re-create grid items on resize for responsiveness
     window.addEventListener('resize', createGridItems);
 });
 
@@ -206,7 +201,6 @@ projectBoxes.forEach((box) => {
         }
     });
 
-    // Start the right box animations at top 75% along with leftBoxText h4
     tl.from(box.querySelectorAll(".tabSection, .tabMobSection"), {
         opacity: 0,
         y: 30,
@@ -219,7 +213,6 @@ projectBoxes.forEach((box) => {
         .from(box.querySelectorAll(".leftBoxText p"), { opacity: 0, y: 50, stagger: 0.2, ease: "power2.out" }, )
         .from(box.querySelectorAll(".leftBoxText a"), { opacity: 0, y: 30, stagger: 0.1, ease: "power2.out" }, );
 
-    // Start the leftLine, leftRect, and leftCircle at top 55%
     tl2.from(box.querySelector(".leftLine"), { scale: 0, start: "top 90%" ,stagger: 0.5 }, )
         .from(box.querySelector(".leftRect"), { width: 0 })
         .from(box.querySelector(".leftCircle"), { scale: 0 });
@@ -278,9 +271,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         }, 3500);
     }
 });
-
-
-
 
 // Education Entry
 document.querySelectorAll('.animationShow').forEach((section, index) => {
