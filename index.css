@@ -376,9 +376,6 @@ nav {
   transform: translateX(0); /* Slide arrow into position */
 }
 
-canvas {
-  display: block;
-}
 
 /* MovingBar Animation */
 
