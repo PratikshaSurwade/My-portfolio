@@ -461,7 +461,7 @@ div.mainpageskills {
   height: 1rem;
   border-radius: 50%;
   pointer-events: none;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   z-index: 3;
   background-color: #ff8c00;
   transition: transform 0.4s ease-out, width 0.3s ease, height 0.3s ease,
@@ -487,6 +487,9 @@ button {
 .page2{
   width: 100%;
   min-height: 100vh;
+  position: relative;
+  z-index: 2;
+
   background-color: #f7f7f7;
 }
 
@@ -679,10 +682,6 @@ button {
   transform: translateX(-10px); /* Start offset */
   transition: all 0.3s ease; /* Smooth transition */
   margin-left: 0.5rem; /* Spacing between text and icon */
-}
-
-.links:hover {
-  color: #ff8c00; /* Change text color on hover */
 }
 
 .links:hover .icon {

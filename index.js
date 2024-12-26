@@ -279,7 +279,7 @@ document.querySelectorAll('.animationShow').forEach((section, index) => {
             trigger: section,
             start: "top 90%", // Start when section reaches 75% of the viewport
             end: "top 70%",   // End when section reaches 25% of the viewport
-            scrub: true,      // Tie animation to scroll progress
+            // scrub: true,      // Tie animation to scroll progress
             toggleActions: "play none reverse none", // Reverse on back scroll
         },
         opacity: 0,
