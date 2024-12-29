@@ -345,14 +345,14 @@ nav {
 }
 
 .buttonLinkText .herobtnIcon{
-  opacity: 0; /* Initially hidden */
-  transform: translateX(-10px); /* Start offset */
-  transition: all 0.3s ease; /* Smooth transition */
+  opacity: 0;
+  transform: translateX(-10px); 
+  transition: all 0.3s ease; 
 }
 
 .heroButtons button:hover .herobtnIcon{
-  opacity: 1; /* Fade in */
-  transform: translateX(0); /* Slide into position */
+  opacity: 1;
+  transform: translateX(0); 
 }
 
 .heroButtons button:hover {
@@ -360,13 +360,15 @@ nav {
   background-color: #005F5F;
 }
 
+
+
 .heroSide {
   flex: 1;
   transform: rotateZ(90deg);
   text-align: center;
   pointer-events: auto;
   text-decoration: none;
-  overflow: hidden; /* Ensure arrow stays within bounds */
+  overflow: hidden;
   transition: color 0.3s ease;
 }
 
@@ -378,13 +380,13 @@ nav {
 }
 
 .heroSide:hover {
-  color: #ff8c00; /* Change text color on hover */
+  color: #ff8c00;
   font-weight: bold;
 }
 
 .heroSide:hover .arrow {
-  opacity: 1; /* Make arrow visible */
-  transform: translateX(0); /* Slide arrow into position */
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
@@ -413,9 +415,7 @@ div.mainpageskills {
 
 .mainpageskills p:hover {
   filter: brightness(1.2);
-  /* Slightly brightens the text */
   text-shadow: 0 0 8px rgba(255, 255, 0, 0.5);
-  /* Light yellow glow effect */
 }
 
 .mainpageskills::before {
@@ -461,9 +461,9 @@ div.mainpageskills {
   border-radius: 50%;
   z-index: 1;
   background-color: rgba(0, 0, 0);
+  transform: translate(-50%, -50%);
   box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.781);
-  transition-property: transform, top, left;
-  transition-duration: 0.3s; /* Longer duration for smoother effect */
+  transform: .8s cubic-bezier(.05,.8,.4,1);
   transition-timing-function: ease-out;
 }
 
@@ -645,14 +645,13 @@ button {
   font-size: 1.1rem;
 }
 
-.links {
+a.links {
   position: relative;
   display: inline-flex;
   align-items: center;
   font-size: 1rem;
   color: #005F5F;
   text-decoration: none;
-  padding: 0.5rem;
   border: 2px solid transparent; /* Optional border styling */
   transition: color 0.3s ease; /* Smooth color transition */
 }

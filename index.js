@@ -15,6 +15,7 @@ function animateLoaderCircle() {
         loaderCircle.style.top = "21.5%";
     }, 3000); // Wait for the circle to fully draw
 }
+gsap.registerPlugin (ScrollTrigger);
 
 // Function to handle the animation of the loader (opacity changes, etc.) krte
 function animateLoader() {
@@ -144,13 +145,13 @@ createGridItems();
 // Recalculate the grid when the window is resized
 window.addEventListener('resize', createGridItems);
 
-function navToggle() {
-    let navOpen = false;
-    (navOpen === false) ?
-        document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
-    navOpen = !navOpen;
-    console.log(navOpen)
-}
+// function navToggle() {
+//     let navOpen = false;
+//     (navOpen === false) ?
+//         document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
+//     navOpen = !navOpen;
+//     console.log(navOpen)
+// }
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     followMouseSpotlightRing(); // Activate spotlight ring animation
     buttonhoverEffect();
     createGridItems(); // Create grid items
-    navToggle();// Navbar Open Close
+    // navToggle();// Navbar Open Close
     window.addEventListener('resize', createGridItems);
 });
 
@@ -205,18 +206,24 @@ projectBoxes.forEach((box) => {
         opacity: 0,
         y: 30,
         stagger: 0.2,
-        scrub: 0.5,
+        // scrub: 2,
         ease: "power2.out",
     }, "start");
 
-    tl.from(box.querySelector(".leftBoxText h4"), { opacity: 0, y: 50, ease: "power2.out" }, "start")
+    tl.from(box.querySelector(".leftBoxText h2"), { opacity: 0, y: 50, ease: "power2.out" })
         .from(box.querySelectorAll(".leftBoxText p"), { opacity: 0, y: 50, stagger: 0.2, ease: "power2.out" }, )
         .from(box.querySelectorAll(".leftBoxText a"), { opacity: 0, y: 30, stagger: 0.1, ease: "power2.out" }, );
 
-    tl2.from(box.querySelector(".leftLine"), { scale: 0, start: "top 90%" ,stagger: 0.5 }, )
+        tl2.from(box.querySelector(".leftLine"), {
+            scale: 0,
+            scrollTrigger: {
+                trigger: box.querySelector(".leftLine"),
+                start: "top 90%",
+            },
+        })
         .from(box.querySelector(".leftRect"), { width: 0 })
         .from(box.querySelector(".leftCircle"), { scale: 0 });
-});
+    });
 
 // Email.js
 emailjs.init("VFv3_naMz3dnon2jF");
