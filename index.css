@@ -794,6 +794,7 @@ a.links {
 footer{
   width: 100%;
   padding-bottom: 2rem;
+  background-color: #f7f7f7;
 } 
 
 footer a:hover{
