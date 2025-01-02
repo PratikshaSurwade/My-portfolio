@@ -65,11 +65,20 @@ function animateLoader() {
 }
 
 // Function to move the cursor ring based on mouse movement
+gsap.registerPlugin(CustomEase);
+CustomEase.create("smoothCursor", "M0,0 C0.25,0.1 0.25,1 1,1");
+
 function followMouseCursorRing() {
+    const cursorRing = document.querySelector(".cursor-ring");
+
     document.addEventListener("mousemove", (e) => {
-        const cursorRing = document.querySelector(".cursor-ring");
-        cursorRing.style.left = `${e.clientX}px`;
-        cursorRing.style.top = `${e.clientY}px`;
+      // Animate the cursor ring to follow the mouse using GSAP
+      gsap.to(cursorRing, {
+        duration: 0.8, // Smooth transition duration
+        ease: "smoothCursor",
+        x: e.clientX,
+        y: e.clientY,
+      });
     });
 }
 
