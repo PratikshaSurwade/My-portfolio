@@ -5,7 +5,6 @@ const lenis = new Lenis({
 });
 
 // State Initializing 
-// Function to handle the loader circle animation and position change
 
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
@@ -72,9 +71,8 @@ function followMouseCursorRing() {
     const cursorRing = document.querySelector(".cursor-ring");
 
     document.addEventListener("mousemove", (e) => {
-      // Animate the cursor ring to follow the mouse using GSAP
       gsap.to(cursorRing, {
-        duration: 0.8, // Smooth transition duration
+        duration: 0.8,
         ease: "smoothCursor",
         x: e.clientX,
         y: e.clientY,
@@ -82,7 +80,6 @@ function followMouseCursorRing() {
     });
 }
 
-// Function to move the spotlight ring based on mouse movement
 function followMouseSpotlightRing() {
     document.addEventListener("mousemove", (e) => {
         const spotLightRing = document.querySelector(".spotlight-ring");
@@ -100,7 +97,6 @@ function buttonhoverEffect() {
             // Get the position and dimensions of the h4
             const rect = h4.getBoundingClientRect();
 
-            // Adjust spotlight-ring's size and position
             spotlightRing.style.width = "3rem";
             spotlightRing.style.height = "3rem";
             spotlightRing.style.backgroundColor = "transparent";
@@ -115,12 +111,13 @@ function buttonhoverEffect() {
         h4.addEventListener("mouseleave", () => {
             spotlightRing.style.width = "1rem";
             spotlightRing.style.height = "1rem";
-            spotlightRing.style.backgroundColor = "#ff8c00"; // Reset to dot color
+            spotlightRing.style.backgroundColor = "#ff8c00";
             spotlightRing.style.border = "none";
             spotlightRing.style.zIndex = "3";
         });
     });
 }
+
 // Function to create grid items dynamically based on the viewport size
 function createGridItems() {
     const gridContainer = document.querySelector('.grid-container');
@@ -154,29 +151,20 @@ createGridItems();
 // Recalculate the grid when the window is resized
 window.addEventListener('resize', createGridItems);
 
-// function navToggle() {
-//     let navOpen = false;
-//     (navOpen === false) ?
-//         document.querySelector(".NavMobItems").style.right = "-100%" : document.querySelector(".NavMobItems").style.right = "0"
-//     navOpen = !navOpen;
-//     console.log(navOpen)
-// }
-
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    animateLoaderCircle(); // Start loader circle position change
-    animateLoader(); // Start loader animation
-    followMouseCursorRing(); // Activate cursor ring animation
-    followMouseSpotlightRing(); // Activate spotlight ring animation
+    animateLoaderCircle(); 
+    animateLoader();
+    followMouseCursorRing();
+    followMouseSpotlightRing(); 
     buttonhoverEffect();
-    createGridItems(); // Create grid items
-    // navToggle();// Navbar Open Close
+    createGridItems(); 
     window.addEventListener('resize', createGridItems);
 });
 
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
-        y: 100, // Higher value to make it start from below the border
+        y: 100, 
         opacity: 0,
         stagger: 0.1,
         ease: "power3.out",
@@ -197,7 +185,7 @@ projectBoxes.forEach((box) => {
         scrollTrigger: {
             trigger: box,
             scroller: "body",
-            start: "top 75%", // Trigger when the box is 75% from the top
+            start: "top 75%",
             end: "top 15%",
             scrub: 0.3,
         }
@@ -206,7 +194,7 @@ projectBoxes.forEach((box) => {
         scrollTrigger: {
             trigger: box,
             scroller: "body",
-            start: "top 55%", // Trigger when the box is 75% from the top
+            start: "top 55%", 
             end: "top 15%",
         }
     });
@@ -288,13 +276,12 @@ document.querySelectorAll('.animationShow').forEach((section, index) => {
     gsap.from(section, {
         scrollTrigger: {
             trigger: section,
-            start: "top 90%", // Start when section reaches 75% of the viewport
-            end: "top 70%",   // End when section reaches 25% of the viewport
-            // scrub: true,      // Tie animation to scroll progress
-            toggleActions: "play none reverse none", // Reverse on back scroll
+            start: "top 90%",
+            end: "top 70%",
+            toggleActions: "play none reverse none",
         },
         opacity: 0,
-        x: index % 2 === 0 ? -100 : 100, // Alternate slide directions
+        x: index % 2 === 0 ? -100 : 100, 
         ease: "power2.out",
     });
 });
