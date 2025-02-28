@@ -216,6 +216,18 @@ projectBoxes.forEach((box) => {
         .from(box.querySelector(".leftCircle"), { scale: 0 });
 });
 
+document.querySelectorAll('.buttonEffect').forEach(button => {
+    button.addEventListener('mousemove', (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / 4;
+        const y = (e.clientY - rect.top - rect.height / 2) / 4;
+        button.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translate(0, 0)';
+    });
+});
 
 // Email.js
 emailjs.init("VFv3_naMz3dnon2jF");
