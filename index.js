@@ -71,12 +71,12 @@ function followMouseCursorRing() {
     const cursorRing = document.querySelector(".cursor-ring");
 
     document.addEventListener("mousemove", (e) => {
-      gsap.to(cursorRing, {
-        duration: 0.8,
-        ease: "smoothCursor",
-        x: e.clientX,
-        y: e.clientY,
-      });
+        gsap.to(cursorRing, {
+            duration: 0.8,
+            ease: "smoothCursor",
+            x: e.clientX,
+            y: e.clientY,
+        });
     });
 }
 
@@ -153,18 +153,18 @@ window.addEventListener('resize', createGridItems);
 
 // Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
-    animateLoaderCircle(); 
+    animateLoaderCircle();
     animateLoader();
     followMouseCursorRing();
-    followMouseSpotlightRing(); 
+    followMouseSpotlightRing();
     buttonhoverEffect();
-    createGridItems(); 
+    createGridItems();
     window.addEventListener('resize', createGridItems);
 });
 
 gsap.utils.toArray(".titleName").forEach((heading) => {
     gsap.from(heading.querySelectorAll(".animateTitleWords"), {
-        y: 100, 
+        y: 100,
         opacity: 0,
         stagger: 0.1,
         ease: "power3.out",
@@ -194,7 +194,7 @@ projectBoxes.forEach((box) => {
         scrollTrigger: {
             trigger: box,
             scroller: "body",
-            start: "top 55%", 
+            start: "top 55%",
             end: "top 15%",
         }
     });
@@ -281,7 +281,7 @@ document.querySelectorAll('.animationShow').forEach((section, index) => {
             toggleActions: "play none reverse none",
         },
         opacity: 0,
-        x: index % 2 === 0 ? -100 : 100, 
+        x: index % 2 === 0 ? -100 : 100,
         ease: "power2.out",
     });
 });

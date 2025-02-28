@@ -307,7 +307,7 @@ nav {
   font-size: xx-large;
 }
 
-.heroIcons>a>i{
+.heroIcons>a>i {
   pointer-events: auto;
 }
 
@@ -344,15 +344,15 @@ nav {
   overflow: hidden;
 }
 
-.buttonLinkText .herobtnIcon{
+.buttonLinkText .herobtnIcon {
   opacity: 0;
-  transform: translateX(-10px); 
-  transition: all 0.3s ease; 
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
 }
 
-.heroButtons button:hover .herobtnIcon{
+.heroButtons button:hover .herobtnIcon {
   opacity: 1;
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 .heroButtons button:hover {
@@ -462,7 +462,7 @@ div.mainpageskills {
   background-color: rgba(0, 0, 0);
   transform: translate(-50%, -50%);
   box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.781);
-  transform: .8s cubic-bezier(.05,.8,.4,1);
+  transform: .8s cubic-bezier(.05, .8, .4, 1);
   transition-timing-function: ease-out;
 }
 
@@ -495,7 +495,7 @@ button {
   padding: 0 10%;
 }
 
-.page2{
+.page2 {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -556,16 +556,20 @@ button {
   border-radius: 5%;
   text-align: center;
   box-shadow: 4px 4px 5px 0em #d3d3d3;
-  overflow: visible; /* Allows content to overflow the boundaries */
+  overflow: visible;
+  /* Allows content to overflow the boundaries */
 }
 
 .tabLaptopImage {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Keeps the image centered */
-  width: 134%; /* Increases the width */
-  height: 100%; /* Maintains aspect ratio */
+  transform: translate(-50%, -50%);
+  /* Keeps the image centered */
+  width: 134%;
+  /* Increases the width */
+  height: 100%;
+  /* Maintains aspect ratio */
 }
 
 .tabImage {
@@ -573,7 +577,7 @@ button {
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 3% 3% 0  0;
+  border-radius: 3% 3% 0 0;
   width: 99%;
   height: 93%;
   z-index: 1;
@@ -591,7 +595,7 @@ button {
   bottom: 0rem;
 }
 
-.tabMobileImage{
+.tabMobileImage {
   width: 100%;
   position: absolute;
   height: 100%;
@@ -615,9 +619,10 @@ button {
   align-items: center;
 }
 
-.projectBox>.rightBox{
+.projectBox>.rightBox {
   text-align: center;
 }
+
 .projectBox>.rightBox>img {
   width: 20rem;
   height: 30rem;
@@ -651,20 +656,28 @@ a.links {
   font-size: 1rem;
   color: #005F5F;
   text-decoration: none;
-  border: 2px solid transparent; /* Optional border styling */
-  transition: color 0.3s ease; /* Smooth color transition */
+  border: 2px solid transparent;
+  /* Optional border styling */
+  transition: color 0.3s ease;
+  /* Smooth color transition */
 }
 
 .links .icon {
-  opacity: 0; /* Initially hidden */
-  transform: translateX(-10px); /* Start offset */
-  transition: all 0.3s ease; /* Smooth transition */
-  margin-left: 0.5rem; /* Spacing between text and icon */
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateX(-10px);
+  /* Start offset */
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  margin-left: 0.5rem;
+  /* Spacing between text and icon */
 }
 
 .links:hover .icon {
-  opacity: 1; /* Fade in */
-  transform: translateX(0); /* Slide into position */
+  opacity: 1;
+  /* Fade in */
+  transform: translateX(0);
+  /* Slide into position */
 }
 
 
@@ -720,7 +733,6 @@ a.links {
   margin: 2rem 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease
-
 }
 
 .animationWrapper {
@@ -758,20 +770,23 @@ a.links {
 }
 
 .emailSuccessBar {
-  display: block; /* Ensure it's a block-level element */
+  display: block;
+  /* Ensure it's a block-level element */
 
   width: 0;
   margin: 1rem 0;
   height: 5px;
   background-color: transparent;
-  transform-origin: left; /* Start from the left */
+  transform-origin: left;
+  /* Start from the left */
   transition: width 3s ease, background-color 0.3s ease;
 }
 
 .success {
   background-color: teal;
   width: 60%;
-  transform-origin: left; /* Start from the left */
+  transform-origin: left;
+  /* Start from the left */
   transition: width 3s ease, background-color 0.3s ease;
 
 }
@@ -779,7 +794,8 @@ a.links {
 .failure {
   background-color: red;
   width: 60%;
-  transform-origin: left; /* Start from the left */
+  transform-origin: left;
+  /* Start from the left */
   transition: width 3s ease, background-color 0.3s ease;
 
 }
@@ -790,20 +806,20 @@ a.links {
   border-radius: 5px;
 }
 
-footer{
+footer {
   width: 100%;
   padding-bottom: 2rem;
   background-color: #f7f7f7;
-} 
-
-footer a:hover{
-  cursor: pointer;
-  font-weight:bold
 }
 
-.footerDetails{
-  display: flex; 
-  justify-content: space-around; 
+footer a:hover {
+  cursor: pointer;
+  font-weight: bold
+}
+
+.footerDetails {
+  display: flex;
+  justify-content: space-around;
   font-size: 1.5rem;
 }
 
@@ -872,17 +888,20 @@ footer a:hover{
   .tabMobSection {
     left: 0;
   }
+
   .projectsImagesShow {
     width: 95%;
   }
+
   .projectBox>.leftBox {
     margin-top: 10%;
     width: 90%;
   }
+
   .leftBoxText {
     width: 80%;
   }
-  
+
   #contactForm>input,
   #contactForm>textarea {
     width: 90%;
@@ -931,7 +950,9 @@ footer a:hover{
   .leftBoxText {
     width: 80%;
   }
-  .page2Wrapper,.pageWrapper {
+
+  .page2Wrapper,
+  .pageWrapper {
     padding: 0;
   }
 
@@ -971,14 +992,15 @@ footer a:hover{
   .leftBoxText {
     width: 80%;
   }
+
   .page2Wrapper {
     padding: 0;
   }
 
 }
 
-@media only  screen and (min-width:1025px) and (max-width:1280px){
-/* @media only screen and (min-width :1024px) { */
+@media only screen and (min-width:1025px) and (max-width:1280px) {
+  /* @media only screen and (min-width :1024px) { */
 
   nav .navBarButton,
   nav .NavMobItems {
