@@ -216,7 +216,8 @@ projectBoxes.forEach((box) => {
         .from(box.querySelector(".leftCircle"), { scale: 0 });
 });
 
-document.querySelectorAll('.buttonEffect').forEach(button => {
+//Magnetic effect
+document.querySelectorAll('.buttonLinkText').forEach(button => {
     button.addEventListener('mousemove', (e) => {
         const rect = button.getBoundingClientRect();
         const x = (e.clientX - rect.left - rect.width / 2) / 4;
