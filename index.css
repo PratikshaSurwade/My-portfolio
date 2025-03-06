@@ -20,6 +20,10 @@ html.lenis body {
   pointer-events: none;
 }
 
+.lenis {
+  will-change: transform;
+}
+
 /* CSS */
 *,
 *::before,

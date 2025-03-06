@@ -1,11 +1,13 @@
 // Initialize Lenis
 const lenis = new Lenis({
-    autoRaf: true,
-    duration: 4,
+    autoRaf: true,  // Keep this if you want it to work automatically with requestAnimationFrame
+    duration: 1.5,  // Lower this for faster scroll feel, 4 is very slow
+    easing: (t) => 1 - Math.pow(1 - t, 4), // Ease-out effect (play with this curve)
+    smoothTouch: true,  // Makes touch scroll also smooth
+    touchMultiplier: 1.5,  // Adjust touch scroll speed
 });
 
 // State Initializing 
-
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
 
