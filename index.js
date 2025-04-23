@@ -147,7 +147,7 @@ function createGridItems() {
     }
 }
 
-// Call the function initially
+// Creating a Grid
 createGridItems();
 
 // Recalculate the grid when the window is resized

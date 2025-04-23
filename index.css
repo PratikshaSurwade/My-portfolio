@@ -37,7 +37,6 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   overflow-x: hidden;
-
 }
 
 body {
@@ -311,7 +310,7 @@ nav {
   font-size: xx-large;
 }
 
-.heroIcons>a>i {
+.heroIcons > a > i {
   pointer-events: auto;
 }
 
@@ -323,26 +322,26 @@ nav {
   align-items: center;
 }
 
-.heroTitleName>p {
+.heroTitleName > p {
   font-size: xx-large;
   padding-bottom: 5%;
   text-align: center;
 }
 
-.heroTitleName>p:nth-child(2) {
+.heroTitleName > p:nth-child(2) {
   font-weight: bolder;
   font-size: 3rem;
 }
 
-.heroTitleName>p:nth-child(3) {
+.heroTitleName > p:nth-child(3) {
   font-weight: bold;
   font-size: 2rem;
 }
 
 .heroButtons button {
   margin-right: 1rem;
-  border: #005F5F solid 3px;
-  color: #6C757D;
+  border: #005f5f solid 3px;
+  color: #6c757d;
   cursor: none;
   position: relative;
   overflow: hidden;
@@ -361,10 +360,8 @@ nav {
 
 .heroButtons button:hover {
   color: #fff;
-  background-color: #005F5F;
+  background-color: #005f5f;
 }
-
-
 
 .heroSide {
   flex: 1;
@@ -392,7 +389,6 @@ nav {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 /* MovingBar Animation */
 
@@ -466,7 +462,7 @@ div.mainpageskills {
   background-color: rgba(0, 0, 0);
   transform: translate(-50%, -50%);
   box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.781);
-  transform: .8s cubic-bezier(.05, .8, .4, 1);
+  transform: 0.8s cubic-bezier(0.05, 0.8, 0.4, 1);
   transition-timing-function: ease-out;
 }
 
@@ -623,16 +619,16 @@ button {
   align-items: center;
 }
 
-.projectBox>.rightBox {
+.projectBox > .rightBox {
   text-align: center;
 }
 
-.projectBox>.rightBox>img {
+.projectBox > .rightBox > img {
   width: 20rem;
   height: 30rem;
 }
 
-.projectBox>.leftBox {
+.projectBox > .leftBox {
   display: flex;
   width: 30rem;
   height: 30rem;
@@ -648,8 +644,8 @@ button {
   align-items: center;
 }
 
-.leftBoxText>p,
-.leftBoxText>a {
+.leftBoxText > p,
+.leftBoxText > a {
   font-size: 1.1rem;
 }
 
@@ -658,7 +654,7 @@ a.links {
   display: inline-flex;
   align-items: center;
   font-size: 1rem;
-  color: #005F5F;
+  color: #005f5f;
   text-decoration: none;
   border: 2px solid transparent;
   /* Optional border styling */
@@ -683,7 +679,6 @@ a.links {
   transform: translateX(0);
   /* Slide into position */
 }
-
 
 .leftBoxLineContainer {
   height: 25rem;
@@ -736,16 +731,14 @@ a.links {
 .animationShow {
   margin: 2rem 0;
   transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .animationWrapper {
   /* opacity: 0; Start invisible */
   /* transform: translateY(50px); */
   /* For the initial slide-up effect */
-
 }
-
 
 #contactForm {
   height: 60vh;
@@ -759,8 +752,8 @@ a.links {
   margin: auto;
 }
 
-#contactForm>input,
-#contactForm>textarea {
+#contactForm > input,
+#contactForm > textarea {
   height: 3rem;
   width: 60%;
   padding: 1rem;
@@ -769,7 +762,7 @@ a.links {
   border-radius: 5px;
 }
 
-#contactForm>textarea {
+#contactForm > textarea {
   height: 4rem;
 }
 
@@ -792,7 +785,6 @@ a.links {
   transform-origin: left;
   /* Start from the left */
   transition: width 3s ease, background-color 0.3s ease;
-
 }
 
 .failure {
@@ -801,7 +793,6 @@ a.links {
   transform-origin: left;
   /* Start from the left */
   transition: width 3s ease, background-color 0.3s ease;
-
 }
 
 .submit {
@@ -818,7 +809,7 @@ footer {
 
 footer a:hover {
   cursor: pointer;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .footerDetails {
@@ -827,10 +818,9 @@ footer a:hover {
   font-size: 1.5rem;
 }
 
-
 /* Mobile Responsive Design */
 
-@media only screen and (max-width :575px) {
+@media only screen and (max-width: 575px) {
   html {
     font-size: 80%;
   }
@@ -855,11 +845,11 @@ footer a:hover {
     margin-top: 7rem;
   }
 
-  .heroTitleName>p:nth-child(2) {
+  .heroTitleName > p:nth-child(2) {
     font-size: 3rem;
   }
 
-  .heroTitleName>p:nth-child(3) {
+  .heroTitleName > p:nth-child(3) {
     font-size: 2.5rem;
   }
 
@@ -897,7 +887,7 @@ footer a:hover {
     width: 95%;
   }
 
-  .projectBox>.leftBox {
+  .projectBox > .leftBox {
     margin-top: 10%;
     width: 90%;
   }
@@ -906,14 +896,13 @@ footer a:hover {
     width: 80%;
   }
 
-  #contactForm>input,
-  #contactForm>textarea {
+  #contactForm > input,
+  #contactForm > textarea {
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 769px) {
-
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
@@ -923,15 +912,15 @@ footer a:hover {
     flex: 4;
   }
 
-  .heroTitleName>p {
+  .heroTitleName > p {
     font-size: large;
   }
 
-  .heroTitleName>p:nth-child(2) {
+  .heroTitleName > p:nth-child(2) {
     font-size: 2.7rem;
   }
 
-  .heroTitleName>p:nth-child(3) {
+  .heroTitleName > p:nth-child(3) {
     font-size: 2rem;
   }
 
@@ -947,7 +936,7 @@ footer a:hover {
     width: 100%;
   }
 
-  .projectBox>.leftBox {
+  .projectBox > .leftBox {
     width: 98%;
   }
 
@@ -960,14 +949,13 @@ footer a:hover {
     padding: 0;
   }
 
-  #contactForm>input,
-  #contactForm>textarea {
+  #contactForm > input,
+  #contactForm > textarea {
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
@@ -989,7 +977,7 @@ footer a:hover {
     width: 100%;
   }
 
-  .projectBox>.leftBox {
+  .projectBox > .leftBox {
     width: 98%;
   }
 
@@ -1000,10 +988,9 @@ footer a:hover {
   .page2Wrapper {
     padding: 0;
   }
-
 }
 
-@media only screen and (min-width:1025px) and (max-width:1280px) {
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
   /* @media only screen and (min-width :1024px) { */
 
   nav .navBarButton,
