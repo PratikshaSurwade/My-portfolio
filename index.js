@@ -1,24 +1,23 @@
 // Initialize Lenis
 const lenis = new Lenis({
-    autoRaf: true,  // Keep this if you want it to work automatically with requestAnimationFrame
-    duration: 1.5,  // Lower this for faster scroll feel, 4 is very slow
-    easing: (t) => 1 - Math.pow(1 - t, 4), // Ease-out effect (play with this curve)
-    smoothTouch: true,  // Makes touch scroll also smooth
-    touchMultiplier: 1.5,  // Adjust touch scroll speed
+    autoRaf: true,  
+    duration: 1.5,  
+    easing: (t) => 1 - Math.pow(1 - t, 4), 
+    smoothTouch: true,  
+    touchMultiplier: 1.5, 
 });
 
 // State Initializing 
 function animateLoaderCircle() {
     const loaderCircle = document.querySelector(".loaderCircle");
 
-    // After 3 seconds when the circle is fully drawn, start the next transitions
     setTimeout(function () {
         loaderCircle.style.top = "21.5%";
-    }, 3000); // Wait for the circle to fully draw
+    }, 3000); 
 }
 gsap.registerPlugin(ScrollTrigger);
 
-// Function to handle the animation of the loader (opacity changes, etc.) krte
+// Function to handle the animation of the loader (opacity changes, etc.)
 function animateLoader() {
     const tl = gsap.timeline();
 
@@ -96,7 +95,6 @@ function buttonhoverEffect() {
 
     h4Elements.forEach(h4 => {
         h4.addEventListener("mouseenter", (event) => {
-            // Get the position and dimensions of the h4
             const rect = h4.getBoundingClientRect();
 
             spotlightRing.style.width = "3rem";
@@ -105,8 +103,6 @@ function buttonhoverEffect() {
             spotlightRing.style.border = "2px solid #ff8c00";
             spotlightRing.style.left = `${rect.left + rect.width / 2}px`;
             spotlightRing.style.top = `${rect.top + rect.height / 2}px`;
-
-            // Make spotlight-ring visible by adjusting z-index
             spotlightRing.style.zIndex = "34";
         });
 
@@ -123,23 +119,19 @@ function buttonhoverEffect() {
 // Function to create grid items dynamically based on the viewport size
 function createGridItems() {
     const gridContainer = document.querySelector('.grid-container');
-    gridContainer.innerHTML = ''; // Clear any existing grid items
+    gridContainer.innerHTML = ''; 
 
     // Define item size and gap
-    const itemSize = 10; // in vh (10vh height and width for square items)
-    const gap = 1; // in px
+    const itemSize = 10; 
+    const gap = 1; 
 
-    // Calculate the total height of the document in vh
     const totalHeight = document.body.scrollHeight / window.innerHeight * 100;
 
-    // Calculate number of columns and rows needed to fill the entire document
     const columns = Math.ceil(window.innerWidth / (window.innerHeight * (itemSize / 100)));
     const rows = Math.ceil(totalHeight / itemSize);
 
-    // Set the CSS grid template dynamically
     gridContainer.style.gridTemplateColumns = `repeat(${columns}, ${itemSize}vh)`;
 
-    // Create and append the required number of grid items
     for (let i = 0; i < columns * rows; i++) {
         const gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
@@ -153,7 +145,6 @@ createGridItems();
 // Recalculate the grid when the window is resized
 window.addEventListener('resize', createGridItems);
 
-// Initialize functions on page load
 document.addEventListener("DOMContentLoaded", function () {
     animateLoaderCircle();
     animateLoader();
@@ -172,7 +163,7 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
         ease: "power3.out",
         scrollTrigger: {
             trigger: heading,
-            start: "top 75%", // Trigger when .titleName reaches the center of the viewport
+            start: "top 75%", 
             end: "bottom bottom",
             toggleActions: "play none none none"
         }
@@ -247,7 +238,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
     // Reset bar for a fresh animation
     emailSuccessBar.style.width = "0";
-    emailSuccessBar.style.opacity = "1"; // Ensure it's visible
+    emailSuccessBar.style.opacity = "1"; 
     emailSuccessBar.classList.remove("success", "failure");
 
     emailjs.sendForm("service_81oe22w", "template_eu4lzyl", this)
@@ -263,7 +254,6 @@ document.getElementById("contactForm").addEventListener("submit", function (even
             animateBar();
         })
         .finally(() => {
-            // Re-enable the button and reset cursor
             submitButton.disabled = false;
             submitButton.style.cursor = "pointer";
         });
@@ -273,12 +263,10 @@ document.getElementById("contactForm").addEventListener("submit", function (even
             emailSuccessBar.style.width = "60%";
         }, 0);
 
-        // Fade out bar and clear message after 3 seconds
         setTimeout(() => {
             emailSuccessBar.style.opacity = "0"; // Fade out the bar
         }, 3000);
 
-        // Reset content and visibility after fade out
         setTimeout(() => {
             emailSuccessBar.style.width = "0";
             emailSuccessBar.innerHTML = "";
@@ -286,7 +274,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     }
 });
 
-// Education Entry
+// Education
 document.querySelectorAll('.animationShow').forEach((section, index) => {
     gsap.from(section, {
         scrollTrigger: {
