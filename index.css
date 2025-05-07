@@ -137,8 +137,8 @@ a {
 .circleContainer {
   /* opacity: 0;    // for intial animation
     visibility: hidden;  //for intial animation */
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   width: 7rem;
   height: 7rem;
   position: relative;
@@ -361,6 +361,17 @@ nav {
 .heroButtons button:hover {
   color: #fff;
   background-color: #005f5f;
+}
+
+.heroButtons button {
+  margin-right: 1rem;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+}
+.heropageBtn{
+  border-bottom: #005f5f solid 3px;
+  color: #6c757d;
 }
 
 .heroSide {
@@ -769,7 +780,6 @@ a.links {
 .emailSuccessBar {
   display: block;
   /* Ensure it's a block-level element */
-
   width: 0;
   margin: 1rem 0;
   height: 5px;
@@ -979,6 +989,7 @@ footer a:hover {
 
   .projectBox > .leftBox {
     width: 98%;
+    height: auto;
   }
 
   .leftBoxText {
@@ -986,12 +997,16 @@ footer a:hover {
   }
 
   .page2Wrapper {
-    padding: 0;
+    padding: 10%;
   }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
   /* @media only screen and (min-width :1024px) { */
+
+  .page2Wrapper {
+    padding: 0;
+  }
 
   nav .navBarButton,
   nav .NavMobItems {
