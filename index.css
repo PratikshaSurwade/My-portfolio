@@ -680,7 +680,7 @@ a.links {
   /* Start offset */
   transition: all 0.3s ease;
   /* Smooth transition */
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
   /* Spacing between text and icon */
 }
 
