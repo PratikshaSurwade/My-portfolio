@@ -1,10 +1,10 @@
 // Initialize Lenis
 const lenis = new Lenis({
-    autoRaf: true,  
-    duration: 1.5,  
-    easing: (t) => 1 - Math.pow(1 - t, 4), 
-    smoothTouch: true,  
-    touchMultiplier: 1.5, 
+    autoRaf: true,
+    duration: 1.5,
+    easing: (t) => 1 - Math.pow(1 - t, 4),
+    smoothTouch: true,
+    touchMultiplier: 1.5,
 });
 
 // State Initializing 
@@ -13,7 +13,7 @@ function animateLoaderCircle() {
 
     setTimeout(function () {
         loaderCircle.style.top = "21.5%";
-    }, 3000); 
+    }, 3000);
 }
 gsap.registerPlugin(ScrollTrigger);
 
@@ -119,11 +119,11 @@ function buttonhoverEffect() {
 // Function to create grid items dynamically based on the viewport size
 function createGridItems() {
     const gridContainer = document.querySelector('.grid-container');
-    gridContainer.innerHTML = ''; 
+    gridContainer.innerHTML = '';
 
     // Define item size and gap
-    const itemSize = 10; 
-    const gap = 1; 
+    const itemSize = 10;
+    const gap = 1;
 
     const totalHeight = document.body.scrollHeight / window.innerHeight * 100;
 
@@ -163,7 +163,7 @@ gsap.utils.toArray(".titleName").forEach((heading) => {
         ease: "power3.out",
         scrollTrigger: {
             trigger: heading,
-            start: "top 75%", 
+            start: "top 75%",
             end: "bottom bottom",
             toggleActions: "play none none none"
         }
@@ -238,7 +238,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
     // Reset bar for a fresh animation
     emailSuccessBar.style.width = "0";
-    emailSuccessBar.style.opacity = "1"; 
+    emailSuccessBar.style.opacity = "1";
     emailSuccessBar.classList.remove("success", "failure");
 
     emailjs.sendForm("service_81oe22w", "template_eu4lzyl", this)

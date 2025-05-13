@@ -310,7 +310,7 @@ nav {
   font-size: xx-large;
 }
 
-.heroIcons > a > i {
+.heroIcons>a>i {
   pointer-events: auto;
 }
 
@@ -322,18 +322,18 @@ nav {
   align-items: center;
 }
 
-.heroTitleName > p {
+.heroTitleName>p {
   font-size: xx-large;
   padding-bottom: 5%;
   text-align: center;
 }
 
-.heroTitleName > p:nth-child(2) {
+.heroTitleName>p:nth-child(2) {
   font-weight: bolder;
   font-size: 3rem;
 }
 
-.heroTitleName > p:nth-child(3) {
+.heroTitleName>p:nth-child(3) {
   font-weight: bold;
   font-size: 2rem;
 }
@@ -369,7 +369,8 @@ nav {
   position: relative;
   overflow: hidden;
 }
-.heropageBtn{
+
+.heropageBtn {
   border-bottom: #005f5f solid 3px;
   color: #6c757d;
 }
@@ -630,16 +631,16 @@ button {
   align-items: center;
 }
 
-.projectBox > .rightBox {
+.projectBox>.rightBox {
   text-align: center;
 }
 
-.projectBox > .rightBox > img {
+.projectBox>.rightBox>img {
   width: 20rem;
   height: 30rem;
 }
 
-.projectBox > .leftBox {
+.projectBox>.leftBox {
   display: flex;
   width: 30rem;
   height: 30rem;
@@ -655,8 +656,8 @@ button {
   align-items: center;
 }
 
-.leftBoxText > p,
-.leftBoxText > a {
+.leftBoxText>p,
+.leftBoxText>a {
   font-size: 1.1rem;
 }
 
@@ -763,8 +764,8 @@ a.links {
   margin: auto;
 }
 
-#contactForm > input,
-#contactForm > textarea {
+#contactForm>input,
+#contactForm>textarea {
   height: 3rem;
   width: 60%;
   padding: 1rem;
@@ -773,7 +774,7 @@ a.links {
   border-radius: 5px;
 }
 
-#contactForm > textarea {
+#contactForm>textarea {
   height: 4rem;
 }
 
@@ -855,11 +856,11 @@ footer a:hover {
     margin-top: 7rem;
   }
 
-  .heroTitleName > p:nth-child(2) {
+  .heroTitleName>p:nth-child(2) {
     font-size: 3rem;
   }
 
-  .heroTitleName > p:nth-child(3) {
+  .heroTitleName>p:nth-child(3) {
     font-size: 2.5rem;
   }
 
@@ -897,7 +898,7 @@ footer a:hover {
     width: 95%;
   }
 
-  .projectBox > .leftBox {
+  .projectBox>.leftBox {
     margin-top: 10%;
     width: 90%;
   }
@@ -906,13 +907,14 @@ footer a:hover {
     width: 80%;
   }
 
-  #contactForm > input,
-  #contactForm > textarea {
+  #contactForm>input,
+  #contactForm>textarea {
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 769px) {
+
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
@@ -922,15 +924,15 @@ footer a:hover {
     flex: 4;
   }
 
-  .heroTitleName > p {
+  .heroTitleName>p {
     font-size: large;
   }
 
-  .heroTitleName > p:nth-child(2) {
+  .heroTitleName>p:nth-child(2) {
     font-size: 2.7rem;
   }
 
-  .heroTitleName > p:nth-child(3) {
+  .heroTitleName>p:nth-child(3) {
     font-size: 2rem;
   }
 
@@ -946,7 +948,7 @@ footer a:hover {
     width: 100%;
   }
 
-  .projectBox > .leftBox {
+  .projectBox>.leftBox {
     width: 98%;
   }
 
@@ -959,13 +961,14 @@ footer a:hover {
     padding: 0;
   }
 
-  #contactForm > input,
-  #contactForm > textarea {
+  #contactForm>input,
+  #contactForm>textarea {
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
   nav .navBarButton,
   nav .NavMobItems {
     display: none;
@@ -987,7 +990,7 @@ footer a:hover {
     width: 100%;
   }
 
-  .projectBox > .leftBox {
+  .projectBox>.leftBox {
     width: 98%;
     height: auto;
   }
